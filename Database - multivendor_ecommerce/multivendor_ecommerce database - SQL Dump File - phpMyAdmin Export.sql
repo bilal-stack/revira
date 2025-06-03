@@ -2509,7 +2509,7 @@ CREATE TABLE `vendors_business_details` (
 --
 
 INSERT INTO `vendors_business_details` (`id`, `vendor_id`, `shop_name`, `shop_address`, `shop_city`, `shop_state`, `shop_country`, `shop_pincode`, `shop_mobile`, `shop_website`, `shop_email`, `address_proof`, `address_proof_image`, `business_license_number`, `gst_number`, `pan_number`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Electronics World', '1234-Mall Road', 'New Cairo', 'Cairo', 'Egypt', '00000000000', '1111111111', 'amazon.com.eg', 'yasser@admin.com', 'Aadhar card', '52583.png', '2222222', '3333333337', '444444444', NULL, '2022-10-15 20:11:35'),
+(1, 1, 'Electronics World', '1234-Mall Road', 'New Cairo', 'Cairo', 'Egypt', '00000000000', '1111111111', 'amazon.com.eg', 'yasser@admin.com', 'PAN', '52583.png', '2222222', '3333333337', '444444444', NULL, '2022-10-15 20:11:35'),
 (2, 6, 'B Tech', 'test', 'sgs', 'sgsag', 'Bahrain', '454545', '1111111111', 'sagasga', NULL, 'PAN', '', '3333', '333333333', '11111', NULL, '2022-10-15 21:19:44'),
 (3, 9, 'Ghali Vendor', NULL, 'Cairo', NULL, NULL, NULL, '0113335845', NULL, NULL, 'Passport', '', NULL, NULL, NULL, NULL, NULL);
 
