@@ -295,14 +295,7 @@
                         <h3 class="mb-5">Flash Deals</h3>
                         <p class="font-base color-gray-500">Special products in this month.</p>
                     </div>
-                    <div class="col-xl-6 col-lg-7">
-                        <ul class="nav nav-tabs nav-tabs-underline text-uppercase" role="tablist">
-                            <li><a class="active" href="#tab-flash-all" data-bs-toggle="tab" data-index="1" role="tab" aria-controls="tab-flash-all" aria-selected="true">All</a></li>
-                            <li><a href="#tab-flash-bestseller" data-bs-toggle="tab" data-index="2" role="tab" aria-controls="tab-flash-bestseller" aria-selected="true">Best seller</a></li>
-                            <li><a href="#tab-flash-mostviewed" data-bs-toggle="tab" data-index="3" role="tab" aria-controls="tab-flash-mostviewed" aria-selected="true">Most viewed</a></li>
-                            <li><a href="#tab-flash-topbrands" data-bs-toggle="tab" data-index="4" role="tab" aria-controls="tab-flash-topbrands" aria-selected="true">Top Brands</a></li>
-                        </ul>
-                    </div>
+
                 </div>
             </div>
             <div class="tab-content">
@@ -406,118 +399,6 @@
                             <div class="grid-banner-height"><span class="lbl-new-arrival color-brand-3">New Arrivals</span>
                                 <h4 class="font-24 mt-10 mb-5">Xiaomi Redmi Serial 12</h4>
                                 <p class="font-16">Special Sale</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card-grid-style-3 hover-show hover-hide-show-cart">
-                                <div class="card-grid-inner">
-                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
-                                    <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp1.png')}}" alt="Revira"></a></div>
-                                    <div class="box-count">
-                                        <div class="deals-countdown" data-countdown="2023/09/25 00:00:00"></div>
-                                    </div>
-                                    <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="#">HP 22 All-in-One PC, Intel Pentium Silver J5040, 4GB RAM</a>
-                                        <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500"> (65)</span></div>
-                                        <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2856.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                        <div class="box-progress box-progress-small">
-                                            <div class="progress-bar">
-                                                <div class="progress-bar-inner"></div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-6"><span class="font-xs color-gray-500">Available:</span><span class="font-xs-bold color-gray-900">568</span></div>
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-6 text-end"><span class="font-xs color-gray-500">Sold:</span><span class="font-xs-bold color-gray-900">289</span></div>
-                                            </div>
-                                        </div>
-                                        <div class="mt-20 box-add-cart"><a class="btn btn-cart" href="{{url('shop-cart')}}">Add To Cart</a></div>
-                                        <ul class="list-features">
-                                            <li> 2-day Delivery. Free shipping</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card-grid-style-3 hover-show hover-hide-show-cart">
-                                <div class="card-grid-inner">
-                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
-                                    <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp3.png')}}" alt="Revira"></a></div>
-                                    <div class="box-count">
-                                        <div class="deals-countdown" data-countdown="2023/09/25 00:00:00"></div>
-                                    </div>
-                                    <div class="info-right"><span class="font-xs color-gray-500">Gateway</span><br><a class="color-brand-3 font-sm-bold" href="#">Gateway 23.8&quot; All-in-one Desktop, Fully Adjustable Stand</a>
-                                        <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500"> (65)</span></div>
-                                        <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2856.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                        <div class="box-progress box-progress-small">
-                                            <div class="progress-bar">
-                                                <div class="progress-bar-inner"></div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-6"><span class="font-xs color-gray-500">Available:</span><span class="font-xs-bold color-gray-900">568</span></div>
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-6 text-end"><span class="font-xs color-gray-500">Sold:</span><span class="font-xs-bold color-gray-900">289</span></div>
-                                            </div>
-                                        </div>
-                                        <div class="mt-20 box-add-cart"><a class="btn btn-cart" href="{{url('shop-cart')}}">Add To Cart</a></div>
-                                        <ul class="list-features">
-                                            <li> 2-day Delivery. Free shipping</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card-grid-style-3 hover-show hover-hide-show-cart">
-                                <div class="card-grid-inner">
-                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
-                                    <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp5.png')}}" alt="Revira"></a></div>
-                                    <div class="box-count">
-                                        <div class="deals-countdown" data-countdown="2023/09/25 00:00:00"></div>
-                                    </div>
-                                    <div class="info-right"><span class="font-xs color-gray-500">HP</span><br><a class="color-brand-3 font-sm-bold" href="#">HP 24 All-in-One PC, Intel Core i3-1115G4, 4GB RAM</a>
-                                        <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500"> (65)</span></div>
-                                        <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2856.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                        <div class="box-progress box-progress-small">
-                                            <div class="progress-bar">
-                                                <div class="progress-bar-inner"></div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-6"><span class="font-xs color-gray-500">Available:</span><span class="font-xs-bold color-gray-900">568</span></div>
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-6 text-end"><span class="font-xs color-gray-500">Sold:</span><span class="font-xs-bold color-gray-900">289</span></div>
-                                            </div>
-                                        </div>
-                                        <div class="mt-20 box-add-cart"><a class="btn btn-cart" href="{{url('shop-cart')}}">Add To Cart</a></div>
-                                        <ul class="list-features">
-                                            <li> 2-day Delivery. Free shipping</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card-grid-style-3 hover-show hover-hide-show-cart">
-                                <div class="card-grid-inner">
-                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
-                                    <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp6.png')}}" alt="Revira"></a></div>
-                                    <div class="box-count">
-                                        <div class="deals-countdown" data-countdown="2023/09/25 00:00:00"></div>
-                                    </div>
-                                    <div class="info-right"><span class="font-xs color-gray-500">Dell</span><br><a class="color-brand-3 font-sm-bold" href="#">Dell Optiplex 9020 Small Form Business Desktop Tower PC</a>
-                                        <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500"> (65)</span></div>
-                                        <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2856.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                        <div class="box-progress box-progress-small">
-                                            <div class="progress-bar">
-                                                <div class="progress-bar-inner"></div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-6"><span class="font-xs color-gray-500">Available:</span><span class="font-xs-bold color-gray-900">568</span></div>
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-6 text-end"><span class="font-xs color-gray-500">Sold:</span><span class="font-xs-bold color-gray-900">289</span></div>
-                                            </div>
-                                        </div>
-                                        <div class="mt-20 box-add-cart"><a class="btn btn-cart" href="{{url('shop-cart')}}">Add To Cart</a></div>
-                                        <ul class="list-features">
-                                            <li> 2-day Delivery. Free shipping</li>
-                                        </ul>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -1181,189 +1062,81 @@
                         <h3 class="mb-5">Trending Products</h3>
                         <p class="font-base color-gray-500">Special products in this month.</p>
                     </div>
-                    <div class="col-xl-7 col-lg-7">
-                        <ul class="nav nav-tabs nav-tabs-underline text-uppercase" role="tablist">
-                            <li><a class="active" href="#tab-all" data-bs-toggle="tab" role="tab" aria-controls="tab-all" aria-selected="true">All</a></li>
-                            <li><a href="#tab-bestseller" data-bs-toggle="tab" role="tab" aria-controls="tab-bestseller" aria-selected="true">Best seller</a></li>
-                            <li><a href="#tab-mostviewed" data-bs-toggle="tab" role="tab" aria-controls="tab-mostviewed" aria-selected="true">Most viewed</a></li>
-                            <li><a href="#tab-topbrands" data-bs-toggle="tab" role="tab" aria-controls="tab-topbrands" aria-selected="true">Top Brands</a></li>
-                        </ul>
-                    </div>
                 </div>
             </div>
             <div class="tab-content">
                 <div class="tab-pane fade active show" id="tab-all" role="tabpanel" aria-labelledby="tab-all">
                     <div class="list-products-5">
-                        <div class="card-grid-style-3 card-grid-none-border">
-                            <div class="card-grid-inner">
-                                <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#" aria-label="Trend"></a><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
-                                <div class="image-box"><span class="label bg-brand-2">-12%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp3.png')}}" alt="Revira"></a>
-                                </div>
-                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="{{url('shop-single-product')}}">Dell Optiplex 9020 Small Form Business Desktop Tower PC</a>
-                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500">(65)</span></div>
-                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2856.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                    <ul class="list-features">
-                                        <li> 27-inch (diagonal) Retina 5K display</li>
-                                        <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
-                                        <li>AMD Radeon Pro 5300 graphics</li>
-                                    </ul>
-                                    <div class="mt-20 box-add-cart"><a class="btn btn-cart" href="{{url('shop-cart')}}">Add To Cart</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-grid-style-3 card-grid-none-border">
-                            <div class="card-grid-inner">
-                                <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#" aria-label="Trend"></a><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
-                                <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp4.png')}}" alt="Revira"></a>
-                                </div>
-                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="{{url('shop-single-product')}}">HP 24 All-in-One PC, Intel Core i3-1115G4, 4GB RAM</a>
-                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500">(65)</span></div>
-                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2856.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                    <ul class="list-features">
-                                        <li> 27-inch (diagonal) Retina 5K display</li>
-                                        <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
-                                        <li>AMD Radeon Pro 5300 graphics</li>
-                                    </ul>
-                                    <div class="mt-20 box-add-cart"><a class="btn btn-cart" href="{{url('shop-cart')}}">Add To Cart</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-grid-style-3 card-grid-none-border">
-                            <div class="card-grid-inner">
-                                <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#" aria-label="Trend"></a><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
-                                <div class="image-box"><span class="label bg-brand-2">-25%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp5.png')}}" alt="Revira"></a>
-                                </div>
-                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="{{url('shop-single-product')}}">Gateway 23.8&quot; All-in-one Desktop, Fully Adjustable Stand</a>
-                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500">(65)</span></div>
-                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2856.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                    <ul class="list-features">
-                                        <li> 27-inch (diagonal) Retina 5K display</li>
-                                        <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
-                                        <li>AMD Radeon Pro 5300 graphics</li>
-                                    </ul>
-                                    <div class="mt-20 box-add-cart"><a class="btn btn-cart" href="{{url('shop-cart')}}">Add To Cart</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-grid-style-3 card-grid-none-border">
-                            <div class="card-grid-inner">
-                                <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#" aria-label="Trend"></a><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
-                                <div class="image-box"><span class="label bg-brand-2">-16%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp6.png')}}" alt="Revira"></a>
-                                </div>
-                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="{{url('shop-single-product')}}">HP 22 All-in-One PC, Intel Pentium Silver J5040, 4GB RAM</a>
-                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500">(65)</span></div>
-                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2856.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                    <ul class="list-features">
-                                        <li> 27-inch (diagonal) Retina 5K display</li>
-                                        <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
-                                        <li>AMD Radeon Pro 5300 graphics</li>
-                                    </ul>
-                                    <div class="mt-20 box-add-cart"><a class="btn btn-cart" href="{{url('shop-cart')}}">Add To Cart</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-grid-style-3 card-grid-none-border">
-                            <div class="card-grid-inner">
-                                <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#" aria-label="Trend"></a><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
-                                <div class="image-box"><span class="label bg-brand-2">-22%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp7.png')}}" alt="Revira"></a>
-                                </div>
-                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="{{url('shop-single-product')}}">HP Slim Desktop, Intel Celeron J4025, 4GB RAM, 256GB</a>
-                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500">(65)</span></div>
-                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2856.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                    <ul class="list-features">
-                                        <li> 27-inch (diagonal) Retina 5K display</li>
-                                        <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
-                                        <li>AMD Radeon Pro 5300 graphics</li>
-                                    </ul>
-                                    <div class="mt-20 box-add-cart"><a class="btn btn-cart" href="{{url('shop-cart')}}">Add To Cart</a></div>
+                        @foreach ($discountedProducts as $product)
+                            @php
+                                $product_image_path = 'front/images/product_images/small/' . $product['product_image'];
+                            @endphp
+
+                            <div class="card-grid-style-3 card-grid-none-border">
+                                <div class="card-grid-inner">
+                                    <div class="tools">
+                                        <a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a>
+                                        <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>
+                                    </div>
+                                    <div class="image-box">
+                                        <span class="label bg-brand-2">-@include('front.layout.currency') {{$product['product_discount']}}</span>
+                                        <a href="{{ url('product/' . $product['id']) }}">
+                                            @if (!empty($product['product_image']) && file_exists($product_image_path)) {{-- if the product image exists in BOTH database table AND filesystem (on server) --}}
+                                                <img src="{{ asset($product_image_path) }}" alt="Product">
+                                            @else {{-- show the dummy image --}}
+                                                <img src="{{ asset('front/images/product_images/small/no-image.png') }}" alt="Product">
+                                            @endif
+                                        </a>
+                                    </div>
+                                    <div class="info-right"><span class="font-xs color-gray-500">{{ $product['brand']['name'] ?? $product['product_code'] }}</span>
+                                        <br>
+                                        <a class="color-brand-3 font-sm-bold" href="{{ url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
+                                        <div class="rating">
+                                            @php
+                                                $avg = round($product['ratings_avg_rating'], 1); // average like 4.2
+                                                $fullStars = floor($avg); // e.g. 4
+                                                $halfStar = ($avg - $fullStars) >= 0.5;
+                                                $emptyStars = 5 - $fullStars - ($halfStar ? 1 : 0);
+                                            @endphp
+
+                                            {{-- Full Stars --}}
+                                            @for ($i = 0; $i < $fullStars; $i++)
+                                                <img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira">
+                                            @endfor
+
+                                            {{-- Half Star --}}
+                                            @if ($halfStar)
+                                                <img src="{{asset('front/new/assets/imgs/template/icons/star-gray.svg')}}" alt="Revira">
+                                            @endif
+                                            {{-- Empty Stars --}}
+                                            @for ($i = 0; $i < $emptyStars; $i++)
+                                                <img src="{{asset('front/new/assets/imgs/template/icons/star-gray.svg')}}" alt="Revira">
+                                            @endfor
+
+                                            <span class="font-xs color-gray-500">({{ number_format($avg, 1) }}/5) {{ $product['ratings_count'] }} reviews</span>
+                                        </div>
+                                        @php
+                                            $getDiscountPrice = \App\Models\Product::getDiscountPrice($product['id']);
+                                        @endphp
+                                        <div class="price-info">
+                                            @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
+
+                                            <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                            <span class="color-gray-500 price-line">@include('front.layout.currency'){{ $product['product_price'] }}</span>
+
+                                            @else {{-- if there's no discount on the price, show the original price --}}
+                                            <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                            @endif
+                                        </div>
+                                        <p class="list-features">
+                                            {{ $product['description'] }}
+                                        </p>
+                                        <div class="mt-20 box-add-cart"><a class="btn btn-cart" href="{{url('shop-cart')}}">Add To Cart</a></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-grid-style-3 card-grid-none-border">
-                            <div class="card-grid-inner">
-                                <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#" aria-label="Trend"></a><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
-                                <div class="image-box"><span class="label bg-brand-2">-25%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp1.png')}}" alt="Revira"></a>
-                                </div>
-                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="{{url('shop-single-product')}}">Class 4K UHD (2160P) LED Roku Smart TV HDR</a>
-                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500">(65)</span></div>
-                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2856.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                    <ul class="list-features">
-                                        <li> 27-inch (diagonal) Retina 5K display</li>
-                                        <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
-                                        <li>AMD Radeon Pro 5300 graphics</li>
-                                    </ul>
-                                    <div class="mt-20 box-add-cart"><a class="btn btn-cart" href="{{url('shop-cart')}}">Add To Cart</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-grid-style-3 card-grid-none-border">
-                            <div class="card-grid-inner">
-                                <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#" aria-label="Trend"></a><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
-                                <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp2.png')}}" alt="Revira"></a>
-                                </div>
-                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="{{url('shop-single-product')}}">SAMSUNG Galaxy Tab S7 Plus 12.4&quot; 128GB Mystic Black</a>
-                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500">(65)</span></div>
-                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2856.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                    <ul class="list-features">
-                                        <li> 27-inch (diagonal) Retina 5K display</li>
-                                        <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
-                                        <li>AMD Radeon Pro 5300 graphics</li>
-                                    </ul>
-                                    <div class="mt-20 box-add-cart"><a class="btn btn-cart" href="{{url('shop-cart')}}">Add To Cart</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-grid-style-3 card-grid-none-border">
-                            <div class="card-grid-inner">
-                                <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#" aria-label="Trend"></a><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
-                                <div class="image-box"><span class="label bg-brand-2">-12%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp3.png')}}" alt="Revira"></a>
-                                </div>
-                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="{{url('shop-single-product')}}">MSI Optix G272 27&quot; Full HD LED Gaming LCD Monitor</a>
-                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500">(65)</span></div>
-                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2856.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                    <ul class="list-features">
-                                        <li> 27-inch (diagonal) Retina 5K display</li>
-                                        <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
-                                        <li>AMD Radeon Pro 5300 graphics</li>
-                                    </ul>
-                                    <div class="mt-20 box-add-cart"><a class="btn btn-cart" href="{{url('shop-cart')}}">Add To Cart</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-grid-style-3 card-grid-none-border">
-                            <div class="card-grid-inner">
-                                <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#" aria-label="Trend"></a><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
-                                <div class="image-box"><span class="label bg-brand-2">-10%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp4.png')}}" alt="Revira"></a>
-                                </div>
-                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="{{url('shop-single-product')}}">RCA 43&quot; Class 4K Ultra HD (2160P) HDR Roku Smart</a>
-                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500">(65)</span></div>
-                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2856.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                    <ul class="list-features">
-                                        <li> 27-inch (diagonal) Retina 5K display</li>
-                                        <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
-                                        <li>AMD Radeon Pro 5300 graphics</li>
-                                    </ul>
-                                    <div class="mt-20 box-add-cart"><a class="btn btn-cart" href="{{url('shop-cart')}}">Add To Cart</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-grid-style-3 card-grid-none-border">
-                            <div class="card-grid-inner">
-                                <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#" aria-label="Trend"></a><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
-                                <div class="image-box"><span class="label bg-brand-2">-5%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp6.png')}}" alt="Revira"></a>
-                                </div>
-                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="{{url('shop-single-product')}}">Bose Sport Earbuds True Wireless Bluetooth Headphones</a>
-                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500">(65)</span></div>
-                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2856.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                    <ul class="list-features">
-                                        <li> 27-inch (diagonal) Retina 5K display</li>
-                                        <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
-                                        <li>AMD Radeon Pro 5300 graphics</li>
-                                    </ul>
-                                    <div class="mt-20 box-add-cart"><a class="btn btn-cart" href="{{url('shop-cart')}}">Add To Cart</a></div>
-                                </div>
-                            </div>
-                        </div>
+
+                        @endforeach
                     </div>
                 </div>
                 <div class="tab-pane fade" id="tab-bestseller" role="tabpanel" aria-labelledby="tab-bestseller">
@@ -1933,87 +1706,68 @@
                             <div class="swiper-wrapper pt-5">
                                 <div class="swiper-slide">
                                     <div class="row">
-                                        <div class="col-lg-4 col-md-6 col-sm-12">
-                                            <div class="card-grid-style-2">
-                                                <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp2.png')}}" alt="Revira"></a></div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="{{url('shop-single-product')}}">2025 Apple iMac with Retina 5K Display 8GB RAM, 256GB SSD</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500">(65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
+                                        @foreach ($bestSellers as $product)
+                                            @php
+                                                $product_image_path = 'front/images/product_images/small/' . $product['product_image'];
+                                            @endphp
+
+                                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                                <div class="card-grid-style-2">
+                                                    <div class="image-box">
+                                                        <a href="{{ url('product/' . $product['id']) }}">
+                                                            @if (!empty($product['product_image']) && file_exists($product_image_path)) {{-- if the product image exists in BOTH database table AND filesystem (on server) --}}
+                                                                <img src="{{ asset($product_image_path) }}" alt="Product">
+                                                            @else {{-- show the dummy image --}}
+                                                                <img  src="{{ asset('front/images/product_images/small/no-image.png') }}" alt="Product">
+                                                            @endif
+
+                                                        </a>
+                                                    </div>
+                                                    <div class="info-right"><span class="font-xs color-gray-500">{{ $product['brand']['name'] ?? $product['product_code'] }}</span>
+                                                        <br>
+                                                        <a class="color-brand-3 font-sm-bold" href="{{ url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
+                                                        <div class="rating">
+                                                            @php
+                                                                $avg = round($product['ratings_avg_rating'], 1); // average like 4.2
+                                                                $fullStars = floor($avg); // e.g. 4
+                                                                $halfStar = ($avg - $fullStars) >= 0.5;
+                                                                $emptyStars = 5 - $fullStars - ($halfStar ? 1 : 0);
+                                                            @endphp
+
+                                                            {{-- Full Stars --}}
+                                                            @for ($i = 0; $i < $fullStars; $i++)
+                                                                <img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira">
+                                                            @endfor
+
+                                                            {{-- Half Star --}}
+                                                            @if ($halfStar)
+                                                                <img src="{{asset('front/new/assets/imgs/template/icons/star-gray.svg')}}" alt="Revira">
+                                                            @endif
+                                                            {{-- Empty Stars --}}
+                                                            @for ($i = 0; $i < $emptyStars; $i++)
+                                                                <img src="{{asset('front/new/assets/imgs/template/icons/star-gray.svg')}}" alt="Revira">
+                                                            @endfor
+
+                                                            <span class="font-xs color-gray-500">({{ number_format($avg, 1) }}/5, {{ $product['ratings_count'] }} reviews</span>
+                                                        </div>
+                                                        @php
+                                                            $getDiscountPrice = \App\Models\Product::getDiscountPrice($product['id']);
+                                                        @endphp
+                                                        <div class="price-info">
+                                                            @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
+
+                                                                <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                                                <span class="color-gray-500 price-line">@include('front.layout.currency'){{ $product['product_price'] }}</span>
+
+                                                            @else {{-- if there's no discount on the price, show the original price --}}
+                                                                <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                                            @endif
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 col-sm-12">
-                                            <div class="card-grid-style-2">
-                                                <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp3.png')}}" alt="Revira"></a></div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="{{url('shop-single-product')}}">Bose Sport Earbuds True Wireless Bluetooth Headphones</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500">(65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 col-sm-12">
-                                            <div class="card-grid-style-2">
-                                                <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp4.png')}}" alt="Revira"></a></div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="{{url('shop-single-product')}}">ASUS VivoBook 15.6&quot; 1080p PC Laptops, Intel Core i3</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500">(65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 col-sm-12">
-                                            <div class="card-grid-style-2">
-                                                <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp5.png')}}" alt="Revira"></a></div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="{{url('shop-single-product')}}">Apple Watch Series 7 GPS + Cellular, 41mm Midnight</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500">(65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 col-sm-12">
-                                            <div class="card-grid-style-2">
-                                                <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp6.png')}}" alt="Revira"></a></div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="{{url('shop-single-product')}}">Hisense 43&quot; Class 4K UHD LED XClass Smart TV HDR</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500">(65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 col-sm-12">
-                                            <div class="card-grid-style-2">
-                                                <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp7.png')}}" alt="Revira"></a></div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="{{url('shop-single-product')}}">Chromecast with Google TV - Streaming Entertainment</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500">(65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 col-sm-12">
-                                            <div class="card-grid-style-2">
-                                                <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp2.png')}}" alt="Revira"></a></div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="{{url('shop-single-product')}}">SAMSUNG Galaxy Tab A7 Lite, 8.7&quot; Tablet 32GB</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500">(65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 col-sm-12">
-                                            <div class="card-grid-style-2">
-                                                <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp3.png')}}" alt="Revira"></a></div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="{{url('shop-single-product')}}">Apple AirPods Pro with MagSafe Charging Case</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500">(65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 col-sm-12">
-                                            <div class="card-grid-style-2">
-                                                <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp4.png')}}" alt="Revira"></a></div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="{{url('shop-single-product')}}">Razer Power Up Gaming Bundle V2 - Cynosa Lite</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500">(65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        @endforeach
+
                                     </div>
                                 </div>
                             </div>
@@ -2093,460 +1847,462 @@
             </div>
         </div>
     </section>
-    <section class="section-box bg-gray-50 pt-50 pb-50 mt-50">
-        <div class="container">
-            <div class="head-main bd-gray-200">
-                <div class="row">
-                    <div class="col-xl-7 col-lg-6">
-                        <h3 class="mb-5">Top Brands</h3>
-                        <p class="font-base color-gray-500">Special products in this month.</p>
-                    </div>
-                    <div class="col-xl-5 col-lg-6">
-                        <ul class="nav nav-tabs text-uppercase" role="tablist">
-                            <li><a class="active" href="#tab-2-all" data-bs-toggle="tab" role="tab" aria-controls="tab-2-all" aria-selected="true">All</a></li>
-                            <li><a href="#tab-2-digitals" data-bs-toggle="tab" role="tab" aria-controls="tab-2-digitals" aria-selected="true">Digitals</a></li>
-                            <li><a href="#tab-2-furniture" data-bs-toggle="tab" role="tab" aria-controls="tab-2-furniture" aria-selected="true">Furniture</a></li>
-                            <li><a href="#tab-2-fashion" data-bs-toggle="tab" role="tab" aria-controls="tab-2-fashion" aria-selected="true">Fashion</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-content">
-                <div class="tab-pane fade active show" id="tab-2-all" role="tabpanel" aria-labelledby="tab-2-all">
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-microsoft.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/microsoft.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 25% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-nokia.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/nokia.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 30% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-panasonic.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/panasonic.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-sharp.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/sharp.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 65% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-philip.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/philip.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 19% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-casio.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/casio.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 15% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-acer.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/acer.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 20% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-toshiba.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/toshiba.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 35% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="tab-2-digitals" role="tabpanel" aria-labelledby="tab-2-digitals">
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-acer.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/acer.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-toshiba.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/toshiba.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-microsoft.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/microsoft.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-nokia.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/nokia.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-panasonic.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/panasonic.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-sharp.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/sharp.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-philip.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/philip.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-casio.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/casio.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="tab-2-furniture" role="tabpanel" aria-labelledby="tab-2-furniture">
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-casio.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/casio.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-acer.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/acer.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-microsoft.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/microsoft.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-nokia.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/nokia.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-panasonic.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/panasonic.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-sharp.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/sharp.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-philip.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/philip.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-toshiba.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/toshiba.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="tab-2-fashion" role="tabpanel" aria-labelledby="tab-2-fashion">
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-panasonic.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/panasonic.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-sharp.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/sharp.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-microsoft.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/microsoft.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-nokia.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/nokia.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-philip.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/philip.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-casio.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/casio.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-acer.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/acer.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-grid-style-4">
-                                <div class="card-grid-inner">
-                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-toshiba.png')}}" alt="Revira"></a></div>
-                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/toshiba.svg')}}" alt="Revira"></a>
-                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>
-                                        <div class="divide mb-5"></div>
-                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>
-                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
+{{--    <section class="section-box bg-gray-50 pt-50 pb-50 mt-50">--}}
+{{--        <div class="container">--}}
+{{--            <div class="head-main bd-gray-200">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-xl-7 col-lg-6">--}}
+{{--                        <h3 class="mb-5">Top Brands</h3>--}}
+{{--                        <p class="font-base color-gray-500">Special brands in this month.</p>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-xl-5 col-lg-6">--}}
+{{--                        <ul class="nav nav-tabs text-uppercase" role="tablist">--}}
+{{--                            <li><a class="active" href="#tab-2-all" data-bs-toggle="tab" role="tab" aria-controls="tab-2-all" aria-selected="true">All</a></li>--}}
+{{--                            <li><a href="#tab-2-digitals" data-bs-toggle="tab" role="tab" aria-controls="tab-2-digitals" aria-selected="true">Digitals</a></li>--}}
+{{--                            <li><a href="#tab-2-furniture" data-bs-toggle="tab" role="tab" aria-controls="tab-2-furniture" aria-selected="true">Furniture</a></li>--}}
+{{--                            <li><a href="#tab-2-fashion" data-bs-toggle="tab" role="tab" aria-controls="tab-2-fashion" aria-selected="true">Fashion</a></li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="tab-content">--}}
+{{--                <div class="tab-pane fade active show" id="tab-2-all" role="tabpanel" aria-labelledby="tab-2-all">--}}
+{{--                    <div class="row">--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-microsoft.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/microsoft.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 25% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-nokia.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/nokia.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 30% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-panasonic.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/panasonic.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-sharp.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/sharp.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 65% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-philip.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/philip.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 19% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-casio.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/casio.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 15% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-acer.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/acer.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 20% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-toshiba.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/toshiba.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 35% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="tab-pane fade" id="tab-2-digitals" role="tabpanel" aria-labelledby="tab-2-digitals">--}}
+{{--                    <div class="row">--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-acer.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/acer.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-toshiba.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/toshiba.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-microsoft.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/microsoft.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-nokia.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/nokia.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-panasonic.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/panasonic.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-sharp.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/sharp.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-philip.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/philip.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-casio.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/casio.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="tab-pane fade" id="tab-2-furniture" role="tabpanel" aria-labelledby="tab-2-furniture">--}}
+{{--                    <div class="row">--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-casio.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/casio.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-acer.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/acer.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-microsoft.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/microsoft.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-nokia.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/nokia.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-panasonic.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/panasonic.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-sharp.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/sharp.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-philip.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/philip.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-toshiba.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/toshiba.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="tab-pane fade" id="tab-2-fashion" role="tabpanel" aria-labelledby="tab-2-fashion">--}}
+{{--                    <div class="row">--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-panasonic.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/panasonic.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-sharp.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/sharp.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-microsoft.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/microsoft.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-nokia.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/nokia.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-philip.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/philip.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-casio.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/casio.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-acer.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/acer.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">--}}
+{{--                            <div class="card-grid-style-4">--}}
+{{--                                <div class="card-grid-inner">--}}
+{{--                                    <div class="image-box"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/img-toshiba.png')}}" alt="Revira"></a></div>--}}
+{{--                                    <div class="info-right"><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/toshiba.svg')}}" alt="Revira"></a>--}}
+{{--                                        <p class="font-xs color-brand-3">PC, Laptop, Smart Watch, Gaming Gear ...</p>--}}
+{{--                                        <div class="divide mb-5"></div>--}}
+{{--                                        <div class="font-lg-bold color-brand-3">Up to 55% off</div>--}}
+{{--                                        <div class="box-link"><a class="btn btn-link-brand-2 btn-arrow-brand-2 btn-arrow-small text-lowercase pt-0 pb-0" href="{{url('shop-single-product')}}">Shop Now</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+
     <section class="section-box mt-50">
         <div class="container">
             <div class="row">
@@ -2559,58 +2315,72 @@
                             <div class="box-swiper">
                                 <div class="swiper-container swiper-best-seller">
                                     <div class="swiper-wrapper pt-5">
-                                        <div class="swiper-slide">
-                                            <div class="card-grid-style-2 card-grid-none-border hover-up">
-                                                <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product-second')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/camera.png')}}" alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">Razer</span><br><a class="color-brand-3 font-xs-bold" href="{{url('shop-single-product-second')}}">Razer Power Up Gaming Bundle V2 - Cynosa Lite</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500"> (65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
+                                        @foreach (collect($bestSellers)->chunk(3) as $chunk)
+                                            <div class="swiper-slide">
+                                                @foreach ($chunk as $product)
+                                                    @php
+                                                        $product_image_path = 'front/images/product_images/small/' . $product['product_image'];
+                                                    @endphp
+                                                    <div class="card-grid-style-2 card-grid-none-border hover-up">
+                                                        <div class="image-box">
+                                                            @if ($product['product_discount'] > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
+                                                                <span class="label bg-brand-2">-@include('front.layout.currency'){{ $product['product_discount'] }}</span>
+                                                            @endif
+
+
+                                                            <a href="{{ url('product/' . $product['id']) }}">
+                                                                @if (!empty($product['product_image']) && file_exists($product_image_path)) {{-- if the product image exists in BOTH database table AND filesystem (on server) --}}
+                                                                    <img src="{{ asset($product_image_path) }}" alt="Product">
+                                                                @else {{-- show the dummy image --}}
+                                                                    <img src="{{ asset('front/images/product_images/small/no-image.png') }}" alt="Product">
+                                                                @endif
+                                                            </a>
+                                                        </div>
+                                                        <div class="info-right"><span class="font-xs color-gray-500">{{ $product['brand']['name'] ?? $product['product_code'] }}</span>
+                                                            <br>
+                                                            <a class="color-brand-3 font-xs-bold" href="{{ url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
+                                                            <div class="rating">
+                                                                @php
+                                                                    $avg = round($product['ratings_avg_rating'], 1); // average like 4.2
+                                                                    $fullStars = floor($avg); // e.g. 4
+                                                                    $halfStar = ($avg - $fullStars) >= 0.5;
+                                                                    $emptyStars = 5 - $fullStars - ($halfStar ? 1 : 0);
+                                                                @endphp
+
+                                                                {{-- Full Stars --}}
+                                                                @for ($i = 0; $i < $fullStars; $i++)
+                                                                    <img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira">
+                                                                @endfor
+
+                                                                {{-- Half Star --}}
+                                                                @if ($halfStar)
+                                                                    <img src="{{asset('front/new/assets/imgs/template/icons/star-gray.svg')}}" alt="Revira">
+                                                                @endif
+                                                                {{-- Empty Stars --}}
+                                                                @for ($i = 0; $i < $emptyStars; $i++)
+                                                                    <img src="{{asset('front/new/assets/imgs/template/icons/star-gray.svg')}}" alt="Revira">
+                                                                @endfor
+
+                                                                <span class="font-xs color-gray-500">({{ number_format($avg, 1) }}/5) {{ $product['ratings_count'] }} reviews</span>
+                                                            </div>
+                                                            @php
+                                                                $getDiscountPrice = \App\Models\Product::getDiscountPrice($product['id']);
+                                                            @endphp
+                                                            <div class="price-info">
+                                                                @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
+
+                                                                <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                                                <span class="color-gray-500 price-line">@include('front.layout.currency'){{ $product['product_price'] }}</span>
+
+                                                                @else {{-- if there's no discount on the price, show the original price --}}
+                                                                <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                                                @endif
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
                                             </div>
-                                            <div class="card-grid-style-2 card-grid-none-border hover-up">
-                                                <div class="image-box"><a href="{{url('shop-single-product-second')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/clock.png')}}" alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-xs-bold" href="{{url('shop-single-product-second')}}">Apple AirPods Pro with MagSafe Charging Case</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500"> (65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
-                                            </div>
-                                            <div class="card-grid-style-2 card-grid-none-border hover-up">
-                                                <div class="image-box"><a href="{{url('shop-single-product-second')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/airpod.png')}}" alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">SAMSUNG</span><br><a class="color-brand-3 font-xs-bold" href="{{url('shop-single-product-second')}}">SAMSUNG Galaxy Tab A7 Lite, 8.7&quot; Tablet 32GB</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500"> (65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="card-grid-style-2 card-grid-none-border hover-up">
-                                                <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product-second')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/airpod.png')}}" alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">Razer</span><br><a class="color-brand-3 font-xs-bold" href="{{url('shop-single-product-second')}}">Razer Power Up Gaming Bundle V2 - Cynosa Lite</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500"> (65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
-                                            </div>
-                                            <div class="card-grid-style-2 card-grid-none-border hover-up">
-                                                <div class="image-box"><a href="{{url('shop-single-product-second')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/camera.png')}}" alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-xs-bold" href="{{url('shop-single-product-second')}}">Apple AirPods Pro with MagSafe Charging Case</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500"> (65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
-                                            </div>
-                                            <div class="card-grid-style-2 card-grid-none-border hover-up">
-                                                <div class="image-box"><a href="{{url('shop-single-product-second')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/clock.png')}}" alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">SAMSUNG</span><br><a class="color-brand-3 font-xs-bold" href="{{url('shop-single-product-second')}}">SAMSUNG Galaxy Tab A7 Lite, 8.7&quot; Tablet 32GB</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500"> (65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
                                 <div class="swiper-button-next swiper-button-next-style-2 swiper-button-next-bestseller"></div>
@@ -2628,32 +2398,72 @@
                             <div class="box-swiper">
                                 <div class="swiper-container swiper-featured">
                                     <div class="swiper-wrapper pt-5">
-                                        <div class="swiper-slide">
-                                            <div class="card-grid-style-2 card-grid-none-border hover-up">
-                                                <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product-second')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/cat-img-1.png')}}" alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">Lenovo</span><br><a class="color-brand-3 font-xs-bold" href="{{url('shop-single-product-second')}}">Lenovo Legion 5i 15.6&quot; Laptop, Intel Core i5</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500"> (65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
+                                        @foreach (collect($featuredProducts)->chunk(3) as $chunk)
+                                            <div class="swiper-slide">
+                                                @foreach ($chunk as $product)
+                                                    @php
+                                                        $product_image_path = 'front/images/product_images/small/' . $product['product_image'];
+                                                    @endphp
+                                                    <div class="card-grid-style-2 card-grid-none-border hover-up">
+                                                        <div class="image-box">
+                                                            @if ($product['product_discount'] > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
+                                                            <span class="label bg-brand-2">-@include('front.layout.currency'){{ $product['product_discount'] }}</span>
+                                                            @endif
+
+
+                                                            <a href="{{ url('product/' . $product['id']) }}">
+                                                                @if (!empty($product['product_image']) && file_exists($product_image_path)) {{-- if the product image exists in BOTH database table AND filesystem (on server) --}}
+                                                                <img src="{{ asset($product_image_path) }}" alt="Product">
+                                                                @else {{-- show the dummy image --}}
+                                                                <img src="{{ asset('front/images/product_images/small/no-image.png') }}" alt="Product">
+                                                                @endif
+                                                            </a>
+                                                        </div>
+                                                        <div class="info-right"><span class="font-xs color-gray-500">{{ $product['brand']['name'] ?? $product['product_code'] }}</span>
+                                                            <br>
+                                                            <a class="color-brand-3 font-xs-bold" href="{{ url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
+                                                            <div class="rating">
+                                                                @php
+                                                                    $avg = round($product['ratings_avg_rating'], 1); // average like 4.2
+                                                                    $fullStars = floor($avg); // e.g. 4
+                                                                    $halfStar = ($avg - $fullStars) >= 0.5;
+                                                                    $emptyStars = 5 - $fullStars - ($halfStar ? 1 : 0);
+                                                                @endphp
+
+                                                                {{-- Full Stars --}}
+                                                                @for ($i = 0; $i < $fullStars; $i++)
+                                                                    <img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira">
+                                                                @endfor
+
+                                                                {{-- Half Star --}}
+                                                                @if ($halfStar)
+                                                                    <img src="{{asset('front/new/assets/imgs/template/icons/star-gray.svg')}}" alt="Revira">
+                                                                @endif
+                                                                {{-- Empty Stars --}}
+                                                                @for ($i = 0; $i < $emptyStars; $i++)
+                                                                    <img src="{{asset('front/new/assets/imgs/template/icons/star-gray.svg')}}" alt="Revira">
+                                                                @endfor
+
+                                                                <span class="font-xs color-gray-500">({{ number_format($avg, 1) }}/5) {{ $product['ratings_count'] }} reviews</span>
+                                                            </div>
+                                                            @php
+                                                                $getDiscountPrice = \App\Models\Product::getDiscountPrice($product['id']);
+                                                            @endphp
+                                                            <div class="price-info">
+                                                                @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
+
+                                                                <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                                                <span class="color-gray-500 price-line">@include('front.layout.currency'){{ $product['product_price'] }}</span>
+
+                                                                @else {{-- if there's no discount on the price, show the original price --}}
+                                                                <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                                                @endif
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
                                             </div>
-                                            <div class="card-grid-style-2 card-grid-none-border hover-up">
-                                                <div class="image-box"><a href="{{url('shop-single-product-second')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/cat-img-2.png')}}" alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">LG</span><br><a class="color-brand-3 font-xs-bold" href="{{url('shop-single-product-second')}}">LG 65&quot; Class 4K UHD Smart TV OLED A1 Series</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500"> (65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
-                                            </div>
-                                            <div class="card-grid-style-2 card-grid-none-border hover-up">
-                                                <div class="image-box"><a href="{{url('shop-single-product-second')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/cat-img-3.png')}}" alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">Chromecast</span><br><a class="color-brand-3 font-xs-bold" href="{{url('shop-single-product-second')}}">Chromecast with Google TV - Streaming Entertainment</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500"> (65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
                                 <div class="swiper-button-next swiper-button-next-style-2 swiper-button-next-featured"></div>
@@ -2671,32 +2481,72 @@
                             <div class="box-swiper">
                                 <div class="swiper-container swiper-mostviewed">
                                     <div class="swiper-wrapper pt-5">
-                                        <div class="swiper-slide">
-                                            <div class="card-grid-style-2 card-grid-none-border hover-up">
-                                                <div class="image-box"><a href="{{url('shop-single-product-second')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/cat-img-4.png')}}" alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-xs-bold" href="{{url('shop-single-product-second')}}">2025 Apple 10.9-inch iPad Air Wi-Fi 64GB - Silver</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500"> (65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
+                                        @foreach (collect($mostViewedProducts)->chunk(3) as $chunk)
+                                            <div class="swiper-slide">
+                                                @foreach ($chunk as $product)
+                                                    @php
+                                                        $product_image_path = 'front/images/product_images/small/' . $product['product_image'];
+                                                    @endphp
+                                                    <div class="card-grid-style-2 card-grid-none-border hover-up">
+                                                        <div class="image-box">
+                                                            @if ($product['product_discount'] > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
+                                                            <span class="label bg-brand-2">-@include('front.layout.currency'){{ $product['product_discount'] }}</span>
+                                                            @endif
+
+
+                                                            <a href="{{ url('product/' . $product['id']) }}">
+                                                                @if (!empty($product['product_image']) && file_exists($product_image_path)) {{-- if the product image exists in BOTH database table AND filesystem (on server) --}}
+                                                                <img src="{{ asset($product_image_path) }}" alt="Product">
+                                                                @else {{-- show the dummy image --}}
+                                                                <img src="{{ asset('front/images/product_images/small/no-image.png') }}" alt="Product">
+                                                                @endif
+                                                            </a>
+                                                        </div>
+                                                        <div class="info-right"><span class="font-xs color-gray-500">{{ $product['brand']['name'] ?? $product['product_code'] }}</span>
+                                                            <br>
+                                                            <a class="color-brand-3 font-xs-bold" href="{{ url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
+                                                            <div class="rating">
+                                                                @php
+                                                                    $avg = round($product['ratings_avg_rating'], 1); // average like 4.2
+                                                                    $fullStars = floor($avg); // e.g. 4
+                                                                    $halfStar = ($avg - $fullStars) >= 0.5;
+                                                                    $emptyStars = 5 - $fullStars - ($halfStar ? 1 : 0);
+                                                                @endphp
+
+                                                                {{-- Full Stars --}}
+                                                                @for ($i = 0; $i < $fullStars; $i++)
+                                                                    <img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira">
+                                                                @endfor
+
+                                                                {{-- Half Star --}}
+                                                                @if ($halfStar)
+                                                                    <img src="{{asset('front/new/assets/imgs/template/icons/star-gray.svg')}}" alt="Revira">
+                                                                @endif
+                                                                {{-- Empty Stars --}}
+                                                                @for ($i = 0; $i < $emptyStars; $i++)
+                                                                    <img src="{{asset('front/new/assets/imgs/template/icons/star-gray.svg')}}" alt="Revira">
+                                                                @endfor
+
+                                                                <span class="font-xs color-gray-500">({{ number_format($avg, 1) }}/5) {{ $product['ratings_count'] }} reviews</span>
+                                                            </div>
+                                                            @php
+                                                                $getDiscountPrice = \App\Models\Product::getDiscountPrice($product['id']);
+                                                            @endphp
+                                                            <div class="price-info">
+                                                                @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
+
+                                                                <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                                                <span class="color-gray-500 price-line">@include('front.layout.currency'){{ $product['product_price'] }}</span>
+
+                                                                @else {{-- if there's no discount on the price, show the original price --}}
+                                                                <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                                                @endif
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
                                             </div>
-                                            <div class="card-grid-style-2 card-grid-none-border hover-up">
-                                                <div class="image-box"><a href="{{url('shop-single-product-second')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/cat-img-6.png')}}" alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">Hisense</span><br><a class="color-brand-3 font-xs-bold" href="{{url('shop-single-product-second')}}">Hisense 43&quot; Class 4K UHD LED XClass Smart TV HDR</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500"> (65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
-                                            </div>
-                                            <div class="card-grid-style-2 card-grid-none-border hover-up">
-                                                <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product-second')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/cat-img-7.png')}}" alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-xs-bold" href="{{url('shop-single-product-second')}}">Apple Watch Series 7 GPS + Cellular, 41mm Midnight</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500"> (65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
                                 <div class="swiper-button-next swiper-button-next-style-2 swiper-button-next-mostviewed"></div>
@@ -2708,38 +2558,78 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="box-slider-item">
                         <div class="head">
-                            <h5>Trending</h5>
+                            <h5>Discounted</h5>
                         </div>
                         <div class="content-slider">
                             <div class="box-swiper">
                                 <div class="swiper-container swiper-trending">
                                     <div class="swiper-wrapper pt-5">
-                                        <div class="swiper-slide">
-                                            <div class="card-grid-style-2 card-grid-none-border hover-up">
-                                                <div class="image-box"><a href="{{url('shop-single-product-second')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/cat-img-8.png')}}" alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">ASUS</span><br><a class="color-brand-3 font-xs-bold" href="{{url('shop-single-product-second')}}">ASUS VivoBook 15.6&quot; 1080p PC Laptops, Intel Core i3</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500"> (65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
+                                        @foreach (collect($discountedProducts)->chunk(3) as $chunk)
+                                            <div class="swiper-slide">
+                                                @foreach ($chunk as $product)
+                                                    @php
+                                                        $product_image_path = 'front/images/product_images/small/' . $product['product_image'];
+                                                    @endphp
+                                                    <div class="card-grid-style-2 card-grid-none-border hover-up">
+                                                        <div class="image-box">
+                                                            @if ($product['product_discount'] > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
+                                                            <span class="label bg-brand-2">-@include('front.layout.currency'){{ $product['product_discount'] }}</span>
+                                                            @endif
+
+
+                                                            <a href="{{ url('product/' . $product['id']) }}">
+                                                                @if (!empty($product['product_image']) && file_exists($product_image_path)) {{-- if the product image exists in BOTH database table AND filesystem (on server) --}}
+                                                                <img src="{{ asset($product_image_path) }}" alt="Product">
+                                                                @else {{-- show the dummy image --}}
+                                                                <img src="{{ asset('front/images/product_images/small/no-image.png') }}" alt="Product">
+                                                                @endif
+                                                            </a>
+                                                        </div>
+                                                        <div class="info-right"><span class="font-xs color-gray-500">{{ $product['brand']['name'] ?? $product['product_code'] }}</span>
+                                                            <br>
+                                                            <a class="color-brand-3 font-xs-bold" href="{{ url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
+                                                            <div class="rating">
+                                                                @php
+                                                                    $avg = round($product['ratings_avg_rating'], 1); // average like 4.2
+                                                                    $fullStars = floor($avg); // e.g. 4
+                                                                    $halfStar = ($avg - $fullStars) >= 0.5;
+                                                                    $emptyStars = 5 - $fullStars - ($halfStar ? 1 : 0);
+                                                                @endphp
+
+                                                                {{-- Full Stars --}}
+                                                                @for ($i = 0; $i < $fullStars; $i++)
+                                                                    <img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira">
+                                                                @endfor
+
+                                                                {{-- Half Star --}}
+                                                                @if ($halfStar)
+                                                                    <img src="{{asset('front/new/assets/imgs/template/icons/star-gray.svg')}}" alt="Revira">
+                                                                @endif
+                                                                {{-- Empty Stars --}}
+                                                                @for ($i = 0; $i < $emptyStars; $i++)
+                                                                    <img src="{{asset('front/new/assets/imgs/template/icons/star-gray.svg')}}" alt="Revira">
+                                                                @endfor
+
+                                                                <span class="font-xs color-gray-500">({{ number_format($avg, 1) }}/5) {{ $product['ratings_count'] }} reviews</span>
+                                                            </div>
+                                                            @php
+                                                                $getDiscountPrice = \App\Models\Product::getDiscountPrice($product['id']);
+                                                            @endphp
+                                                            <div class="price-info">
+                                                                @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
+
+                                                                <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                                                <span class="color-gray-500 price-line">@include('front.layout.currency'){{ $product['product_price'] }}</span>
+
+                                                                @else {{-- if there's no discount on the price, show the original price --}}
+                                                                <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                                                @endif
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
                                             </div>
-                                            <div class="card-grid-style-2 card-grid-none-border hover-up">
-                                                <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product-second')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/cat-img-5.png')}}" alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">MSI</span><br><a class="color-brand-3 font-xs-bold" href="{{url('shop-single-product-second')}}">MSI Optix G272 27&quot; Full HD LED Gaming LCD Monitor</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500"> (65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
-                                            </div>
-                                            <div class="card-grid-style-2 card-grid-none-border hover-up">
-                                                <div class="image-box"><a href="{{url('shop-single-product-second')}}"><img src="{{asset('front/new/assets/imgs/page/homepage2/cat-img-9.png')}}" alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><span class="font-xs color-gray-500">Ultra</span><br><a class="color-brand-3 font-xs-bold" href="{{url('shop-single-product-second')}}">RCA 43&quot; Class 4K Ultra HD (2160P) HDR Roku Smart</a>
-                                                    <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500"> (65)</span></div>
-                                                    <div class="price-info"><strong class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span class="color-gray-500 price-line">$3225.6</span></div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
                                 <div class="swiper-button-next swiper-button-next-style-2 swiper-button-next-trending"></div>
@@ -2756,60 +2646,61 @@
             <div class="text-center mt-30"><a href="shop-single-product-3.php"><img src="{{asset('front/new/assets/imgs/page/homepage2/banner-ads.png')}}" alt="Revira"></a></div>
         </div>
     </section>
-    <section class="section-box mt-50">
-        <div class="container">
-            <div class="head-main">
-                <h3 class="mb-5">Latest News &amp; Events</h3>
-                <p class="font-base color-gray-500">From our blog, forum</p>
-                <div class="box-button-slider">
-                    <div class="swiper-button-next swiper-button-next-group-4"></div>
-                    <div class="swiper-button-prev swiper-button-prev-group-4"></div>
-                </div>
-            </div>
-        </div>
-        <div class="container mt-10">
-            <div class="box-swiper">
-                <div class="swiper-container swiper-group-4">
-                    <div class="swiper-wrapper pt-5">
-                        <div class="swiper-slide">
-                            <div class="card-grid-style-1">
-                                <div class="image-box"><a href="blog-single-2.php"></a><img src="{{asset('front/new/assets/imgs/page/blog/blog-1.jpg')}}" alt="Revira"></div><a class="tag-dot font-xs" href="blog-list.php">Technology</a><a class="color-gray-1100" href="blog-single-2.php">
-                                    <h4>The latest technologies to be used for VR in 2025</h4></a>
-                                <div class="mt-20"><span class="color-gray-500 font-xs mr-30">September 02, 2025</span><span class="color-gray-500 font-xs">4<span> Mins read</span></span></div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card-grid-style-1">
-                                <div class="image-box"><a href="blog-single.php"></a><img src="{{asset('front/new/assets/imgs/page/blog/blog-2.jpg')}}" alt="Revira"></div><a class="tag-dot font-xs" href="blog-list.php">Technology</a><a class="color-gray-1100" href="blog-single.php">
-                                    <h4>How can Web 3.0 Bring Changes to the Gaming?</h4></a>
-                                <div class="mt-20"><span class="color-gray-500 font-xs mr-30">August 30, 2025</span><span class="color-gray-500 font-xs">5<span> Mins read</span></span></div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card-grid-style-1">
-                                <div class="image-box"><a href="blog-single-3.php"></a><img src="{{asset('front/new/assets/imgs/page/blog/blog-3.jpg')}}" alt="Revira"></div><a class="tag-dot font-xs" href="blog-list.php">Gaming</a><a class="color-gray-1100" href="blog-single-3.php">
-                                    <h4>NFT Blockchain Games That Might Take Off</h4></a>
-                                <div class="mt-20"><span class="color-gray-500 font-xs mr-30">August 25, 2025</span><span class="color-gray-500 font-xs">3<span> Mins read</span></span></div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card-grid-style-1">
-                                <div class="image-box"><a href="blog-single-2.php"></a><img src="{{asset('front/new/assets/imgs/page/blog/blog-4.jpg')}}" alt="Revira"></div><a class="tag-dot font-xs" href="blog-list.php">Blockchain</a><a class="color-gray-1100" href="blog-single-2.php">
-                                    <h4>Blockchain Gaming And Its Three Challenges</h4></a>
-                                <div class="mt-20"><span class="color-gray-500 font-xs mr-30">August 15, 2025</span><span class="color-gray-500 font-xs">7<span> Mins read</span></span></div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card-grid-style-1">
-                                <div class="image-box"><a href="blog-single-2.php"></a><img src="{{asset('front/new/assets/imgs/page/blog/blog-5.jpg')}}" alt="Revira"></div><a class="tag-dot font-xs" href="blog-list.php">Development</a><a class="color-gray-1100" href="blog-single-2.php">
-                                    <h4>HTML5 – The Future of Mobile App Development</h4></a>
-                                <div class="mt-20"><span class="color-gray-500 font-xs mr-30">August 12, 2025</span><span class="color-gray-500 font-xs">9<span> Mins read</span></span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
+{{--    <section class="section-box mt-50">--}}
+{{--        <div class="container">--}}
+{{--            <div class="head-main">--}}
+{{--                <h3 class="mb-5">Latest News &amp; Events</h3>--}}
+{{--                <p class="font-base color-gray-500">From our blog, forum</p>--}}
+{{--                <div class="box-button-slider">--}}
+{{--                    <div class="swiper-button-next swiper-button-next-group-4"></div>--}}
+{{--                    <div class="swiper-button-prev swiper-button-prev-group-4"></div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="container mt-10">--}}
+{{--            <div class="box-swiper">--}}
+{{--                <div class="swiper-container swiper-group-4">--}}
+{{--                    <div class="swiper-wrapper pt-5">--}}
+{{--                        <div class="swiper-slide">--}}
+{{--                            <div class="card-grid-style-1">--}}
+{{--                                <div class="image-box"><a href="blog-single-2.php"></a><img src="{{asset('front/new/assets/imgs/page/blog/blog-1.jpg')}}" alt="Revira"></div><a class="tag-dot font-xs" href="blog-list.php">Technology</a><a class="color-gray-1100" href="blog-single-2.php">--}}
+{{--                                    <h4>The latest technologies to be used for VR in 2025</h4></a>--}}
+{{--                                <div class="mt-20"><span class="color-gray-500 font-xs mr-30">September 02, 2025</span><span class="color-gray-500 font-xs">4<span> Mins read</span></span></div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="swiper-slide">--}}
+{{--                            <div class="card-grid-style-1">--}}
+{{--                                <div class="image-box"><a href="blog-single.php"></a><img src="{{asset('front/new/assets/imgs/page/blog/blog-2.jpg')}}" alt="Revira"></div><a class="tag-dot font-xs" href="blog-list.php">Technology</a><a class="color-gray-1100" href="blog-single.php">--}}
+{{--                                    <h4>How can Web 3.0 Bring Changes to the Gaming?</h4></a>--}}
+{{--                                <div class="mt-20"><span class="color-gray-500 font-xs mr-30">August 30, 2025</span><span class="color-gray-500 font-xs">5<span> Mins read</span></span></div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="swiper-slide">--}}
+{{--                            <div class="card-grid-style-1">--}}
+{{--                                <div class="image-box"><a href="blog-single-3.php"></a><img src="{{asset('front/new/assets/imgs/page/blog/blog-3.jpg')}}" alt="Revira"></div><a class="tag-dot font-xs" href="blog-list.php">Gaming</a><a class="color-gray-1100" href="blog-single-3.php">--}}
+{{--                                    <h4>NFT Blockchain Games That Might Take Off</h4></a>--}}
+{{--                                <div class="mt-20"><span class="color-gray-500 font-xs mr-30">August 25, 2025</span><span class="color-gray-500 font-xs">3<span> Mins read</span></span></div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="swiper-slide">--}}
+{{--                            <div class="card-grid-style-1">--}}
+{{--                                <div class="image-box"><a href="blog-single-2.php"></a><img src="{{asset('front/new/assets/imgs/page/blog/blog-4.jpg')}}" alt="Revira"></div><a class="tag-dot font-xs" href="blog-list.php">Blockchain</a><a class="color-gray-1100" href="blog-single-2.php">--}}
+{{--                                    <h4>Blockchain Gaming And Its Three Challenges</h4></a>--}}
+{{--                                <div class="mt-20"><span class="color-gray-500 font-xs mr-30">August 15, 2025</span><span class="color-gray-500 font-xs">7<span> Mins read</span></span></div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="swiper-slide">--}}
+{{--                            <div class="card-grid-style-1">--}}
+{{--                                <div class="image-box"><a href="blog-single-2.php"></a><img src="{{asset('front/new/assets/imgs/page/blog/blog-5.jpg')}}" alt="Revira"></div><a class="tag-dot font-xs" href="blog-list.php">Development</a><a class="color-gray-1100" href="blog-single-2.php">--}}
+{{--                                    <h4>HTML5 – The Future of Mobile App Development</h4></a>--}}
+{{--                                <div class="mt-20"><span class="color-gray-500 font-xs mr-30">August 12, 2025</span><span class="color-gray-500 font-xs">9<span> Mins read</span></span></div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
 @endsection

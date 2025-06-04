@@ -1,4 +1,4 @@
-{{-- Note: listing.blade.php is the page (rendered by listing() method in Front/ProductsController.php) that opens when you click on a category in the FRONT home page --}}
+
 @extends('front.layout.layout')
 
 

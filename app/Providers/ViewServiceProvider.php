@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+use App\Models\Brand;
 use App\Models\Section;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -19,5 +20,11 @@ class ViewServiceProvider extends ServiceProvider
             $headerSections = Section::sections();
             $view->with(compact('headerSections', 'headerCategories'));
         });
+
+//        View::composer('front.index', function ($view) {
+//            $brands = Brand::where('status', 1)->inRandom(8);
+//
+//            $view->with(compact('brands'));
+//        });
     }
 }
