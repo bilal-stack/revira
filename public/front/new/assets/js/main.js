@@ -1100,3 +1100,4 @@ function initSwiperTopDeal(idx) {
 if ($(".mobile-header-wrapper-inner").length) {
     const ps = new PerfectScrollbar(".mobile-header-wrapper-inner");
 }
+

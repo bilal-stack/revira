@@ -18,6 +18,7 @@ return new class extends Migration
 
             $table->integer('vendor_id');
             $table->string('shop_name')->nullable();
+            $table->string('shop_image')->nullable();
             $table->string('shop_address')->nullable();
             $table->string('shop_city')->nullable();
             $table->string('shop_state')->nullable();

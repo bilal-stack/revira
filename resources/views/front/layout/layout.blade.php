@@ -8,27 +8,17 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="template-color" content="#0E0E0E">
     {{-- Static And Dynamic SEO (HTML meta tags): Check the HTML <meta> tags and <title> tag in front/layout/layout.blade.php. Check index() method in Front/IndexController.php, listing() method in Front/ProductsController.php, detail() method in Front/ProductsController.php and cart() method in Front/ProductsController.php     --}}
-    @if (!empty($meta_description))
-        <meta name="description" content="{{ $meta_description }}">
-    @endif
 
-    @if (!empty($meta_keywords))
-        <meta name="keywords" content="{{ $meta_keywords }}">
-    @endif
     <meta name="author" content="Bilal - Whatsapp: +923323735667">
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('front/new/assets/imgs/template/favicon.svg')}}">
     <link href="{{asset('front/new/assets/css/style.css?v=3.0.0')}}" rel="stylesheet">
     <title>
-        @if (!empty($meta_title))
-            {{ $meta_title }}
-        @else
-            Revira
-        @endif
+        Home - Revira
     </title>
 </head>
 
     <body>
-
+{{--
         <div id="preloader-active">
             <div class="preloader d-flex align-items-center justify-content-center">
                 <div class="preloader-inner position-relative">
@@ -37,7 +27,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         @include('front.layout.header')
 
@@ -106,7 +96,7 @@
         <script src="{{asset('front/new/assets/js/vendors/waypoints.js')}}"></script>
         <script src="{{asset('front/new/assets/js/vendors/wow.js')}}"></script>
         <script src="{{asset('front/new/assets/js/vendors/magnific-popup.js')}}"></script>
-        <script src="{{asset('front/new/assets/js/vendors/perfect-scrollbar.min.js')}}}"></script>
+        <script src="{{asset('front/new/assets/js/vendors/perfect-scrollbar.min.js')}}"></script>
         <script src="{{asset('front/new/assets/js/vendors/select2.min.js')}}"></script>
         <script src="{{asset('front/new/assets/js/vendors/isotope.js')}}"></script>
         <script src="{{asset('front/new/assets/js/vendors/scrollup.js')}}"></script>
@@ -121,7 +111,7 @@
         <script src="{{asset('front/new/assets/js/main.js?v=3.0.0')}}"></script>
         <script src="{{asset('front/new/assets/js/shop.js?v=1.2.1')}}"></script>
 
-
+        <script type="text/javascript" src="{{ url('front/js/custom.js') }}"></script>
         {{-- To enable us to write PHP code within JavaScript code (to operate the Dynamic Filters dynamically (the second way)) --}}
 {{--        @include('front.layout.scripts') --}}{{-- scripts.blade.php --}}
 

@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Intervention\Image\Facades\Image;
 use Symfony\Component\VarDumper\VarDumper;
-
 use App\Models\Admin;
 use App\Models\Section;
 use App\Models\Category;
@@ -24,9 +23,13 @@ use App\Models\VendorsBusinessDetail;
 use App\Models\VendorsBankDetail;
 use App\Models\Country;
 use Illuminate\Support\Facades\Hash;
+use App\Traits\Username;
+
 
 class AdminController extends Controller
 {
+    use Username;
+
     public function dashboard() {
         // Correcting issues in the Skydash Admin Panel Sidebar using Session:
         Session::put('page', 'dashboard');
@@ -304,6 +307,7 @@ class AdminController extends Controller
                     'shop_city'           => 'required|regex:/^[\pL\s\-]+$/u', // only alphabetical characters and spaces
                     'shop_mobile'         => 'required|numeric',
                     'address_proof'       => 'required',
+                    'shop_image'          => 'required',
                 ];
 
                 $customMessages = [ // Specifying A Custom Message For A Given Attribute: https://laravel.com/docs/9.x/validation#specifying-a-custom-message-for-a-given-attribute
@@ -342,6 +346,30 @@ class AdminController extends Controller
                     $imageName = '';
                 }
 
+                // Uploading Admin Photo    // Using the Intervention package for uploading images
+                if ($request->hasFile('shop_image')) {
+                    $image_tmp = $request->file('shop_image');
+
+                    if ($image_tmp->isValid()) {
+                        // Get the image extension
+                        $extension = $image_tmp->getClientOriginalExtension();
+
+                        // Generate a random name for the uploaded image (to avoid that the image might get overwritten if its name is repeated)
+                        $shop_image = rand(111, 99999) . '.' . $extension;
+
+                        // Assigning the uploaded images path inside the 'public' folder
+                        $imagePath = 'admin/images/photos/' . $shop_image;
+
+                        // Upload the image using the Intervention package and save it in our path inside the 'public' folder
+                        Image::make($image_tmp)->save($imagePath); // '\Image' is the Intervention package
+                    }
+
+                } else if (!empty($data['shop_image'])) { // In case the admins updates other fields but doesn't update the image itself (doesn't upload a new image), but there's an already existing old image
+                    $shop_image = $data['shop_image'];
+                } else { // In case the admins updates other fields but doesn't update the image itself (doesn't upload a new image), and originally there wasn't any image uploaded in the first place
+                    $shop_image = '';
+                }
+
 
                 $vendorCount = VendorsBusinessDetail::where('vendor_id', Auth::guard('admin')->user()->vendor_id)->count(); // Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances
                 if ($vendorCount > 0) { // if there's a vendor already existing, them UPDATE
@@ -360,10 +388,12 @@ class AdminController extends Controller
                         'pan_number'              => $data['pan_number'],
                         'address_proof'           => $data['address_proof'],
                         'address_proof_image'     => $imageName,
+                        'shop_image'              => $shop_image,
                     ]);
 
                 } else { // if there's no vendor already existing, then INSERT
                     // INSERT INTO `vendors_business_details` table
+
                     VendorsBusinessDetail::insert([
                         'vendor_id'               => Auth::guard('admin')->user()->vendor_id, // Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances
                         'shop_name'               => $data['shop_name'],
@@ -379,6 +409,7 @@ class AdminController extends Controller
                         'pan_number'              => $data['pan_number'],
                         'address_proof'           => $data['address_proof'],
                         'address_proof_image'     => $imageName,
+                        'shop_image'              => $shop_image,
                     ]);
                 }
 

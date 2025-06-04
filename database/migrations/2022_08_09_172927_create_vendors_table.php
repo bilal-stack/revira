@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('name');
+            $table->string('username');
             $table->string('address')->nullable();
             $table->string('city')->nullable();
             $table->string('state')->nullable();
@@ -24,7 +25,7 @@ return new class extends Migration
             $table->string('pincode')->nullable();
             $table->string('mobile');
             $table->string('email')->unique();
-            $table->enum('confirm', ['No', 'Yes']); // added later    // "No" is the default value    
+            $table->enum('confirm', ['No', 'Yes']); // added later    // "No" is the default value
             $table->tinyInteger('status'); // active or not active (admins will approve the status of the vendor)
 
             $table->timestamps();

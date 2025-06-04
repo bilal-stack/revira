@@ -12,7 +12,7 @@
 
 
 
-                            
+
                             <a href="{{ url('admin/add-edit-product') }}" style="max-width: 150px; float: right; display: inline-block" class="btn btn-block btn-primary">Add Product</a>
 
                             {{-- Displaying The Validation Errors: https://laravel.com/docs/9.x/validation#quick-displaying-the-validation-errors AND https://laravel.com/docs/9.x/blade#validation-errors --}}
@@ -59,7 +59,11 @@
                                                         <img style="width:120px; height:100px" src="{{ asset('front/images/product_images/small/no-image.png') }}"> {{-- Show the 'no-image' Dummy Image: If you have for example a table with an 'images' column (that can exist or not exist), use a 'Dummy Image' in case there's no image. Example: https://dummyimage.com/  --}}
                                                     @endif
                                                 </td>
-                                                <td>{{ $product['category']['category_name'] }}</td> {{-- Through the relationship --}}
+                                                @if($product['category'])
+                                                    <td>{{ $product['category']['category_name'] }}</td>
+                                                @else
+                                                    <td>-</td>
+                                                @endif {{-- Through the relationship --}}
                                                 <td>{{ $product['section']['name'] }}</td> {{-- Through the relationship --}}
                                                 <td>
                                                     @if ($product['admin_type'] == 'vendor')

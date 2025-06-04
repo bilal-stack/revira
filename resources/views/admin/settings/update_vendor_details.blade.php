@@ -31,7 +31,7 @@
             </div>
 
 
-            
+
             @if ($slug == 'personal') {{-- $slug was passed from AdminController to view (using compact() method) --}}
                 <div class="row">
                     <div class="col-md-6 grid-margin stretch-card">
@@ -53,7 +53,7 @@
 
 
 
-                                {{-- Displaying Laravel Validation Errors: https://laravel.com/docs/9.x/validation#quick-displaying-the-validation-errors --}}    
+                                {{-- Displaying Laravel Validation Errors: https://laravel.com/docs/9.x/validation#quick-displaying-the-validation-errors --}}
                                 @if ($errors->any())
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
 
@@ -79,9 +79,9 @@
                                         </button>
                                     </div>
                                 @endif
-                    
 
-                                
+
+
                                 <form class="forms-sample" action="{{ url('admin/update-vendor-details/personal') }}" method="post" enctype="multipart/form-data"> @csrf <!-- Using the enctype="multipart/form-data" to allow uploading files (images) -->
                                     <div class="form-group">
                                         <label>Vendor Username/Email</label>
@@ -106,7 +106,7 @@
                                     <div class="form-group">
                                         {{-- Show all world countries from the database `countries` table --}}
                                         <label for="shop_country">Country</label>
-                                    
+
                                         <select class="form-control" id="vendor_country" name="vendor_country"  style="color: #495057">
                                             <option value="">Select Country</option>
 
@@ -140,7 +140,7 @@
                         </div>
                     </div>
                 </div>
-            @elseif ($slug == 'business') 
+            @elseif ($slug == 'business')
                 <div class="row">
                     <div class="col-md-6 grid-margin stretch-card">
                         <div class="card">
@@ -161,7 +161,7 @@
 
 
 
-                                {{-- Displaying Laravel Validation Errors: https://laravel.com/docs/9.x/validation#quick-displaying-the-validation-errors --}}    
+                                {{-- Displaying Laravel Validation Errors: https://laravel.com/docs/9.x/validation#quick-displaying-the-validation-errors --}}
                                 @if ($errors->any())
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
 
@@ -178,7 +178,7 @@
 
 
                                 {{-- Our Bootstrap success message in case of updating admin password is successful: --}}
-                                
+
                                 {{-- Determining If An Item Exists In The Session (using has() method): https://laravel.com/docs/9.x/session#determining-if-an-item-exists-in-the-session --}}
                                 @if (Session::has('success_message')) <!-- Check AdminController.php, updateAdminPassword() method -->
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -188,9 +188,9 @@
                                         </button>
                                     </div>
                                 @endif
-                    
 
-                                
+
+
                                 <form class="forms-sample" action="{{ url('admin/update-vendor-details/business') }}" method="post" enctype="multipart/form-data"> @csrf <!-- Using the enctype="multipart/form-data" to allow uploading files (images) -->
                                     <div class="form-group">
                                         <label>Vendor Username/Email</label>
@@ -215,7 +215,7 @@
                                     <div class="form-group">
                                         {{-- Show all world countries from the database `countries` table --}}
                                         <label for="shop_country">Shop Country</label>
-                                    
+
                                         <select class="form-control" id="shop_country" name="shop_country" style="color: #495057">
                                             <option value="">Select Country</option>
 
@@ -256,9 +256,18 @@
                                             <option value="Voting Card"     @if(isset($vendorDetails['address_proof']) && $vendorDetails['address_proof'] == 'Voting Card')     selected @endif>Voting Card</option>
                                             <option value="PAN"             @if(isset($vendorDetails['address_proof']) && $vendorDetails['address_proof'] == 'PAN')             selected @endif>PAN</option>
                                             <option value="Driving License" @if(isset($vendorDetails['address_proof']) && $vendorDetails['address_proof'] == 'Driving License') selected @endif>Driving License</option>
-                                            <option value="Aadhar card"     @if(isset($vendorDetails['address_proof']) && $vendorDetails['address_proof'] == 'Aadhar card')     selected @endif>Aadhar Card</option>
                                         </select>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="shop_image">Shop Image</label>
+                                        <input type="file" class="form-control" id="shop_image" name="shop_image">
+                                        {{-- Show the admin image if exists --}}
+                                        @if (!empty($vendorDetails['shop_image']))
+                                            <a target="_blank" href="{{ url('admin/images/photos/' . $vendorDetails['shop_image']) }}">View Image</a> <!-- We used    target="_blank"    to open the image in another separate page -->
+                                            <input type="hidden" name="current_address_proof" value="{{ $vendorDetails['shop_image'] }}"> <!-- to send the current admin image url all the time with all the requests -->
+                                        @endif
+                                    </div>
+
                                     <div class="form-group">
                                         <label for="address_proof_image">Address Proof Image</label>
                                         <input type="file" class="form-control" id="address_proof_image" name="address_proof_image">
@@ -296,7 +305,7 @@
 
 
 
-                                {{-- Displaying Laravel Validation Errors: https://laravel.com/docs/9.x/validation#quick-displaying-the-validation-errors --}}    
+                                {{-- Displaying Laravel Validation Errors: https://laravel.com/docs/9.x/validation#quick-displaying-the-validation-errors --}}
                                 @if ($errors->any())
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
 
@@ -323,9 +332,9 @@
                                         </button>
                                     </div>
                                 @endif
-                    
 
-                                
+
+
                                 <form class="forms-sample" action="{{ url('admin/update-vendor-details/bank') }}" method="post" enctype="multipart/form-data"> @csrf <!-- Using the enctype="multipart/form-data" to allow uploading files (images) -->
                                     <div class="form-group">
                                         <label>Vendor Username/Email</label>
