@@ -1,3 +1,23 @@
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        autoDisplay: false
+    }, 'google_translate_element');
+}
+
+
+function translateLanguage(lang) {
+    var select = document.querySelector('.goog-te-combo');
+    console.log(select)
+    if (select) {
+        select.value = lang;
+        select.dispatchEvent(new Event('change'));
+    } else {
+        alert("Google Translate widget is not ready yet.");
+    }
+}
+
+
 function addSubscriber() {
     // alert('test');
 
@@ -5,7 +25,7 @@ function addSubscriber() {
     // alert(subscriber_email);
 
     // Email validation in JavaScript    // https://www.scaler.com/topics/email-validation-in-javascript/
-    var mailFormat =  /\S+@\S+\.\S+/; // Regular Expression (RegExp/Regex)
+    var mailFormat = /\S+@\S+\.\S+/; // Regular Expression (RegExp/Regex)
     if (subscriber_email.match(mailFormat)) {
         // alert('Valid Email!');
 
@@ -15,13 +35,12 @@ function addSubscriber() {
     }
 
 
-
     $.ajax({
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}, // X-CSRF-TOKEN: https://laravel.com/docs/9.x/csrf#csrf-x-csrf-token
-        url    : '/add-subscriber-email', // check this route in web.php
-        type   : 'post',
-        data   : {subscriber_email: subscriber_email}, // Sending name/value pairs to server with the AJAX request (AJAX call)
-        success: function(resp) { // if the AJAX request / AJAX call is successful
+        url: '/add-subscriber-email', // check this route in web.php
+        type: 'post',
+        data: {subscriber_email: subscriber_email}, // Sending name/value pairs to server with the AJAX request (AJAX call)
+        success: function (resp) { // if the AJAX request / AJAX call is successful
             // alert(resp);
 
             if (resp == 'Email already exists') { // Check addSubscriber() method in Front/NewsletterController.php
@@ -31,7 +50,7 @@ function addSubscriber() {
                 alert('Thanks for subscribing!');
             }
         },
-        error  : function() { // if the AJAX request is unsuccessful
+        error: function () { // if the AJAX request is unsuccessful
             alert('Error');
         }
     });

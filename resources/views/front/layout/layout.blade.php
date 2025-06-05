@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en-US">
+<html class="no-js" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,6 +15,14 @@
     <title>
         Home - Revira
     </title>
+    <style>
+        body > .skiptranslate {
+            display: none;
+        }
+        body {
+            top: 0px !important;
+        }
+    </style>
 </head>
 
     <body>
@@ -111,11 +119,10 @@
         <script src="{{asset('front/new/assets/js/main.js?v=3.0.0')}}"></script>
         <script src="{{asset('front/new/assets/js/shop.js?v=1.2.1')}}"></script>
 
-        <script type="text/javascript" src="{{ url('front/js/custom.js') }}"></script>
+        <script type="text/javascript" src="{{ url('front/new/js/custom.js') }}"></script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         {{-- To enable us to write PHP code within JavaScript code (to operate the Dynamic Filters dynamically (the second way)) --}}
 {{--        @include('front.layout.scripts') --}}{{-- scripts.blade.php --}}
-
-
 
     </body>
 </html>

@@ -19,27 +19,31 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
                 orders over</span><span class="font-sm-bold color-success"> $75.00</span></div>
         <div class="menu-topbar-right"><span class="font-xs color-brand-3">Need help? Call Us:</span><span
                 class="font-sm-bold color-success"> + 1800 900</span>
+            <div id="google_translate_element" style="display: none"></div>
             <div class="dropdown dropdown-language">
                 <button class="btn dropdown-toggle" id="dropdownPage" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="true" data-bs-display="static"><span class="dropdown-right font-xs color-brand-3">
-                        <img src="{{ asset('front/new/assets/imgs/template/en.svg') }}" alt="Revira">
-                        English</span></button>
-                <ul class="dropdown-menu dropdown-menu-light" aria-labelledby   ="dropdownPage" data-bs-popper="static">
-                    <li><a class="dropdown-item" href="#"><img
-                                src="{{ asset('front/new/assets/imgs/template/flag-en.svg') }}" alt="Revira">
-                            English</a></li>
-                    <li><a class="dropdown-item" href="#"><img
-                                src="{{ asset('front/new/assets/imgs/template/flag-fr.svg') }}" alt="Revira">
-                            Français</a></li>
-                    <li><a class="dropdown-item" href="#"><img
-                                src="{{ asset('front/new/assets/imgs/template/flag-es.svg') }}" alt="Revira">
-                            Español</a></li>
-                    <li><a class="dropdown-item" href="#"><img
-                                src="{{ asset('front/new/assets/imgs/template/flag-pt.svg') }}" alt="Revira">
-                            Português</a></li>
-                    <li><a class="dropdown-item" href="#"><img
-                                src="{{ asset('front/new/assets/imgs/template/flag-cn.svg') }}" alt="Revira"> 中国人</a>
-                    </li>
+                        aria-expanded="true" data-bs-display="static">
+        <span class="dropdown-right font-xs color-brand-3">
+            <img src="{{ asset('front/new/assets/imgs/template/en.svg') }}" alt="Revira"> English
+        </span>
+                </button>
+
+                <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="dropdownPage" data-bs-popper="static">
+                    <li><a class="dropdown-item" href="#" onclick="translateLanguage('en');return false;">
+                            <img src="{{ asset('front/new/assets/imgs/template/flag-en.svg') }}" alt="Revira"> English
+                        </a></li>
+                    <li><a class="dropdown-item" href="#" onclick="translateLanguage('fr');return false;">
+                            <img src="{{ asset('front/new/assets/imgs/template/flag-fr.svg') }}" alt="Revira"> Français
+                        </a></li>
+                    <li><a class="dropdown-item" href="#" onclick="translateLanguage('es');return false;">
+                            <img src="{{ asset('front/new/assets/imgs/template/flag-es.svg') }}" alt="Revira"> Español
+                        </a></li>
+                    <li><a class="dropdown-item" href="#" onclick="translateLanguage('pt');return false;">
+                            <img src="{{ asset('front/new/assets/imgs/template/flag-pt.svg') }}" alt="Revira"> Português
+                        </a></li>
+                    <li><a class="dropdown-item" href="#" onclick="translateLanguage('zh-CN');return false;">
+                            <img src="{{ asset('front/new/assets/imgs/template/flag-cn.svg') }}" alt="Revira"> 中国人
+                        </a></li>
                 </ul>
             </div>
             <div class="dropdown dropdown-language">
