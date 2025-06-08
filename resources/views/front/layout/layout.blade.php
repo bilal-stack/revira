@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="msapplication-TileColor" content="#0E0E0E">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="template-color" content="#0E0E0E">
+    <meta name="template-color" content="#FD9636">
     {{-- Static And Dynamic SEO (HTML meta tags): Check the HTML <meta> tags and <title> tag in front/layout/layout.blade.php. Check index() method in Front/IndexController.php, listing() method in Front/ProductsController.php, detail() method in Front/ProductsController.php and cart() method in Front/ProductsController.php     --}}
 
     <meta name="author" content="Bilal - Whatsapp: +923323735667">

@@ -11,7 +11,6 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
             <ul class="nav-small">
 
                 <li><a class="font-xs" href="{{ url('about-us') }}">About Us</a></li>
-                <li><a class="font-xs" href="{{ url('careers') }}">Careers</a></li>
                 <li><a class="font-xs" href="{{ url('vendor/login-register') }}">Open a shop</a></li>
             </ul>
         </div>

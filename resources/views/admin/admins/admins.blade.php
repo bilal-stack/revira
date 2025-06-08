@@ -19,7 +19,7 @@
                                             <th>Mobile</th>
                                             <th>Email</th>
                                             <th>Image</th>
-                                            <th>Status</th>
+                                            <th>Active</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
@@ -54,6 +54,10 @@
                                                         <a href="{{ url('admin/view-vendor-details/' . $admin['id']) }}">
                                                             <i style="font-size: 25px" class="mdi mdi-file-document"></i> {{-- Icons from Skydash Admin Panel Template --}}
                                                         </a>
+
+                                                    <a href="{{ url('admin/edit-admin-vendor-details/' . $admin['vendor_id']) }}">
+                                                        <i style="font-size: 25px" class="mdi mdi-pencil-box"></i> {{-- Icons from Skydash Admin Panel Template --}}
+                                                    </a>
                                                     @endif
                                                 </td>
                                             </tr>

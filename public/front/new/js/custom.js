@@ -8,12 +8,11 @@ function googleTranslateElementInit() {
 
 function translateLanguage(lang) {
     var select = document.querySelector('.goog-te-combo');
-    console.log(select)
     if (select) {
         select.value = lang;
         select.dispatchEvent(new Event('change'));
     } else {
-        alert("Google Translate widget is not ready yet.");
+        alert("Translate widget is not ready yet.");
     }
 }
 

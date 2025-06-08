@@ -100,6 +100,12 @@ class IndexController extends Controller
 
     }
 
+    public function aboutUs()
+    {
+
+        return view('front.about_us', get_defined_vars());
+    }
+
     public function careers()
     {
 
