@@ -1,0 +1,6 @@
+/admin/images/photos
+/admin/images/proofs
+/build
+# .env.backup
+.phpunit.result.cache
+Homestead.json
