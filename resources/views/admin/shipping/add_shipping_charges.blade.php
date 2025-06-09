@@ -14,7 +14,6 @@
                         <div class="col-12 col-xl-4 mb-2 mb-xl-0">
                             <a href="{{ url('admin/shipping-charges') }}" style="max-width: 150px; float: right; display: inline-block" class="btn btn-block btn-primary">Back to Shipping</a>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -69,38 +68,43 @@
 
 
 
-                            <form class="forms-sample" action="{{ url('admin/edit-shipping-charges/' . $shippingDetails['id']) }}" method="post"> <!-- If the id is not passed in from the route, this measn 'Add a new Shipping Charge', but if the id is passed in from the route, this means 'Edit the Shipping Charge' --> <!-- Using the enctype="multipart/form-data" to allow uploading files (images) -->
-                                @csrf
+                            <form class="forms-sample" action="{{ url('admin/add-shipping-charges/') }}" method="post"> <!-- If the id is not passed in from the route, this measn 'Add a new Shipping Charge', but if the id is passed in from the route, this means 'Edit the Shipping Charge' --> <!-- Using the enctype="multipart/form-data" to allow uploading files (images) -->
+                                @csrf {{-- Preventing CSRF Requests: https://laravel.com/docs/9.x/csrf#preventing-csrf-requests --}}
 
-                                <select class="form-control" id="country" name="country"  style="color: #495057">
-                                    <option value="">Select Country</option>
+                                <div class="form-group">
+                                    {{-- Show all world countries from the database `countries` table --}}
+                                    <label for="country">Country</label>
 
-                                    @foreach ($countries as $country)
-                                    <option value="{{ $country['country_name'] }}" @if ($country['country_name'] == $shippingDetails['country']) selected @endif>{{ $country['country_name'] }}</option>
-                                    @endforeach
+                                    <select class="form-control" id="country" name="country"  style="color: #495057">
+                                        <option value="">Select Country</option>
 
-                                </select>
+                                        @foreach ($countries as $country) {{-- $countries was passed from AdminController to view using compact() method --}}
+                                        <option value="{{ $country['country_name'] }}" @if ($country['country_name'] == old('country')) selected @endif>{{ $country['country_name'] }}</option>
+                                        @endforeach
+
+                                    </select>
+                                </div>
                                 <div class="form-group">
                                     <label for="0_500g">Rate (0-500g)</label>
-                                    <input type="text" class="form-control" id="0_500g" placeholder="Enter Shipping Rate" name="0_500g" value="{{ $shippingDetails['0_500g'] }}">
+                                    <input type="text" class="form-control" id="0_500g" placeholder="Enter Shipping Rate" name="0_500g" value="{{old('0_500g')}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="501g_1000g">Rate (501g-1000g)</label>
-                                    <input type="text" class="form-control" id="501g_1000g" placeholder="Enter Shipping Rate" name="501g_1000g" value="{{ $shippingDetails['501g_1000g'] }}">
+                                    <input type="text" class="form-control" id="501g_1000g" placeholder="Enter Shipping Rate" name="501g_1000g" value="{{old('501g_1000g')}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="1001_2000g">Rate (1001-2000g)</label>
-                                    <input type="text" class="form-control" id="1001_2000g" placeholder="Enter Shipping Rate" name="1001_2000g" value="{{ $shippingDetails['1001_2000g'] }}">
+                                    <input type="text" class="form-control" id="1001_2000g" placeholder="Enter Shipping Rate" name="1001_2000g" value="{{old('1001_2000g')}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="2001g_5000g">Rate (2001g-5000g)</label>
-                                    <input type="text" class="form-control" id="2001g_5000g" placeholder="Enter Shipping Rate" name="2001g_5000g" value="{{ $shippingDetails['2001g_5000g'] }}">
+                                    <input type="text" class="form-control" id="2001g_5000g" placeholder="Enter Shipping Rate" name="2001g_5000g" value="{{old('2001g_5000g')}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="above_5000g">Rate (Above 5000g)</label>
-                                    <input type="text" class="form-control" id="above_5000g" placeholder="Enter Shipping Rate" name="above_5000g" value="{{ $shippingDetails['above_5000g'] }}">
+                                    <input type="text" class="form-control" id="above_5000g" placeholder="Enter Shipping Rate" name="above_5000g" value="{{old('above_5000g')}}">
                                 </div>
-                                <button type="submit" class="btn btn-primary mr-2">Update</button>
+                                <button type="submit" class="btn btn-primary mr-2">Submit</button>
                                 <button type="reset"  class="btn btn-light">Cancel</button>
                             </form>
                         </div>

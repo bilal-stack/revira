@@ -10,8 +10,9 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Shipping Charges</h4>
-                            
 
+
+                            <a href="{{ url('admin/add-shipping-charges') }}" style="max-width: 150px; float: right; display: inline-block" class="btn btn-block btn-primary">Add Shipping</a>
 
                             {{-- Displaying The Validation Errors: https://laravel.com/docs/9.x/validation#quick-displaying-the-validation-errors AND https://laravel.com/docs/9.x/blade#validation-errors --}}
                             {{-- Determining If An Item Exists In The Session (using has() method): https://laravel.com/docs/9.x/session#determining-if-an-item-exists-in-the-session --}}

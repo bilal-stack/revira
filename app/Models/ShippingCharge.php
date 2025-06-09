@@ -9,12 +9,12 @@ class ShippingCharge extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
 
-    
     public static function getShippingCharges($total_weight , $country) { // this method is used inside checkout() method in Front/ProductsController.php
-        $shippingDetails = ShippingCharge::where('country', $country)->first()->toArray(); 
+        $shippingDetails = ShippingCharge::where('country', $country)->first()->toArray();
 
-        
+
         if ($total_weight > 0) {
 
             if ($total_weight > 0 && $total_weight <= 500) {
@@ -35,13 +35,13 @@ class ShippingCharge extends Model
             } else {
                 $rate = 0;
             }
-            
+
         } else {
             $rate = 0;
         }
 
 
-        return $rate; 
+        return $rate;
     }
 
 }
