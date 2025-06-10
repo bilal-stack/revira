@@ -4,14 +4,12 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Vendor;
-use App\Models\VendorsBusinessDetail;
-use Illuminate\Http\Request;
-
 use App\Models\Banner;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use javcorreia\Wishlist\Facades\Wishlist;
 
 class IndexController extends Controller
 {
@@ -114,25 +112,47 @@ class IndexController extends Controller
 
     public function termsConditions()
     {
-
         return view('front.terms_and_conditions', get_defined_vars());
     }
 
     public function wishlist()
     {
+        $wishlists = Wishlist::getUserWishList(Auth::user()->id)->load('item');
+        return view('front.wishlist')->with(compact('wishlists'));
+    }
 
-        return view('front.wishlist', get_defined_vars());
+    public function addProductWishlist($id)
+    {
+        Wishlist::add($id, Auth::user()->id);
+        $wishlists = Wishlist::getUserWishList(Auth::user()->id)->load('item');
+        return view('front.wishlist')->with(compact('wishlists'));
+    }
+
+    public function removeProductWishlist($id)
+    {
+        Wishlist::remove($id, Auth::user()->id);
+        $wishlists = Wishlist::getUserWishList(Auth::user()->id)->load('item');
+        return view('front.wishlist')->with(compact('wishlists'));
+    }
+
+    private function getWishlistProduct($wishlists)
+    {
+        $products = [];
+        foreach ($wishlists as $wishlist) {
+            $products[] = Wishlist::getWishListItem($wishlist->item_id, Auth::user()->id);
+            dd(Wishlist::getWishListItem($wishlist->item_id, Auth::user()->id));
+        }
+        dd($products);
+        return $products;
     }
 
     public function compare()
     {
-
         return view('front.compare', get_defined_vars());
     }
 
     public function logout()
     {
-
         Auth::logout(); // Logging Out: https://laravel.com/docs/9.x/authentication#logging-out
         // Emptying the Session to empty the Cart when the user logs out
         Session::flush(); // Deleting Data: https://laravel.com/docs/9.x/session#deleting-data

@@ -333,7 +333,8 @@ Route::namespace('App\Http\Controllers\Front')->group(function () {
         // Render User 'My Orders' page
         Route::get('user/orders/{id?}', 'OrderController@orders'); // If the slug {id?} (Optional Parameters) is passed in, this means go to the front/orders/order_details.blade.php page, and if not, this means go to the front/orders/orders.blade.php page
 
-
+        Route::get('/wishlist/{id}', 'IndexController@addProductWishlist');
+        Route::get('/wishlist/remove/{id}', 'IndexController@removeProductWishlist');
 
         // PayPal routes:
         // PayPal payment gateway integration in Laravel (this route is accessed from checkout() method in Front/ProductsController.php). Rendering front/paypal/paypal.blade.php page

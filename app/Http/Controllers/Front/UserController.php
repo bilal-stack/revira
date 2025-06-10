@@ -18,7 +18,6 @@ class UserController extends Controller
     // Render User Login/Register page (front/users/login_register.blade.php)
     public function loginRegister()
     {
-
         return view('front.users.login_register');
     }
 

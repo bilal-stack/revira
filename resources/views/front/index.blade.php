@@ -508,7 +508,10 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="card-grid-style-3 hover-show hover-hide-show-cart">
                                 <div class="card-grid-inner">
-                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
+                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist/')}}" aria-label="Add To Wishlist"></a>
+                                        <a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a>
+{{--                                        <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>--}}
+                                    </div>
                                     <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp2.png')}}" alt="Revira"></a></div>
                                     <div class="box-count">
                                         <div class="deals-countdown" data-countdown="2023/09/25 00:00:00"></div>
@@ -536,7 +539,9 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="card-grid-style-3 hover-show hover-hide-show-cart">
                                 <div class="card-grid-inner">
-                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
+                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a>
+{{--                                        <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>--}}
+                                    </div>
                                     <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp4.png')}}" alt="Revira"></a></div>
                                     <div class="box-count">
                                         <div class="deals-countdown" data-countdown="2023/09/25 00:00:00"></div>
@@ -564,7 +569,9 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="card-grid-style-3 hover-show hover-hide-show-cart">
                                 <div class="card-grid-inner">
-                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
+                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a>
+{{--                                        <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>--}}
+                                    </div>
                                     <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp3.png')}}" alt="Revira"></a></div>
                                     <div class="box-count">
                                         <div class="deals-countdown" data-countdown="2023/09/25 00:00:00"></div>
@@ -592,7 +599,9 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="card-grid-style-3 hover-show hover-hide-show-cart">
                                 <div class="card-grid-inner">
-                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
+                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a>
+{{--                                        <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>--}}
+                                    </div>
                                     <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp7.png')}}" alt="Revira"></a></div>
                                     <div class="box-count">
                                         <div class="deals-countdown" data-countdown="2023/09/25 00:00:00"></div>
@@ -724,7 +733,9 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="card-grid-style-3 hover-show hover-hide-show-cart">
                                 <div class="card-grid-inner">
-                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
+                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a>
+{{--                                        <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>--}}
+                                    </div>
                                     <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp1.png')}}" alt="Revira"></a></div>
                                     <div class="box-count">
                                         <div class="deals-countdown" data-countdown="2023/09/25 00:00:00"></div>
@@ -752,7 +763,9 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="card-grid-style-3 hover-show hover-hide-show-cart">
                                 <div class="card-grid-inner">
-                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
+                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a>
+{{--                                        <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>--}}
+                                    </div>
                                     <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp3.png')}}" alt="Revira"></a></div>
                                     <div class="box-count">
                                         <div class="deals-countdown" data-countdown="2023/09/25 00:00:00"></div>
@@ -780,7 +793,9 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="card-grid-style-3 hover-show hover-hide-show-cart">
                                 <div class="card-grid-inner">
-                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
+                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a>
+{{--                                        <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>--}}
+                                    </div>
                                     <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp4.png')}}" alt="Revira"></a></div>
                                     <div class="box-count">
                                         <div class="deals-countdown" data-countdown="2023/09/25 00:00:00"></div>
@@ -808,7 +823,9 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="card-grid-style-3 hover-show hover-hide-show-cart">
                                 <div class="card-grid-inner">
-                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
+                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a>
+{{--                                        <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>--}}
+                                    </div>
                                     <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp6.png')}}" alt="Revira"></a></div>
                                     <div class="box-count">
                                         <div class="deals-countdown" data-countdown="2023/09/25 00:00:00"></div>
@@ -940,7 +957,9 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="card-grid-style-3 hover-show hover-hide-show-cart">
                                 <div class="card-grid-inner">
-                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
+                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a>
+{{--                                        <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>--}}
+                                    </div>
                                     <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp1.png')}}" alt="Revira"></a></div>
                                     <div class="box-count">
                                         <div class="deals-countdown" data-countdown="2023/09/25 00:00:00"></div>
@@ -968,7 +987,9 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="card-grid-style-3 hover-show hover-hide-show-cart">
                                 <div class="card-grid-inner">
-                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
+                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a>
+{{--                                        <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>--}}
+                                    </div>
                                     <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp2.png')}}" alt="Revira"></a></div>
                                     <div class="box-count">
                                         <div class="deals-countdown" data-countdown="2023/09/25 00:00:00"></div>
@@ -996,7 +1017,9 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="card-grid-style-3 hover-show hover-hide-show-cart">
                                 <div class="card-grid-inner">
-                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
+                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a>
+{{--                                        <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>--}}
+                                    </div>
                                     <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp3.png')}}" alt="Revira"></a></div>
                                     <div class="box-count">
                                         <div class="deals-countdown" data-countdown="2023/09/25 00:00:00"></div>
@@ -1024,7 +1047,9 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="card-grid-style-3 hover-show hover-hide-show-cart">
                                 <div class="card-grid-inner">
-                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
+                                    <div class="tools"><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a>
+{{--                                        <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>--}}
+                                    </div>
                                     <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp4.png')}}" alt="Revira"></a></div>
                                     <div class="box-count">
                                         <div class="deals-countdown" data-countdown="2023/09/25 00:00:00"></div>
@@ -1075,8 +1100,8 @@
                             <div class="card-grid-style-3 card-grid-none-border">
                                 <div class="card-grid-inner">
                                     <div class="tools">
-                                        <a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a>
-                                        <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>
+                                        <a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist/'. $product['id'])}}" aria-label="Add To Wishlist"></a>
+{{--                                        <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>--}}
                                     </div>
                                     <div class="image-box">
                                         <span class="label bg-brand-2">-@include('front.layout.currency') {{$product['product_discount']}}</span>
@@ -1143,7 +1168,9 @@
                     <div class="list-products-5">
                         <div class="card-grid-style-3 card-grid-none-border">
                             <div class="card-grid-inner">
-                                <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#" aria-label="Trend"></a><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
+                                <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#" aria-label="Trend"></a><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a>
+{{--                                    <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>--}}
+                                </div>
                                 <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp3.png')}}" alt="Revira"></a>
                                 </div>
                                 <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="{{url('shop-single-product')}}">2025 Apple iMac with Retina 5K Display 8GB RAM, 256GB SSD</a>
@@ -1160,7 +1187,9 @@
                         </div>
                         <div class="card-grid-style-3 card-grid-none-border">
                             <div class="card-grid-inner">
-                                <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#" aria-label="Trend"></a><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
+                                <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#" aria-label="Trend"></a><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a>
+{{--                                    <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>--}}
+                                </div>
                                 <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp4.png')}}" alt="Revira"></a>
                                 </div>
                                 <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="{{url('shop-single-product')}}">2025 Apple iMac with Retina 5K Display 8GB RAM, 256GB SSD</a>
@@ -1194,7 +1223,10 @@
                         </div>
                         <div class="card-grid-style-3 card-grid-none-border">
                             <div class="card-grid-inner">
-                                <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#" aria-label="Trend"></a><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
+                                <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#" aria-label="Trend"></a><a class="btn btn-wishlist btn-tooltip mb-10" href="{{url('wishlist')}}" aria-label="Add To Wishlist"></a>
+{{--                                    <a class="btn btn-compare btn-tooltip mb-10" href="{{url('shop-compare')}}" aria-label="Compare"></a>--}}
+{{--                                    <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>--}}
+                                </div>
                                 <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="{{url('shop-single-product')}}"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp6.png')}}" alt="Revira"></a>
                                 </div>
                                 <div class="info-right"><span class="font-xs color-gray-500">Apple</span><br><a class="color-brand-3 font-sm-bold" href="{{url('shop-single-product')}}">2025 Apple iMac with Retina 5K Display 8GB RAM, 256GB SSD</a>

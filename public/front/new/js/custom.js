@@ -54,3 +54,35 @@ function addSubscriber() {
         }
     });
 }
+
+$(document).ready(function() {
+    $('#getPrice').change(function() {
+        // console.log(this);
+        var size       = $(this).val();
+        var product_id = $(this).attr('product-id');
+        // console.log(size, product_id);
+
+
+        $.ajax({
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}, // X-CSRF-TOKEN: https://laravel.com/docs/9.x/csrf#csrf-x-csrf-token
+            url    : '/get-product-price', // check this route in web.php
+            type   : 'post',
+            data   : {size: size, product_id: product_id}, // Sending name/value pairs to server with the AJAX request (AJAX call)
+            success: function(resp) {
+                console.log(resp);
+                if (resp.discount > 0) { // if there's a discount    // this is the same as:    if (resp['discount'] > 0) {
+                    $('.getAttributePrice').text(
+                        '$' + resp.product_price
+                    ); // Note: resp.product_price    is the same as    resp['product_price']
+                } else { // if there's no discount
+                    $('.getAttributePrice').text(
+                        '$' +  resp.final_price
+                    ); // Note: resp.final_price    is the same as    resp['final_price']
+                }
+            },
+            error  : function() {
+                alert('Error');
+            }
+        });
+    });
+});

@@ -11,6 +11,7 @@
         "guzzlehttp/guzzle": "^7.2",
         "intervention/image": "^2.7",
         "iyzico/iyzipay-php": "^2.0",
+        "javcorreia/laravel-wishlist": "^3.1",
         "laravel/framework": "^10.0",
         "laravel/passport": "^11.8",
         "laravel/sanctum": "^3.2",

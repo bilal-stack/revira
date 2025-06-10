@@ -145,7 +145,9 @@
           <div class="list-products-5 mt-20">
             <div class="card-grid-style-3">
               <div class="card-grid-inner">
-                <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#" aria-label="Trend" data-bs-placement="left"></a><a class="btn btn-wishlist btn-tooltip mb-10" href="shop-wishlist.php" aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10" href="shop-compare.php" aria-label="Compare"></a><a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
+                <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#" aria-label="Trend" data-bs-placement="left"></a><a class="btn btn-wishlist btn-tooltip mb-10" href="shop-wishlist.php" aria-label="Add To Wishlist"></a>
+{{--                    <a class="btn btn-compare btn-tooltip mb-10" href="shop-compare.php" aria-label="Compare"></a>--}}
+                    <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a></div>
                 <div class="image-box"><span class="label bg-brand-2">-17%</span><a href="shop-single-product-2.php"><img src="{{asset('front/new/assets/imgs/page/homepage1/imgsp3.png')}}" alt="Revira"></a></div>
                 <div class="info-right"><a class="font-xs color-gray-500" href="shop-vendor-single.php">HP</a><br><a class="color-brand-3 font-sm-bold" href="shop-single-product-2.php">HP 24mh FHD Monitor - Computer Monitor</a>
                   <div class="rating"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira"><span class="font-xs color-gray-500">(65)</span></div>
