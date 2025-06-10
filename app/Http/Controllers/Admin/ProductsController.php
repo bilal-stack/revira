@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
@@ -249,26 +250,27 @@ class ProductsController extends Controller
 
 
             if (!empty($data['is_featured'])) {
-                // dd($data);
                 $product->is_featured = $data['is_featured'];
             } else {
-                // dd($data);
                 $product->is_featured = 'No';
             }
 
 
             if (!empty($data['is_bestseller'])) {
-                // dd($data);
                 $product->is_bestseller = $data['is_bestseller'];
             } else {
-                // dd($data);
                 $product->is_bestseller = 'No';
             }
 
 
             $product->status = 1;
 
-
+            foreach ($product->getAttributes() as $key => $value) {
+                if (!Schema::hasColumn('products', $key)) {
+                    unset($product->$key);
+                }
+            }
+            $product->save();
             $product->save(); // Save all data in the database
 
             return redirect('admin/products')->with('success_message', $message);

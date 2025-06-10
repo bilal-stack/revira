@@ -11,6 +11,30 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'section_id',
+        'category_id',
+        'brand_id',
+        'admin_type',
+        'admin_id',
+        'vendor_id',
+        'product_name',
+        'product_code',
+        'product_color',
+        'product_price',
+        'product_discount',
+        'product_weight',
+        'product_image',
+        'product_video',
+        'group_code',
+        'description',
+        'meta_title',
+        'meta_description',
+        'meta_keywords',
+        'is_featured',
+        'is_bestseller',
+        'status'
+    ];
 
 
     // Every 'product' belongs to a 'section'
