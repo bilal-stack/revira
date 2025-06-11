@@ -209,6 +209,7 @@ Route::namespace('App\Http\Controllers\Front')->group(function () {
     Route::get('/about-us', 'IndexController@aboutUs');
     Route::get('/shop', 'IndexController@shopGrid');
     Route::get('/terms-and-conditions', 'IndexController@termsConditions');
+    Route::get('/faqs', 'IndexController@faqs');
     Route::get('/careers', 'IndexController@careers');
     Route::get('/wishlist', 'IndexController@wishlist');
 

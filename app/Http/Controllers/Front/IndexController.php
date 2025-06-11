@@ -91,13 +91,6 @@ class IndexController extends Controller
         return view('front.shop_vendor_list', compact('vendors'));
     }
 
-    public function vendor(Vendor $username)
-    {
-
-        return view('front.shop_vendor_single', get_defined_vars());
-
-    }
-
     public function aboutUs()
     {
 
@@ -113,6 +106,11 @@ class IndexController extends Controller
     public function termsConditions()
     {
         return view('front.terms_and_conditions', get_defined_vars());
+    }
+
+    public function faqs()
+    {
+        return view('front.faqs', get_defined_vars());
     }
 
     public function wishlist()

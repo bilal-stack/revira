@@ -179,7 +179,8 @@ class ProductsController extends Controller
                     // dd($categoryProducts);
 
                     // Best Sellers    // Check front/layout/header.blade.php
-                } elseif ($_REQUEST['search'] == 'best-sellers') {
+                }
+                elseif ($_REQUEST['search'] == 'best-sellers') {
                     $search_product = $_REQUEST['search'];
 
                     // We fill in the $categoryDetails array MANUALLY with the same indexes/keys that come from the categoryDetails() method in Category.php model (because in either cases of the if-else statement, we pass in $categoryDetails variable to the view down below)
@@ -211,7 +212,8 @@ class ProductsController extends Controller
                     // dd($categoryProducts);
 
                     // Featured    // Check front/layout/header.blade.php
-                } elseif ($_REQUEST['search'] == 'featured') {
+                }
+                elseif ($_REQUEST['search'] == 'featured') {
                     $search_product = $_REQUEST['search'];
 
                     // We fill in the $categoryDetails array MANUALLY with the same indexes/keys that come from the categoryDetails() method in Category.php model (because in either cases of the if-else statement, we pass in $categoryDetails variable to the view down below)
@@ -243,7 +245,8 @@ class ProductsController extends Controller
                     // dd($categoryProducts);
 
                     // Discount    // Check front/layout/header.blade.php
-                } elseif ($_REQUEST['search'] == 'discounted') {
+                }
+                elseif ($_REQUEST['search'] == 'discounted') {
                     $search_product = $_REQUEST['search'];
 
                     // We fill in the $categoryDetails array MANUALLY with the same indexes/keys that come from the categoryDetails() method in Category.php model (because in either cases of the if-else statement, we pass in $categoryDetails variable to the view down below)

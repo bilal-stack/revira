@@ -14,8 +14,14 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
                 <li><a class="font-xs" href="{{ url('vendor/login-register') }}">Open a shop</a></li>
             </ul>
         </div>
-        <div class="info-topbar text-center d-none d-xl-block"><span class="font-xs color-brand-3">Free shipping for all
-                orders over</span><span class="font-sm-bold color-success"> $75.00</span></div>
+        <div class="info-topbar text-center d-none d-xl-block">
+            <span class="font-xs color-brand-3">
+{{--                Free shipping for allorders over--}}
+            </span>
+            <span class="font-sm-bold color-success">
+{{--                $75.00--}}
+            </span>
+        </div>
         <div class="menu-topbar-right"><span class="font-xs color-brand-3">Need help? Call Us:</span><span
                 class="font-sm-bold color-success"> + 1800 900</span>
             <div id="google_translate_element" style="display: none"></div>
@@ -74,9 +80,9 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
                             <div class="box-category">
                                 <select class="select-active select2-hidden-accessible">
                                     <option>All categories</option>
-                                    @foreach ($sections as $section)
-                                        <option value="{{ $section['id'] }}"
-                                            @if (isset($_REQUEST['section_id']) && !empty($_REQUEST['section_id']) && $_REQUEST['section_id'] == $section['id']) selected @endif>{{ $section['name'] }}
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category['id'] }}"
+                                            @if (isset($_REQUEST['category_id']) && !empty($_REQUEST['category_id']) && $_REQUEST['category_id'] == $category['id']) selected @endif>{{ $category['category_name'] }}
                                         </option> {{-- the search bar drop-down menu at the top --}} {{-- We use the "value" HTML attribute as a value for the "name" HTML attribute for submitting the Search Form. Check the "name" HTML attribute too inside the <input> HTML tag above there! --}}
                                     @endforeach
                                 </select>
@@ -93,9 +99,8 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
                     <nav class="nav-main-menu d-none d-xl-block">
                         <ul class="main-menu">
                             <li><a class="active" href="{{ url('/') }}">Home</a></li>
-                            <li><a href="{{ url('shop-grid') }}">Shop</a></li>
+                            <li><a href="{{ url('shop') }}">Shop</a></li>
                             <li><a href="{{ url('vendors/list') }}">Vendors</a></li>
-                            <li><a href="{{ url('about-us') }}">About Us</a></li>
                             <li><a href="{{ url('contact') }}">Contact Us</a></li>
                         </ul>
                     </nav>
@@ -131,53 +136,44 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
 <div class="mobile-header-active mobile-header-wrapper-style perfect-scrollbar">
     <div class="mobile-header-wrapper-inner">
         <div class="mobile-header-content-area">
-            <div class="mobile-logo"><a class="d-flex" href="{{ url('/') }}"><img alt="Revira"
-                        src="{{ asset('front/new/assets/imgs/logo.png') }}"></a></div>
+            <div class="mobile-logo">
+                <a class="d-flex" href="{{ url('/') }}">
+                    <img alt="Revira" src="{{ asset('front/new/assets/imgs/logo.png') }}">
+                </a>
+            </div>
             <div class="perfect-scroll">
                 <div class="mobile-menu-wrap mobile-header-border">
                     <nav class="mt-15">
                         <ul class="mobile-menu font-heading">
                             <li><a class="active" href="{{ url('/') }}">Home</a></li>
-                            <li><a href="{{ url('shop-grid') }}">Shop</a></li>
-                            <li><a href="{{ url('shop-vendor-list') }}">Vendors</a></li>
+                            <li><a href="{{ url('shop') }}">Shop</a></li>
+                            <li><a href="{{ url('vendors/list') }}">Vendors</a></li>
                             <li><a href="{{ url('contact') }}">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="mobile-account">
                     <div class="mobile-header-top">
-                        <div class="user-account"><a href="page-account.php">
-                                <img src="{{ asset('front/new/assets/imgs/template/ava_1.png') }}"
-                                    alt="Revira"></a>
-                            <div class="content">
-                                <h6 class="user-name">Hello<span class="text-brand"> Steven !</span></h6>
-                                <p class="font-xs text-muted">You have 3 new messages</p>
-                            </div>
+                        <div class="user-account">
+                            <a href="{{ url('user/account') }}">
+                                <img src="{{ url('admin/images/photos/no-image.gif') }}" alt="Revira">
+                            </a>
+{{--                            <div class="content">--}}
+{{--                                <h6 class="user-name">Hello<span class="text-brand"> Steven !</span></h6>--}}
+{{--                                <p class="font-xs text-muted">You have 3 new messages</p>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                     <ul class="mobile-menu">
-                        <ul>
-                            @if (!Auth::check())
-                                <li><a href="{{ url('user/login') }}">Sign in</a></li>
-                                <li><a href="{{ url('sign-up') }}">Sign up</a></li>
-                            @else
-                                <li><a href="{{ url('user/account') }}">My Account</a></li>
-                                <li><a href="{{ url('user/account') }}">Order Tracking</a></li>
-                                <li><a href="{{ url('user/orders') }}">My Orders</a></li>
-                                <li><a href="page-account.php">Setting</a></li>
-                                <li><a href="{{ route('user.logout') }}">Sign out</a></li>
-                            @endif
-
-                        </ul>
-
+                        @if (!Auth::check())
+                            <li><a href="{{ url('user/login') }}">Sign in</a></li>
+                            <li><a href="{{ url('sign-up') }}">Sign up</a></li>
+                        @else
+                            <li><a href="{{ url('user/account') }}">My Account</a></li>
+                            <li><a href="{{ url('user/orders') }}">My Orders</a></li>
+                            <li><a href="{{ route('user.logout') }}">Sign out</a></li>
+                        @endif
                     </ul>
-                </div>
-                <div class="mobile-banner">
-                    <div class="bg-5 block-iphone"><span class="color-brand-3 font-sm-lh32">Starting from $899</span>
-                        <h3 class="font-xl mb-10">iPhone 12 Pro 128Gb</h3>
-                        <p class="font-base color-brand-3 mb-10">Special Sale</p><a class="btn btn-arrow"
-                            href="{{ url('shop-grid') }}">learn more</a>
-                    </div>
                 </div>
                 <div class="site-copyright color-gray-400 mt-30">Copyright 2025 &copy; Revira.</div>
             </div>
@@ -226,55 +222,45 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
         @endforeach
     </ul>
 </div>
+
 <div class="mobile-header-active mobile-header-wrapper-style perfect-scrollbar">
     <div class="mobile-header-wrapper-inner">
         <div class="mobile-header-content-area">
-            <div class="mobile-logo"><a class="d-flex" href="{{ url('/') }}"><img alt="Revira"
-                        src="assets/imgs/logo.png"></a></div>
+            <div class="mobile-logo"><a class="d-flex" href="{{ url('/') }}">
+                    <img alt="Revira" src="{{asset('front/new/assets/imgs/logo.png')}}"></a></div>
             <div class="perfect-scroll">
                 <div class="mobile-menu-wrap mobile-header-border">
                     <nav class="mt-15">
                         <ul class="mobile-menu font-heading">
-                            <li class="has-children"><a class="active" href="{{ url('/') }}">Home</a>
-                                <ul class="sub-menu">
-                                    <li><a href="{{ url('/') }}">Home</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="{{ url('shop-grid') }}">Shop</a></li>
-                            <li><a href="{{ url('shop-vendor-list') }}">Vendors</a></li>
+                            <li><a href="{{ url('shop') }}">Shop</a></li>
+                            <li><a href="{{ url('vendors/list') }}">Vendors</a></li>
                             <li><a href="{{ url('contact') }}">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="mobile-account">
-                    <div class="mobile-header-top">
-                        <div class="user-account"><a href="page-account.php"><img
-                                    src="assets/imgs/template/ava_1.png" alt="Revira"></a>
-                            <div class="content">
-                                <h6 class="user-name">Hello<span class="text-brand"> Steven !</span></h6>
-                                <p class="font-xs text-muted">You have 3 new messages</p>
+                    @if (Auth::check())
+                        <div class="mobile-header-top">
+                            <div class="user-account">
+                                <a href="{{ url('user/account') }}">
+                                    <img src="{{url('admin/images/photos/no-image.gif')}}" alt="Revira">
+                                </a>
+                                <div class="content">
+                                    <h6 class="user-name">Hello<span class="text-brand"> {{\Illuminate\Support\Facades\Auth::user()->name}} !</span></h6>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
                     <ul class="mobile-menu">
                         @if (!Auth::check())
                             <li><a href="{{ url('user/login') }}">Sign in</a></li>
                             <li><a href="{{ url('sign-up') }}">Sign up</a></li>
                         @else
                             <li><a href="{{ url('user/account') }}">My Account</a></li>
-                            <li><a href="{{ url('user/account') }}">Order Tracking</a></li>
                             <li><a href="{{ url('user/orders') }}">My Orders</a></li>
-                            <li><a href="page-account.php">Setting</a></li>
                             <li><a href="{{ route('user.logout') }}">Sign out</a></li>
                         @endif
                     </ul>
-                </div>
-                <div class="mobile-banner">
-                    <div class="bg-5 block-iphone"><span class="color-brand-3 font-sm-lh32">Starting from $899</span>
-                        <h3 class="font-xl mb-10">iPhone 12 Pro 128Gb</h3>
-                        <p class="font-base color-brand-3 mb-10">Special Sale</p><a class="btn btn-arrow"
-                            href="{{ url('shop-grid') }}">learn more</a>
-                    </div>
                 </div>
                 <div class="site-copyright color-gray-400 mt-30">Copyright 2025 &copy; Revira.</div>
             </div>
