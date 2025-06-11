@@ -374,6 +374,9 @@
                                 <div class="image-box">
                                     <span class="label bg-brand-2">-@include('front.layout.currency') {{$product['product_discount']}}</span>
                                     <a href="{{ url('product/' . $product['id']) }}">
+                                        @php
+                                            $product_image_path = 'front/images/product_images/small/' . $product['product_image'];
+                                        @endphp
                                         @if (!empty($product['product_image']) && file_exists($product_image_path)) {{-- if the product image exists in BOTH database table AND filesystem (on server) --}}
                                         <img src="{{ asset($product_image_path) }}" alt="Product">
                                         @else {{-- show the dummy image --}}
