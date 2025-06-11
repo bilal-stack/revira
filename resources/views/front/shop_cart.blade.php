@@ -5,8 +5,8 @@
                 <div class="container">
                     <ul class="breadcrumb">
                         <li><a class="font-xs color-gray-1000" href="{{ url('/') }}">Home</a></li>
-                        <li><a class="font-xs color-gray-500" href="{{ url('shop-grid') }}">Shop</a></li>
-                        <li><a class="font-xs color-gray-500" href="{{ url('shop-cart') }}">Cart</a></li>
+                        <li><a class="font-xs color-gray-500" href="{{ url('shop') }}">Shop</a></li>
+                        <li><a class="font-xs color-gray-500" href="#">Cart</a></li>
                     </ul>
                 </div>
             </div>
@@ -18,9 +18,6 @@
                         <div class="box-carts">
                             <div class="head-wishlist">
                                 <div class="item-wishlist">
-                                    <div class="wishlist-cb">
-                                        <input class="cb-layout cb-all" type="checkbox">
-                                    </div>
                                     <div class="wishlist-product"><span class="font-md-bold color-brand-3">Product</span>
                                     </div>
                                     <div class="wishlist-price"><span class="font-md-bold color-brand-3">Unit Price</span>
@@ -44,10 +41,6 @@
                                         );
                                     @endphp
                                     <div class="item-wishlist">
-                                        <div class="wishlist-cb">
-                                            <input class="cb-layout cb-select" type="checkbox">
-                                        </div>
-
                                         <div class="wishlist-product">
                                             <div class="product-wishlist">
                                                 <div class="product-image">
@@ -79,19 +72,18 @@
                                         <div class="wishlist-price">
                                             <h4 class="color-brand-3">
                                                 @if ($getDiscountAttributePrice['discount'] > 0)
-                                                    EGP {{ $getDiscountAttributePrice['final_price'] }}
-
-                                                    {{-- {{ $getDiscountAttributePrice['product_price'] }} --}}
+                                                    @include('front.layout.currency') {{ $getDiscountAttributePrice['final_price'] }}
                                                 @else
-                                                    EGP {{ $getDiscountAttributePrice['final_price'] }}
+                                                    @include('front.layout.currency') {{ $getDiscountAttributePrice['final_price'] }}
                                                 @endif
                                             </h4>
                                         </div>
                                         <div class="wishlist-status">
                                             <div class="box-quantity">
                                                 <div class="input-quantity">
-                                                    <input class="font-xl color-brand-3" type="text" value="{{ $item['quantity'] }}"><span
-                                                        class="minus-cart"></span><span class="plus-cart"></span>
+                                                    <input class="font-xl color-brand-3 quantity-text-field" type="text"  value="{{ $item['quantity'] }}">
+                                                    <span class="minus-cart minus-a updateCartItem" data-cartid="{{ $item['id'] }}" data-qty="{{ $item['quantity'] }}"></span>
+                                                    <span class="plus-cart plus-a updateCartItem" data-cartid="{{ $item['id'] }}" data-qty="{{ $item['quantity'] }}"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -112,7 +104,7 @@
 
                                         <div class="wishlist-action">
                                             <h4 class="color-brand-3">
-                                                EGP {{ $getDiscountAttributePrice['final_price'] * $item['quantity'] }}
+                                                @include('front.layout.currency') {{ $getDiscountAttributePrice['final_price'] * $item['quantity'] }}
                                             </h4>
                                         </div>
 
@@ -120,6 +112,7 @@
                                             <a class="btn btn-delete deleteCartItem" data-cartid="{{ $item['id'] }}"></a>
                                         </div>
                                     </div>
+                                    @php $total_price = $total_price + ($getDiscountAttributePrice['final_price'] * $item['quantity']) @endphp
                                 @endforeach
                             </div>
                             {{-- Shipping & Coupon input from your original layout --}}
@@ -157,11 +150,11 @@
                                         <span class="font-sm-bold mb-5 d-inline-block color-gray-500">Using A Promo
                                             Code?</span>
                                         <div class="form-group d-flex">
-                                            <input class="form-control mr-15" placeholder="Enter Your Coupon"
-                                                name="coupon_code" value="{{ session('coupon_code') }}">
-                                            <button class="btn btn-buy w-auto" type="submit"
-                                                formaction="{{ url('cart/apply-coupon') }}"
-                                                formmethod="POST">Apply</button>
+                                            <form id="applyCoupon" method="post" action="javascript:void(0)" style="display:flex"
+                                                  @if (\Illuminate\Support\Facades\Auth::check()) user=1 @endif>
+                                            <input type="text" required class="form-control mr-15" placeholder="Enter Your Coupon" id="code" name="code" value="{{ session('coupon_code') }}">
+                                            <button class="btn btn-buy w-auto" type="submit">Apply</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -170,12 +163,7 @@
                             {{-- Buttons Continue Shopping and Update Cart --}}
                             <div class="row mb-40">
                                 <div class="col-lg-6 col-md-6 col-sm-6-col-6">
-                                    <a class="btn btn-buy w-auto arrow-back mb-10" href="{{ url('shop-grid') }}">Continue
-                                        shopping</a>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6-col-6 text-md-end">
-                                    <button type="submit" class="btn btn-buy w-auto update-cart mb-10">Update
-                                        cart</button>
+                                    <a class="btn btn-buy w-auto arrow-back mb-10" href="{{ url('shop') }}">Continue shopping</a>
                                 </div>
                             </div>
                         </div>
@@ -187,7 +175,7 @@
                                 <div class="row">
                                     <div class="col-6"><span class="font-md-bold color-gray-500">Subtotal</span></div>
                                     <div class="col-6 text-end">
-                                        <h4>EGP{{ number_format($total_price, 2) }}</h4>
+                                        <h4 class="calc-text">@include('front.layout.currency'){{ $total_price }}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -196,11 +184,11 @@
                                     <div class="col-6"><span class="font-md-bold color-gray-500">Coupon Discount</span>
                                     </div>
                                     <div class="col-6 text-end">
-                                        <h4>
+                                        <h4 class="couponAmount">
                                             @if (session()->has('couponAmount'))
-                                                EGP{{ number_format(session('couponAmount'), 2) }}
+                                                @include('front.layout.currency'){{ number_format(session('couponAmount'), 2) }}
                                             @else
-                                                EGP0
+                                                @include('front.layout.currency') 0
                                             @endif
                                         </h4>
                                     </div>
@@ -210,288 +198,14 @@
                                 <div class="row">
                                     <div class="col-6"><span class="font-md-bold color-gray-500">Grand Total</span></div>
                                     <div class="col-6 text-end">
-                                        <h4>
-                                            EGP{{ number_format($total_price - (session('couponAmount') ?? 0), 2) }}
+                                        <h4 class="grand_total">
+                                            @include('front.layout.currency'){{ $total_price - \Illuminate\Support\Facades\Session::get('couponAmount') }}
                                         </h4>
                                     </div>
                                 </div>
                             </div>
                             <div class="box-button">
                                 <a class="btn btn-buy" href="{{ url('checkout') }}">Proceed To CheckOut</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <h4 class="color-brand-3">You may also like</h4>
-                <div class="list-products-5 mt-20 mb-40">
-                    <div class="card-grid-style-3">
-                        <div class="card-grid-inner">
-                            <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#"
-                                    aria-label="Trend" data-bs-placement="left"></a><a
-                                    class="btn btn-wishlist btn-tooltip mb-10" href="shop-wishlist.php"
-                                    aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10"
-                                    href="shop-compare.php" aria-label="Compare"></a><a
-                                    class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview"
-                                    data-bs-toggle="modal"></a></div>
-                            <div class="image-box"><span class="label bg-brand-2">-17%</span><a
-                                    href="shop-single-product.php"><img src="assets/imgs/page/homepage1/imgsp3.png"
-                                        alt="Revira"></a></div>
-                            <div class="info-right"><a class="font-xs color-gray-500"
-                                    href="shop-vendor-single.php">Hisense</a><br><a class="color-brand-3 font-sm-bold"
-                                    href="shop-single-product.php">Hisense
-                                    43&quot; Class 4K UHD LED XClass Smart TV
-                                    HDR</a>
-                                <div class="rating"><img src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><span
-                                        class="font-xs color-gray-500">(65)</span></div>
-                                <div class="price-info"><strong
-                                        class="font-lg-bold color-brand-3 price-main">$2856.3</strong><span
-                                        class="color-gray-500 price-line">$3225.6</span></div>
-                                <div class="mt-20 box-btn-cart"><a class="btn btn-cart"
-                                        href="{{ url('shop-cart') }}">Add To
-                                        Cart</a></div>
-                                <ul class="list-features">
-                                    <li>27-inch (diagonal) Retina 5K display</li>
-                                    <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
-                                    <li>AMD Radeon Pro 5300 graphics</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-grid-style-3">
-                        <div class="card-grid-inner">
-                            <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#"
-                                    aria-label="Trend" data-bs-placement="left"></a><a
-                                    class="btn btn-wishlist btn-tooltip mb-10" href="shop-wishlist.php"
-                                    aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10"
-                                    href="shop-compare.php" aria-label="Compare"></a><a
-                                    class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview"
-                                    data-bs-toggle="modal"></a></div>
-                            <div class="image-box"><span class="label bg-brand-2">-17%</span><a
-                                    href="shop-single-product.php"><img src="assets/imgs/page/homepage1/imgsp4.png"
-                                        alt="Revira"></a></div>
-                            <div class="info-right"><a class="font-xs color-gray-500"
-                                    href="shop-vendor-single.php">Apple</a><br><a class="color-brand-3 font-sm-bold"
-                                    href="shop-single-product.php">2025
-                                    Apple 10.9-inch iPad Air Wi-Fi 64GB -
-                                    Silver</a>
-                                <div class="rating"><img src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><span
-                                        class="font-xs color-gray-500">(65)</span></div>
-                                <div class="price-info"><strong
-                                        class="font-lg-bold color-brand-3 price-main">$2856.3</strong><span
-                                        class="color-gray-500 price-line">$3225.6</span></div>
-                                <div class="mt-20 box-btn-cart"><a class="btn btn-cart"
-                                        href="{{ url('shop-cart') }}">Add To
-                                        Cart</a></div>
-                                <ul class="list-features">
-                                    <li>27-inch (diagonal) Retina 5K display</li>
-                                    <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
-                                    <li>AMD Radeon Pro 5300 graphics</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-grid-style-3">
-                        <div class="card-grid-inner">
-                            <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#"
-                                    aria-label="Trend" data-bs-placement="left"></a><a
-                                    class="btn btn-wishlist btn-tooltip mb-10" href="shop-wishlist.php"
-                                    aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10"
-                                    href="shop-compare.php" aria-label="Compare"></a><a
-                                    class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview"
-                                    data-bs-toggle="modal"></a></div>
-                            <div class="image-box"><span class="label bg-brand-2">-17%</span><a
-                                    href="shop-single-product.php"><img src="assets/imgs/page/homepage1/imgsp5.png"
-                                        alt="Revira"></a></div>
-                            <div class="info-right"><a class="font-xs color-gray-500"
-                                    href="shop-vendor-single.php">LG</a><br><a class="color-brand-3 font-sm-bold"
-                                    href="shop-single-product.php">LG
-                                    65&quot; Class 4K UHD Smart TV OLED A1 Series
-                                </a>
-                                <div class="rating"><img src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><span
-                                        class="font-xs color-gray-500">(65)</span></div>
-                                <div class="price-info"><strong
-                                        class="font-lg-bold color-brand-3 price-main">$2856.3</strong><span
-                                        class="color-gray-500 price-line">$3225.6</span></div>
-                                <div class="mt-20 box-btn-cart"><a class="btn btn-cart"
-                                        href="{{ url('shop-cart') }}">Add To
-                                        Cart</a></div>
-                                <ul class="list-features">
-                                    <li>27-inch (diagonal) Retina 5K display</li>
-                                    <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
-                                    <li>AMD Radeon Pro 5300 graphics</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-grid-style-3">
-                        <div class="card-grid-inner">
-                            <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#"
-                                    aria-label="Trend" data-bs-placement="left"></a><a
-                                    class="btn btn-wishlist btn-tooltip mb-10" href="shop-wishlist.php"
-                                    aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10"
-                                    href="shop-compare.php" aria-label="Compare"></a><a
-                                    class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview"
-                                    data-bs-toggle="modal"></a></div>
-                            <div class="image-box"><span class="label bg-brand-2">-17%</span><a
-                                    href="shop-single-product.php"><img src="assets/imgs/page/homepage1/imgsp6.png"
-                                        alt="Revira"></a></div>
-                            <div class="info-right"><a class="font-xs color-gray-500"
-                                    href="shop-vendor-single.php">Apple</a><br><a class="color-brand-3 font-sm-bold"
-                                    href="shop-single-product.php">Apple
-                                    AirPods Pro with MagSafe Charging Case</a>
-                                <div class="rating"><img src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><span
-                                        class="font-xs color-gray-500">(65)</span></div>
-                                <div class="price-info"><strong
-                                        class="font-lg-bold color-brand-3 price-main">$2856.3</strong><span
-                                        class="color-gray-500 price-line">$3225.6</span></div>
-                                <div class="mt-20 box-btn-cart"><a class="btn btn-cart"
-                                        href="{{ url('shop-cart') }}">Add To
-                                        Cart</a></div>
-                                <ul class="list-features">
-                                    <li>27-inch (diagonal) Retina 5K display</li>
-                                    <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
-                                    <li>AMD Radeon Pro 5300 graphics</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-grid-style-3">
-                        <div class="card-grid-inner">
-                            <div class="tools"><a class="btn btn-trend btn-tooltip mb-10" href="#"
-                                    aria-label="Trend" data-bs-placement="left"></a><a
-                                    class="btn btn-wishlist btn-tooltip mb-10" href="shop-wishlist.php"
-                                    aria-label="Add To Wishlist"></a><a class="btn btn-compare btn-tooltip mb-10"
-                                    href="shop-compare.php" aria-label="Compare"></a><a
-                                    class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview"
-                                    data-bs-toggle="modal"></a></div>
-                            <div class="image-box"><span class="label bg-brand-2">-17%</span><a
-                                    href="shop-single-product.php"><img src="assets/imgs/page/homepage1/imgsp7.png"
-                                        alt="Revira"></a></div>
-                            <div class="info-right"><a class="font-xs color-gray-500"
-                                    href="shop-vendor-single.php">Razer</a><br><a class="color-brand-3 font-sm-bold"
-                                    href="shop-single-product.php">Razer
-                                    Power Up Gaming Bundle V2 - Cynosa Lite</a>
-                                <div class="rating"><img src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><span
-                                        class="font-xs color-gray-500">(65)</span></div>
-                                <div class="price-info"><strong
-                                        class="font-lg-bold color-brand-3 price-main">$2856.3</strong><span
-                                        class="color-gray-500 price-line">$3225.6</span></div>
-                                <div class="mt-20 box-btn-cart"><a class="btn btn-cart"
-                                        href="{{ url('shop-cart') }}">Add To
-                                        Cart</a></div>
-                                <ul class="list-features">
-                                    <li>27-inch (diagonal) Retina 5K display</li>
-                                    <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
-                                    <li>AMD Radeon Pro 5300 graphics</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <h4 class="color-brand-3">Recently viewed items</h4>
-                <div class="row mt-40">
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="card-grid-style-2 card-grid-none-border hover-up">
-                            <div class="image-box"><a href="shop-single-product.php"><img
-                                        src="assets/imgs/page/homepage1/imgsp1.png" alt="Revira"></a>
-                            </div>
-                            <div class="info-right"><span class="font-xs color-gray-500">HP</span><br><a
-                                    class="color-brand-3 font-xs-bold" href="shop-single-product.php">HP
-                                    DeskJet 2755e
-                                    Wireless Color All-in-One Printer</a>
-                                <div class="rating"><img src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><span
-                                        class="font-xs color-gray-500"> (65)</span></div>
-                                <div class="price-info"><strong
-                                        class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span
-                                        class="color-gray-500 price-line">$3225.6</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="card-grid-style-2 card-grid-none-border hover-up">
-                            <div class="image-box"><a href="shop-single-product.php"><img
-                                        src="assets/imgs/page/homepage1/imgsp2.png" alt="Revira"></a>
-                            </div>
-                            <div class="info-right"><span class="font-xs color-gray-500">HP</span><br><a
-                                    class="color-brand-3 font-xs-bold" href="shop-single-product.php">Original
-                                    HP 63XL
-                                    Black High-yield Ink Cartridge</a>
-                                <div class="rating"><img src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><span
-                                        class="font-xs color-gray-500"> (65)</span></div>
-                                <div class="price-info"><strong
-                                        class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span
-                                        class="color-gray-500 price-line">$3225.6</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="card-grid-style-2 card-grid-none-border hover-up">
-                            <div class="image-box"><a href="shop-single-product.php"><img
-                                        src="assets/imgs/page/homepage1/imgsp1.png" alt="Revira"></a>
-                            </div>
-                            <div class="info-right"><span class="font-xs color-gray-500">Logitech</span><br><a
-                                    class="color-brand-3 font-xs-bold" href="shop-single-product.php">Logitech
-                                    H390
-                                    Wired Headset, Stereo Headphones</a>
-                                <div class="rating"><img src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><span
-                                        class="font-xs color-gray-500"> (65)</span></div>
-                                <div class="price-info"><strong
-                                        class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span
-                                        class="color-gray-500 price-line">$3225.6</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="card-grid-style-2 card-grid-none-border hover-up">
-                            <div class="image-box"><a href="shop-single-product.php"><img
-                                        src="assets/imgs/page/homepage1/imgsp2.png" alt="Revira"></a>
-                            </div>
-                            <div class="info-right"><span class="font-xs color-gray-500">Logitech</span><br><a
-                                    class="color-brand-3 font-xs-bold" href="shop-single-product.php">Logitech
-                                    MK345
-                                    Wireless Combo Full-Sized</a>
-                                <div class="rating"><img src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><img
-                                        src="assets/imgs/template/icons/star.svg" alt="Revira"><span
-                                        class="font-xs color-gray-500"> (65)</span></div>
-                                <div class="price-info"><strong
-                                        class="font-lg-bold color-brand-3 price-main">$2556.3</strong><span
-                                        class="color-gray-500 price-line">$3225.6</span></div>
                             </div>
                         </div>
                     </div>

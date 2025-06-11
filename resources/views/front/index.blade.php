@@ -1156,7 +1156,7 @@
                                         <p class="list-features">
                                             {{ $product['description'] }}
                                         </p>
-                                        <div class="mt-20 box-add-cart"><a class="btn btn-cart" href="{{url('shop-cart')}}">Add To Cart</a></div>
+                                        <div class="mt-20 box-add-cart"><a class="btn btn-cart" href="{{ url('product/' . $product['id']) }}">Add To Cart</a></div>
                                     </div>
                                 </div>
                             </div>

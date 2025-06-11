@@ -649,11 +649,11 @@ class ProductsController extends Controller
         $getCartItems = Cart::getCartItems();
 
         // Static SEO (HTML meta tags): Check the HTML <meta> tags and <title> tag in front/layout/layout.blade.php
-        $meta_title       = 'Shopping Cart - Multi Vendor E-commerce';
-        $meta_keywords    = 'shopping cart, multi vendor';
+        $meta_title       = 'Shopping Cart - Revira';
+        $meta_keywords    = 'shopping cart, Revira';
 
-
-        return view('front.shop_cart')->with(compact('getCartItems', 'meta_title', /* 'meta_description', */ 'meta_keywords'));
+        $shipping = ShippingCharge::where('status', 1)->get();
+        return view('front.products.cart')->with(compact('shipping','getCartItems', 'meta_title', /* 'meta_description', */ 'meta_keywords'));
     }
 
     // Update Cart Item Quantity AJAX call in front/products/cart_items.blade.php. Check front/js/custom.js
@@ -734,7 +734,6 @@ class ProductsController extends Controller
             // We need to remove/empty (forget) the 'couponAmount' and 'couponCode' Session Variables (reset the whole process of Applying the Coupon) whenever a user applies a new coupon, or updates Cart items (changes items quantity for example) or deletes items from the Cart or even Adds new items in the Cart
             Session::forget('couponAmount'); // Deleting Data: https://laravel.com/docs/9.x/session#deleting-data
             Session::forget('couponCode');   // Deleting Data: https://laravel.com/docs/9.x/session#deleting-data
-
 
 
             return response()->json([ // JSON Responses: https://laravel.com/docs/9.x/responses#json-responses
