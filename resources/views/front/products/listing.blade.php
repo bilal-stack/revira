@@ -3,6 +3,12 @@
 
 
 @section('content')
+    <style>
+        .page-item.active .page-link {
+            background-color: #ff5400;
+            border-color: #ff5400;
+        }
+    </style>
     <div class="section-box">
         <div class="breadcrumbs-div">
             <div class="container">
@@ -34,19 +40,19 @@
                                     Showing: {{ count($categoryProducts) }}
                                 </span>
 
-                                <div class="d-inline-block"><span class="font-sm color-gray-500 font-medium">Show</span>
-                                    <div class="dropdown dropdown-sort border-1-right">
-                                        <button class="btn dropdown-toggle font-sm color-gray-900 font-medium"
-                                                id="dropdownSort2" type="button" data-bs-toggle="dropdown"
-                                                aria-expanded="false" data-bs-display="static"><span>30
-                                                items</span></button>
-                                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="dropdownSort2">
-                                            <li><a class="dropdown-item active" href="#">30 items</a></li>
-                                            <li><a class="dropdown-item" href="#">50 items</a></li>
-                                            <li><a class="dropdown-item" href="#">100 items</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+{{--                                <div class="d-inline-block"><span class="font-sm color-gray-500 font-medium">Show</span>--}}
+{{--                                    <div class="dropdown dropdown-sort border-1-right">--}}
+{{--                                        <button class="btn dropdown-toggle font-sm color-gray-900 font-medium"--}}
+{{--                                                id="dropdownSort2" type="button" data-bs-toggle="dropdown"--}}
+{{--                                                aria-expanded="false" data-bs-display="static"><span>30--}}
+{{--                                                items</span></button>--}}
+{{--                                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="dropdownSort2">--}}
+{{--                                            <li><a class="dropdown-item active" href="#">30 items</a></li>--}}
+{{--                                            <li><a class="dropdown-item" href="#">50 items</a></li>--}}
+{{--                                            <li><a class="dropdown-item" href="#">100 items</a></li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
 
                                 <div class="d-inline-block">
                                     <form name="sortProducts" id="sortProducts">
@@ -77,229 +83,7 @@
 
                 <div class="col-lg-3 order-last order-lg-first">
                     @include('front.products.filters')
-                    <div class="box-slider-item mb-30">
-                        <div class="head pb-15 border-brand-2">
-                            <h5 class="color-gray-900">Best seller</h5>
-                        </div>
-                        <div class="content-slider">
-                            <div class="box-swiper slide-shop">
-                                <div class="swiper-container swiper-best-seller">
-                                    <div class="swiper-wrapper pt-5">
-                                        <div class="swiper-slide">
-                                            <div class="card-grid-style-2 card-grid-none-border border-bottom mb-10">
-                                                <div class="image-box"><span class="label bg-brand-2">-17%</span><a
-                                                        href="shop-single-product-3.php"><img
-                                                            src="assets/imgs/page/homepage2/camera.png"
-                                                            alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><a class="color-brand-3 font-xs-bold"
-                                                        href="shop-single-product-3.php">HP Slim Desktop, Intel
-                                                        Celeron J4025, 4GB RAM</a>
-                                                    <div class="rating"><img src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><span class="font-xs color-gray-500">
-                                                            (65)</span></div>
-                                                    <div class="price-info"><strong
-                                                            class="font-md-bold color-brand-3 price-main">$150</strong><span
-                                                            class="color-gray-500 font-sm price-line">$187</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-grid-style-2 card-grid-none-border border-bottom mb-10">
-                                                <div class="image-box"><a href="shop-single-product-3.php"><img
-                                                            src="assets/imgs/page/homepage2/clock.png"
-                                                            alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><a class="color-brand-3 font-xs-bold"
-                                                        href="shop-single-product-3.php">Class 4K UHD (2160P) LED
-                                                        Roku Smart TV HDR</a>
-                                                    <div class="rating"><img src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><span class="font-xs color-gray-500">
-                                                            (65)</span></div>
-                                                    <div class="price-info"><strong
-                                                            class="font-md-bold color-brand-3 price-main">$2900</strong><span
-                                                            class="color-gray-500 font-sm price-line">$3200</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-grid-style-2 card-grid-none-border border-bottom mb-10">
-                                                <div class="image-box"><a href="shop-single-product-3.php"><img
-                                                            src="assets/imgs/page/homepage2/airpod.png"
-                                                            alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><a class="color-brand-3 font-xs-bold"
-                                                        href="shop-single-product-3.php">HP 11.6&quot; Chromebook,
-                                                        AMD A4, 4GB RAM, 32GB Storage</a>
-                                                    <div class="rating"><img src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><span class="font-xs color-gray-500">
-                                                            (65)</span></div>
-                                                    <div class="price-info"><strong
-                                                            class="font-md-bold color-brand-3 price-main">$160</strong><span
-                                                            class="color-gray-500 font-sm price-line">$168</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-grid-style-2 card-grid-none-border border-bottom mb-10">
-                                                <div class="image-box"><a href="shop-single-product-3.php"><img
-                                                            src="assets/imgs/page/homepage2/cat-img-7.png"
-                                                            alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><a class="color-brand-3 font-xs-bold"
-                                                        href="shop-single-product-3.php">LG 65&quot; Class 4K UHD
-                                                        Smart TV OLED A1 Series</a>
-                                                    <div class="rating"><img src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><span class="font-xs color-gray-500">
-                                                            (65)</span></div>
-                                                    <div class="price-info"><strong
-                                                            class="font-md-bold color-brand-3 price-main">$325</strong><span
-                                                            class="color-gray-500 font-sm price-line">$392</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="card-grid-style-2 card-grid-none-border border-bottom mb-10">
-                                                <div class="image-box"><a href="shop-single-product-3.php"><img
-                                                            src="assets/imgs/page/homepage2/cat-img-8.png"
-                                                            alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><a class="color-brand-3 font-xs-bold"
-                                                        href="shop-single-product-3.php">Lenovo Legion 5i
-                                                        15.6&quot; Laptop, Intel Core i5</a>
-                                                    <div class="rating"><img src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><span class="font-xs color-gray-500">
-                                                            (65)</span></div>
-                                                    <div class="price-info"><strong
-                                                            class="font-md-bold color-brand-3 price-main">$150</strong><span
-                                                            class="color-gray-500 font-sm price-line">$187</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-grid-style-2 card-grid-none-border border-bottom mb-10">
-                                                <div class="image-box"><span class="label bg-brand-2">-17%</span><a
-                                                        href="shop-single-product-3.php"><img
-                                                            src="assets/imgs/page/homepage2/cat-img-1.png"
-                                                            alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><a class="color-brand-3 font-xs-bold"
-                                                        href="shop-single-product-3.php">SAMSUNG Galaxy Tab A7
-                                                        Lite, 8.7&quot; Tablet 32GB</a>
-                                                    <div class="rating"><img src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><span class="font-xs color-gray-500">
-                                                            (65)</span></div>
-                                                    <div class="price-info"><strong
-                                                            class="font-md-bold color-brand-3 price-main">$2900</strong><span
-                                                            class="color-gray-500 font-sm price-line">$3200</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-grid-style-2 card-grid-none-border border-bottom mb-10">
-                                                <div class="image-box"><a href="shop-single-product-3.php"><img
-                                                            src="assets/imgs/page/homepage2/cat-img-2.png"
-                                                            alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><a class="color-brand-3 font-xs-bold"
-                                                        href="shop-single-product-3.php">Apple AirPods Pro with
-                                                        MagSafe Charging</a>
-                                                    <div class="rating"><img src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><span class="font-xs color-gray-500">
-                                                            (65)</span></div>
-                                                    <div class="price-info"><strong
-                                                            class="font-md-bold color-brand-3 price-main">$160</strong><span
-                                                            class="color-gray-500 font-sm price-line">$168</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-grid-style-2 card-grid-none-border border-bottom mb-10">
-                                                <div class="image-box"><a href="shop-single-product-3.php"><img
-                                                            src="assets/imgs/page/homepage2/cat-img-3.png"
-                                                            alt="Revira"></a>
-                                                </div>
-                                                <div class="info-right"><a class="color-brand-3 font-xs-bold"
-                                                        href="shop-single-product-3.php">Razer Power Up Gaming
-                                                        Bundle V2 - Cynosa</a>
-                                                    <div class="rating"><img src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><img
-                                                            src="assets/imgs/template/icons/star.svg"
-                                                            alt="Revira"><span class="font-xs color-gray-500">
-                                                            (65)</span></div>
-                                                    <div class="price-info"><strong
-                                                            class="font-md-bold color-brand-3 price-main">$325</strong><span
-                                                            class="color-gray-500 font-sm price-line">$392</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-button-next swiper-button-next-style-2 swiper-button-next-bestseller">
-                                </div>
-                                <div class="swiper-button-prev swiper-button-prev-style-2 swiper-button-prev-bestseller">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>

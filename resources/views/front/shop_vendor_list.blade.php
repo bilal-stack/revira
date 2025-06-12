@@ -5,16 +5,16 @@
             <div class="container">
                 <ul class="breadcrumb">
                     <li><a class="font-xs color-gray-1000" href="{{url('/')}}">Home</a></li>
-                    <li><a class="font-xs color-gray-500" href="#">Vendor listing</a></li>
+                    <li><a class="font-xs color-gray-500" href="#">Vendors</a></li>
                 </ul>
             </div>
         </div>
     </div>
     <section class="section-box shop-template mt-0">
         <div class="container">
-            <h2>Vendors Listing</h2>
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-30">
+                    <h2>Vendors</h2>
 {{--                    <p class="font-md color-gray-500">We have<span class="font-md-bold color-brand-3"> 780</span><span>--}}
 {{--                            vendors now</span></p>--}}
                 </div>
@@ -65,9 +65,9 @@
 {{--                            </div>--}}
 {{--                        </div>--}}
 {{--                    </div>--}}
-                    <div class="row mt-20">
+                    <div class="row">
                         @foreach ($vendors as $vendor)
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="col-xl-46 col-lg-4 col-md-4 col-sm-12 col-12">
                                 <div class="card-vendor">
                                     <div class="card-top-vendor">
                                         <div class="card-top-vendor-left">
@@ -78,15 +78,17 @@
                                             @endif
                                         </div>
                                         <div class="card-top-vendor-right">
-                                            <p class="font-sm color-gray-500">{{ $vendor->vendorbusinessdetails->shop_name }}</p>
+                                            <p class="font-lg-bold color-gray-500">{{ $vendor->vendorbusinessdetails->shop_name }}</p>
 
-                                            <p class="font-xs color-gray-500 mt-10">Member since {{ \Carbon\Carbon::parse($vendor->created_at)->format('F Y') }}</p>
+                                            <p class="font-md color-gray-500 mt-10">Member since {{ \Carbon\Carbon::parse($vendor->created_at)->format('F Y') }}</p>
                                         </div>
                                     </div>
                                     <div class="card-bottom-vendor">
-                                        <p class="font-sm color-gray-500 location mb-10">{{ $vendor->vendorbusinessdetails->shop_country }} </p>
+                                        <p class="fontlg color-gray-500 location mb-10">{{ $vendor->vendorbusinessdetails->shop_country }} </p>
 
-                                        <p class="font-sm color-gray-500 phone"><a class="btn btn-gray" href="{{url('chat/'. $vendor->username)}}">Message</a></p>
+                                        <p class="font-lg color-gray-500 phone">
+                                            <a class="btn btn-gray" href="{{url('chat/'. $vendor->username)}}">Message</a>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
