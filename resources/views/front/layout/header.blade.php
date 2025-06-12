@@ -143,10 +143,10 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
                         @if (!$category['category_image'])
                             <img src="{{ asset('front/new/assets/imgs/template/monitor.svg') }}" alt="Revira">
                         @else
-                            <img src="{{ url('front/images/category_images/' . $category['category_image']) }}"
-                                alt="Revira">
+                            <img src="{{ url('front/images/category_images/' . $category['category_image']) }}" alt="Revira">
                         @endif
-                    </a></li>
+                    </a>
+                </li>
             @endif
         @endforeach
 

@@ -123,6 +123,6 @@
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         {{-- To enable us to write PHP code within JavaScript code (to operate the Dynamic Filters dynamically (the second way)) --}}
 {{--        @include('front.layout.scripts') --}}{{-- scripts.blade.php --}}
-
+    @yield('scripts')
     </body>
 </html>

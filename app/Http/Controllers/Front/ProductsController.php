@@ -28,7 +28,8 @@ class ProductsController extends Controller
     // match() method is used for the HTTP 'GET' requests to render listing.blade.php page and the HTTP 'POST' method for the AJAX request of the Sorting Filter or the HTML Form submission and jQuery for the Sorting Filter WITHOUT AJAX, AND ALSO for submitting the Search Form in listing.blade.php    // e.g.    /men    or    /computers
     // Search Form
     public function listing(Request $request)
-    { // using the Dynamic Routes with the foreach loop
+    {
+        // using the Dynamic Routes with the foreach loop
         // Sorting Filter WITH AJAX in listing.blade.php. Load (and check) ajax_products_listing.blade.php
         if ($request->ajax()) {
             $data = $request->all();
