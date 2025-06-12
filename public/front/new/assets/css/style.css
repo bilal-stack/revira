@@ -251,6 +251,11 @@ li.hr span {
   opacity: 1;
 }
 
+.theme-color {
+    color:#ff5400
+}
+
+
 .fix {
   overflow: hidden;
 }
@@ -347,7 +352,7 @@ a {
 }
 
 a:hover {
-  color: #0BA9ED;
+  color: #ff5400;
 }
 
 *:hover {
@@ -538,15 +543,15 @@ body {
 }
 
 .bg-15 {
-  background-color: #5C74A6;
+  background-color: #ff5400;
 }
 
 .bg-16 {
-  background-color: #C8DCE8;
+  background-color: #ff5400;
 }
 
 .bg-17 {
-  background-color: #C4E3D6;
+  background-color: #ff5400;
 }
 
 .bg-18 {
@@ -652,7 +657,7 @@ h6 {
 }
 
 .bg-brand-2 {
-  background-color: #FD9636 !important;
+  background-color: #ff5400 !important;
 }
 
 .bg-color-success {
@@ -954,7 +959,7 @@ h6 {
 }
 
 .color-success {
-  color: #5BC694;
+  color: #ff5400;
 }
 
 .color-danger {
@@ -966,7 +971,7 @@ h6 {
 }
 
 .color-gray-500 {
-  color: #8C9EC5;
+  color: #ff5400;
 }
 
 .color-gray-700 {
@@ -1162,7 +1167,7 @@ a.text-brand-3:hover {
   background: url(../imgs/template/icons/arrow.svg) no-repeat right 0px top 20px;
 }
 .btn.btn-brand-2 {
-  background-color: #FD9636;
+  background-color: #ff5400;
   color: #ffffff;
   font-weight: bold;
 }
@@ -1170,7 +1175,7 @@ a.text-brand-3:hover {
   background-color: #425A8B;
 }
 .btn.btn-brand-3 {
-  background-color: #425A8B;
+  background-color: #ff5400;
   color: #ffffff;
   font-weight: bold;
 }
@@ -1262,8 +1267,8 @@ a.text-brand-3:hover {
   transition: all 0.3s ease 0s;
 }
 .btn.btn-cart:hover {
-  border: 1px solid #425A8B;
-  background-color: #425A8B;
+  border: 1px solid #ff5400;
+  background-color: #ff5400;
   color: #ffffff;
 }
 .btn.btn-buy {
@@ -1271,11 +1276,11 @@ a.text-brand-3:hover {
   line-height: 20px;
   font-weight: bold;
   color: #ffffff;
-  border: 1px solid #8C9EC5;
+  border: 1px solid #ff5400;
   width: 100%;
   text-align: center;
   padding: 7px 22px;
-  background-color: #425A8B;
+  background-color: #ff5400;
 }
 .btn.btn-buy:hover {
   border: 1px solid #425A8B;
@@ -3275,7 +3280,7 @@ a.text-brand-3:hover {
   background-position: 0px 2px;
 }
 .header .main-header .header-left .header-shop .number-item {
-  background-color: #FD9636;
+  background-color: #ff5400;
   border-radius: 50%;
   position: absolute;
   top: -8px;
@@ -4157,7 +4162,7 @@ a.text-brand-3:hover {
   background-color: #0E224D;
 }
 .top-gray-1000 .nav-small li a {
-  color: #ffffff;
+  color: #ff5400;
 }
 .top-gray-1000 .color-brand-3 {
   color: #ffffff !important;
@@ -4214,7 +4219,7 @@ a.text-brand-3:hover {
 .nav-small li a {
   display: block;
   padding: 0px 30px 0px 0px;
-  color: #425A8B;
+  color: #ff5400;
 }
 .nav-small li a:hover {
   color: #FD9636;
@@ -4549,9 +4554,8 @@ a.text-brand-3:hover {
   overflow: hidden;
   z-index: 999 !important;
   border: 0;
-  background-color: #fff;
   transition-duration: 0.2s;
-  background-color: #425A8B;
+  background-color: #ff5400;
 }
 #scrollUp i {
   display: block;
@@ -5442,7 +5446,7 @@ a.text-brand-3:hover {
 }
 
 /***************************
-    Page section margin 
+    Page section margin
 ****************************/
 .mtb-0 {
   margin: 0;
@@ -6457,7 +6461,7 @@ a.text-brand-3:hover {
   padding: 5px 5px 10px 5px;
 }
 .list-9-col li .box-category:hover {
-  border: 1px solid #8C9EC5;
+  border: 1px solid #ff5400;
 }
 .list-9-col li .box-category .image {
   height: 80px;
@@ -6912,7 +6916,7 @@ a.text-brand-3:hover {
 }
 
 .list-9-col li .box-category {
-  padding: 5px 3px 10px 3px;
+  padding: 30px 8px 30px 8px;
 }
 
 .list-style-brand-2 .btn-cart:hover {
@@ -6923,7 +6927,7 @@ a.text-brand-3:hover {
   border-color: #FD9636;
 }
 .list-style-brand-2 .card-grid-style-3:hover a.color-gray-500, .list-style-brand-2 .card-grid-style-3:hover .rating span {
-  color: #FD9636;
+  color: #ff5400;
 }
 
 .card-hide-cart .box-btn-cart {

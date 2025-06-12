@@ -18,13 +18,15 @@
 {{--                    <p class="font-md color-gray-500">We have<span class="font-md-bold color-brand-3"> 780</span><span>--}}
 {{--                            vendors now</span></p>--}}
                 </div>
-                <div class="col-lg-6 mb-30 text-end"><a class="font-sm color-gray-900 mr-30" href="#">Support
-                        Ticket</a><a class="font-sm color-gray-900 mr-30" href="#">BRevirae an Affilate</a><a
-                        class="btn btn-buy w-auto font-sm-bold" href="{{url('sign-up')}}">Open a Shop</a></div>
+                <div class="col-lg-6 mb-30 text-end">
+{{--                    <a class="font-sm color-gray-900 mr-30" href="#">Support--}}
+{{--                        Ticket</a>--}}
+{{--                    <a class="font-sm color-gray-900 mr-30" href="#">BRevirae an Affilate</a>--}}
+                    <a class="btn btn-buy w-auto font-sm-bold" href="{{ url('vendor/login-register') }}">Open a Shop</a></div>
             </div>
             <div class="border-bottom pt-0 mb-30"></div>
             <div class="row">
-                <div class="col-lg-9 order-first order-lg-last">
+                <div class="col-lg-12 order-first order-lg-last">
 {{--                    <div class="box-filters mt-0 pb-5 border-bottom">--}}
 {{--                        <div class="row">--}}
 {{--                            <div class="col-xl-2 col-lg-3 mb-10 text-lg-start text-center"><a--}}
@@ -65,7 +67,7 @@
 {{--                    </div>--}}
                     <div class="row mt-20">
                         @foreach ($vendors as $vendor)
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card-vendor">
                                     <div class="card-top-vendor">
                                         <div class="card-top-vendor-left">

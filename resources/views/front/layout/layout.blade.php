@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="msapplication-TileColor" content="#0E0E0E">
+    <meta name="msapplication-TileColor" content="#ff5400">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="template-color" content="#FD9636">
+    <meta name="template-color" content="#ff5400">
     {{-- Static And Dynamic SEO (HTML meta tags): Check the HTML <meta> tags and <title> tag in front/layout/layout.blade.php. Check index() method in Front/IndexController.php, listing() method in Front/ProductsController.php, detail() method in Front/ProductsController.php and cart() method in Front/ProductsController.php     --}}
 
     <meta name="author" content="Bilal - Whatsapp: +923323735667">

@@ -133,53 +133,7 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
         </div>
     </div>
 </header>
-<div class="mobile-header-active mobile-header-wrapper-style perfect-scrollbar">
-    <div class="mobile-header-wrapper-inner">
-        <div class="mobile-header-content-area">
-            <div class="mobile-logo">
-                <a class="d-flex" href="{{ url('/') }}">
-                    <img alt="Revira" src="{{ asset('front/new/assets/imgs/logo.png') }}">
-                </a>
-            </div>
-            <div class="perfect-scroll">
-                <div class="mobile-menu-wrap mobile-header-border">
-                    <nav class="mt-15">
-                        <ul class="mobile-menu font-heading">
-                            <li><a class="active" href="{{ url('/') }}">Home</a></li>
-                            <li><a href="{{ url('shop') }}">Shop</a></li>
-                            <li><a href="{{ url('vendors/list') }}">Vendors</a></li>
-                            <li><a href="{{ url('contact') }}">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="mobile-account">
-                    <div class="mobile-header-top">
-                        <div class="user-account">
-                            <a href="{{ url('user/account') }}">
-                                <img src="{{ url('admin/images/photos/no-image.gif') }}" alt="Revira">
-                            </a>
-{{--                            <div class="content">--}}
-{{--                                <h6 class="user-name">Hello<span class="text-brand"> Steven !</span></h6>--}}
-{{--                                <p class="font-xs text-muted">You have 3 new messages</p>--}}
-{{--                            </div>--}}
-                        </div>
-                    </div>
-                    <ul class="mobile-menu">
-                        @if (!Auth::check())
-                            <li><a href="{{ url('user/login') }}">Sign in</a></li>
-                            <li><a href="{{ url('sign-up') }}">Sign up</a></li>
-                        @else
-                            <li><a href="{{ url('user/account') }}">My Account</a></li>
-                            <li><a href="{{ url('user/orders') }}">My Orders</a></li>
-                            <li><a href="{{ route('user.logout') }}">Sign out</a></li>
-                        @endif
-                    </ul>
-                </div>
-                <div class="site-copyright color-gray-400 mt-30">Copyright 2025 &copy; Revira.</div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <div class="sidebar-left"><a class="btn btn-open" href="#"></a>
     <ul class="menu-icons hidden">
         @foreach ($headerCategories as $category)
@@ -238,7 +192,7 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
                         </ul>
                     </nav>
                 </div>
-                <div class="mobile-account">
+                <div class="mobile-account" style="margin: unset; padding: unset; border: unset; border-bottom: thin solid #DDE4F0">
                     @if (Auth::check())
                         <div class="mobile-header-top">
                             <div class="user-account">
@@ -251,16 +205,17 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
                             </div>
                         </div>
                     @endif
-                    <ul class="mobile-menu">
-                        @if (!Auth::check())
-                            <li><a href="{{ url('user/login') }}">Sign in</a></li>
-                            <li><a href="{{ url('sign-up') }}">Sign up</a></li>
-                        @else
-                            <li><a href="{{ url('user/account') }}">My Account</a></li>
-                            <li><a href="{{ url('user/orders') }}">My Orders</a></li>
-                            <li><a href="{{ route('user.logout') }}">Sign out</a></li>
-                        @endif
-                    </ul>
+{{--                    <ul class="mobile-menu">--}}
+{{--                        @if (!Auth::check())--}}
+{{--                            <li><a href="{{ url('login') }}">User Login</a></li>--}}
+{{--                            <li><a href="{{ url('user/login-register') }}">User Register</a></li>--}}
+{{--                            <li><a href="{{ url('vendor/login-register') }}">Vendor Login</a></li>--}}
+{{--                        @else--}}
+{{--                            <li><a href="{{ url('user/account') }}">My Account</a></li>--}}
+{{--                            <li><a href="{{ url('user/orders') }}">My Orders</a></li>--}}
+{{--                            <li><a href="{{ route('user.logout') }}">Sign out</a></li>--}}
+{{--                        @endif--}}
+{{--                    </ul>--}}
                 </div>
                 <div class="site-copyright color-gray-400 mt-30">Copyright 2025 &copy; Revira.</div>
             </div>
