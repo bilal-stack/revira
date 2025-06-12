@@ -136,7 +136,7 @@
                 var {{ $filters['filter_column'] }} = get_filter('{{ $filters['filter_column'] }}'); // get all the ':checked' checkboxes (the 'fabric' filter values) in filters.blade.php    // get the filter values array of 'fabric' filter like    ['red', 'blue', ...]    as an ARRAY    // get_filter() is in front/js/custom.js
             @endforeach
 
-
+            console.log(url)
             $.ajax({
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}, // X-CSRF-TOKEN: https://laravel.com/docs/9.x/csrf#csrf-x-csrf-token
                 url    : url, // this will hit the listing() method in Front/ProductsController.php    // e.g. /men (this url hits the Dynamic Routes in web.php using a foreach loop ('ProductsController@listing'))    // check the web.php for this route and check the ProductsController for the listing() method

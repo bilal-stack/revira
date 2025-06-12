@@ -284,7 +284,7 @@ Route::namespace('App\Http\Controllers\Front')->group(function () {
     // Website Search Form (to search for all website products). Check the HTML Form in front/layout/header.blade.php
     Route::get('search-products', 'ProductsController@listing');
 
-    Route::get('shop', 'ProductsController@shop');
+    Route::match(['get', 'post'], 'shop', 'ProductsController@listing');
 
     // PIN code Availability Check: check if the PIN code of the user's Delivery Address exists in our database (in both `cod_pincodes` and `prepaid_pincodes`) or not in front/products/detail.blade.php via AJAX. Check front/js/custom.js
     Route::post('check-pincode', 'ProductsController@checkPincode');

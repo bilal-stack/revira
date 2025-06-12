@@ -8,7 +8,12 @@
             <div class="container">
                 <ul class="breadcrumb">
                     <li><a class="font-sm color-gray-1000" href="{{url('/')}}">Home</a></li>
-                    @php echo $categoryDetails['breadcrumbs']; @endphp
+                    @php if (isset($categoryDetails['breadcrumbs'])) {
+                        echo $categoryDetails['breadcrumbs'];
+                        } else {
+                            echo '<li><a class="font-sm color-gray-1000" href="#">Shop</a></li>';
+                        }
+                         @endphp
 {{--                    <li><a class="font-xs color-gray-500" href="shop-grid-2.php">Accessories</a></li>--}}
                 </ul>
             </div>
