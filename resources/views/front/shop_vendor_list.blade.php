@@ -86,7 +86,7 @@
                                     <div class="card-bottom-vendor">
                                         <p class="font-sm color-gray-500 location mb-10">{{ $vendor->vendorbusinessdetails->shop_country }} </p>
 
-                                        <p class="font-sm color-gray-500 phone"><a class="btn btn-gray" href="{{url('vendor/'. $vendor->username)}}">Message</a></p>
+                                        <p class="font-sm color-gray-500 phone"><a class="btn btn-gray" href="{{url('chat/'. $vendor->username)}}">Message</a></p>
                                     </div>
                                 </div>
                             </div>
