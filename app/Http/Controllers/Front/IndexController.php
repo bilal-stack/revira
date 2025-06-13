@@ -87,7 +87,7 @@ class IndexController extends Controller
 
     public function vendors()
     {
-        $vendors = Vendor::whereHas('vendorbusinessdetails')->with('vendorbusinessdetails')
+        $vendors = Vendor::whereHas('vendorbusinessdetails')->with('vendorbusinessdetails', 'limitedProducts')
             ->where('status', 1)->paginate(15);
 
         return view('front.shop_vendor_list', compact('vendors'));

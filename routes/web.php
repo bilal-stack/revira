@@ -214,7 +214,7 @@ Route::namespace('App\Http\Controllers\Front')->group(function () {
     Route::get('/wishlist', 'IndexController@wishlist');
 
     Route::get('/vendors/list', 'IndexController@vendors');
-    Route::get('/vendors/{username}', ['as' => 'vendor-detail', 'uses' => 'IndexController@vendors']);
+//    Route::get('/vendors/{username}', ['as' => 'vendor-detail', 'uses' => 'IndexController@vendors']);
 
 
 //    Route::get('/shop-compare', 'IndexController@compare');

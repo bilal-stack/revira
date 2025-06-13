@@ -2340,7 +2340,7 @@ a.text-brand-3:hover {
   padding: 0px;
 }
 .card-grid-style-3.card-grid-none-border .card-grid-inner {
-  border-color: #ffffff;
+  border-color: #8C9EC5;
 }
 .card-grid-style-3.card-grid-none-border .card-grid-inner .box-add-cart {
   min-height: 36px;
@@ -2349,7 +2349,7 @@ a.text-brand-3:hover {
   display: none;
 }
 .card-grid-style-3.card-grid-none-border .card-grid-inner:hover {
-  border-color: #8C9EC5;
+  border-color: #ff5400;
 }
 .card-grid-style-3.card-grid-none-border .card-grid-inner:hover .box-add-cart .btn-cart {
   display: block;
@@ -9709,7 +9709,7 @@ a:hover span {
   margin-left: 1px;
 }
 .slider-shop-2 .card-grid-style-2:hover {
-  border: 1px solid #FD9636;
+  border: 1px solid #FD9636 !important;
 }
 .slider-shop-2 .swiper-button-next {
   right: -50px;

@@ -39,4 +39,14 @@ class Vendor extends Model
         return $getVendorCommission['commission'];
     }
 
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'vendor_id');
+    }
+
+    public function limitedProducts()
+    {
+        return $this->hasMany(Product::class, 'vendor_id')->limit(10);
+    }
+
 }

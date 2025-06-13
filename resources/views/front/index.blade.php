@@ -137,9 +137,9 @@
                                             <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
                                             @endif
                                         </div>
-                                        <p class="list-features">
-                                            {{ $product['description'] }}
-                                        </p>
+{{--                                        <p class="list-features">--}}
+{{--                                            {{ $product['description'] }}--}}
+{{--                                        </p>--}}
                                         <div class="mt-20 box-add-cart"><a class="btn btn-cart" href="{{ url('product/' . $product['id']) }}">Add To Cart</a></div>
                                     </div>
                                 </div>
@@ -754,9 +754,9 @@
                                             <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
                                             @endif
                                         </div>
-                                        <p class="list-features">
-                                            {{ $product['description'] }}
-                                        </p>
+{{--                                        <p class="list-features">--}}
+{{--                                            {{ \Illuminate\Support\Str::words($product['description'], 5, '...') }}--}}
+{{--                                        </p>--}}
                                         <div class="mt-20 box-add-cart"><a class="btn btn-cart" href="{{ url('product/' . $product['id']) }}">Add To Cart</a></div>
                                     </div>
                                 </div>
@@ -1365,11 +1365,11 @@
                                                             <div class="price-info">
                                                                 @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
 
-                                                                <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                                                <strong class="font-sm-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
                                                                 <span class="color-gray-500 price-line">@include('front.layout.currency'){{ $product['product_price'] }}</span>
 
                                                                 @else {{-- if there's no discount on the price, show the original price --}}
-                                                                <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                                                <strong class="font-sm-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
                                                                 @endif
                                                             </div>
                                                         </div>
@@ -1448,11 +1448,11 @@
                                                             <div class="price-info">
                                                                 @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
 
-                                                                <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                                                <strong class="font-sm-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
                                                                 <span class="color-gray-500 price-line">@include('front.layout.currency'){{ $product['product_price'] }}</span>
 
                                                                 @else {{-- if there's no discount on the price, show the original price --}}
-                                                                <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                                                <strong class="font-sm-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
                                                                 @endif
                                                             </div>
                                                         </div>
@@ -1531,11 +1531,11 @@
                                                             <div class="price-info">
                                                                 @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
 
-                                                                <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                                                <strong class="font-sm-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
                                                                 <span class="color-gray-500 price-line">@include('front.layout.currency'){{ $product['product_price'] }}</span>
 
                                                                 @else {{-- if there's no discount on the price, show the original price --}}
-                                                                <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                                                <strong class="font-sm-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
                                                                 @endif
                                                             </div>
                                                         </div>
@@ -1614,11 +1614,11 @@
                                                             <div class="price-info">
                                                                 @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
 
-                                                                <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                                                <strong class="font-sm-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
                                                                 <span class="color-gray-500 price-line">@include('front.layout.currency'){{ $product['product_price'] }}</span>
 
                                                                 @else {{-- if there's no discount on the price, show the original price --}}
-                                                                <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                                                <strong class="font-sm-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
                                                                 @endif
                                                             </div>
                                                         </div>

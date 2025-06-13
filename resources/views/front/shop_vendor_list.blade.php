@@ -4,8 +4,8 @@
         <div class="breadcrumbs-div">
             <div class="container">
                 <ul class="breadcrumb">
-                    <li><a class="font-xs color-gray-1000" href="{{url('/')}}">Home</a></li>
-                    <li><a class="font-xs color-gray-500" href="#">Vendors</a></li>
+                    <li><a class="font-sm color-gray-1000" href="{{url('/')}}">Home</a></li>
+                    <li><a class="font-sm color-gray-500" href="#">Vendors</a></li>
                 </ul>
             </div>
         </div>
@@ -14,7 +14,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-30">
-                    <h2>Vendors</h2>
+                    <h3>Vendors</h3>
 {{--                    <p class="font-md color-gray-500">We have<span class="font-md-bold color-brand-3"> 780</span><span>--}}
 {{--                            vendors now</span></p>--}}
                 </div>
@@ -27,68 +27,112 @@
             <div class="border-bottom pt-0 mb-30"></div>
             <div class="row">
                 <div class="col-lg-12 order-first order-lg-last">
-{{--                    <div class="box-filters mt-0 pb-5 border-bottom">--}}
-{{--                        <div class="row">--}}
-{{--                            <div class="col-xl-2 col-lg-3 mb-10 text-lg-start text-center"><a--}}
-{{--                                    class="btn btn-filter font-sm color-brand-3 font-medium" href="#ModalFiltersForm"--}}
-{{--                                    data-bs-toggle="modal">All Fillters</a></div>--}}
-{{--                            <div class="col-xl-10 col-lg-9 mb-10 text-lg-end text-center"><span--}}
-{{--                                    class="font-sm color-gray-900 font-medium border-1-right span">Showing 1&ndash;16 of 17--}}
-{{--                                    results</span>--}}
-{{--                                <div class="d-inline-block"><span class="font-sm color-gray-500 font-medium">Sort by:</span>--}}
-{{--                                    <div class="dropdown dropdown-sort border-1-right">--}}
-{{--                                        <button class="btn dropdown-toggle font-sm color-gray-900 font-medium"--}}
-{{--                                            id="dropdownSort" type="button" data-bs-toggle="dropdown"--}}
-{{--                                            aria-expanded="false">Latest added</button>--}}
-{{--                                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="dropdownSort"--}}
-{{--                                            style="margin: 0px;">--}}
-{{--                                            <li><a class="dropdown-item active" href="#">Latest added</a></li>--}}
-{{--                                            <li><a class="dropdown-item" href="#">Oldest added</a></li>--}}
-{{--                                            <li><a class="dropdown-item" href="#">Comments added</a></li>--}}
-{{--                                        </ul>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="d-inline-block"><span class="font-sm color-gray-500 font-medium">Show</span>--}}
-{{--                                    <div class="dropdown dropdown-sort border-1-right">--}}
-{{--                                        <button class="btn dropdown-toggle font-sm color-gray-900 font-medium"--}}
-{{--                                            id="dropdownSort2" type="button" data-bs-toggle="dropdown"--}}
-{{--                                            aria-expanded="false" data-bs-display="static"><span>30 items</span></button>--}}
-{{--                                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="dropdownSort2">--}}
-{{--                                            <li><a class="dropdown-item active" href="#">30 items</a></li>--}}
-{{--                                            <li><a class="dropdown-item" href="#">50 items</a></li>--}}
-{{--                                            <li><a class="dropdown-item" href="#">100 items</a></li>--}}
-{{--                                        </ul>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="d-inline-block"><a class="view-type-grid mr-5 active"--}}
-{{--                                        href="{{url('shop-vendor-list')}}"></a><a class="view-type-list" href="#"></a></div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+
                     <div class="row">
                         @foreach ($vendors as $vendor)
-                            <div class="col-xl-46 col-lg-4 col-md-4 col-sm-12 col-12">
-                                <div class="card-vendor">
-                                    <div class="card-top-vendor">
-                                        <div class="card-top-vendor-left">
-                                            @if(!empty($vendor->vendorbusinessdetails->shop_image))
-                                                <img src="{{ url('admin/images/photos/' . $vendor->vendorbusinessdetails->shop_image) }}" alt="{{ $vendor->vendorbusinessdetails->shop_name }}">
-                                                @else
-                                                <img src="{{asset('front/images/store-default.png')}}" alt="{{ $vendor->vendorbusinessdetails->shop_name }}">
-                                            @endif
-                                        </div>
-                                        <div class="card-top-vendor-right">
-                                            <p class="font-lg-bold color-gray-500">{{ $vendor->vendorbusinessdetails->shop_name }}</p>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                                        <div class="card-vendor">
+                                            <div class="card-top-vendor">
+                                                <div class="card-top-vendor-left">
+                                                   <a href="{{url('products/'. $vendor['id'])}}">
+                                                       @if(!empty($vendor->vendorbusinessdetails->shop_image))
+                                                           <img src="{{ url('admin/images/photos/' . $vendor->vendorbusinessdetails->shop_image) }}" alt="{{ $vendor->vendorbusinessdetails->shop_name }}">
+                                                       @else
+                                                           <img src="{{asset('front/images/store-default.png')}}" alt="{{ $vendor->vendorbusinessdetails->shop_name }}">
+                                                       @endif
+                                                   </a>
+                                                </div>
+                                                <div class="card-top-vendor-right">
+                                                    <a href="{{url('products/'. $vendor['id'])}}"><p class="font-lg-bold color-gray-500" style="color: #000000ad">{{ $vendor->vendorbusinessdetails->shop_name }}</p></a>
 
-                                            <p class="font-md color-gray-500 mt-10">Member since {{ \Carbon\Carbon::parse($vendor->created_at)->format('F Y') }}</p>
+                                                    <p class="font-sm color-gray-500 mt-10">Member since {{ \Carbon\Carbon::parse($vendor->created_at)->format('F Y') }}</p>
+                                                    <a class="btn btn-gray mt-2" href="{{url('products/'. $vendor['id'])}}">View Products</a>
+                                                </div>
+                                            </div>
+                                            <div class="card-bottom-vendor">
+                                                <p class="fontlg color-gray-500 location mb-10">{{ $vendor->vendorbusinessdetails->shop_country }} </p>
+
+                                                <p class="font-lg color-gray-500 phone">
+                                                    <a class="btn btn-gray" href="{{url('chat/'. $vendor->username)}}">Message</a>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="card-bottom-vendor">
-                                        <p class="fontlg color-gray-500 location mb-10">{{ $vendor->vendorbusinessdetails->shop_country }} </p>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                        <div class="box-swiper">
+                                            <div class="swiper-container swiper-group-1">
+                                                <div class="swiper-wrapper pt-5">
+                                                    <div class="swiper-slide">
+                                                        <div class="row">
+                                                            @foreach ($vendor->limitedProducts as $product)
+                                                                @php
+                                                                    $product_image_path = 'front/images/product_images/small/' . $product['product_image'];
+                                                                @endphp
 
-                                        <p class="font-lg color-gray-500 phone">
-                                            <a class="btn btn-gray" href="{{url('chat/'. $vendor->username)}}">Message</a>
-                                        </p>
+                                                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                                                    <div class="card-grid-style-2">
+                                                                        <div class="image-box">
+                                                                            <a href="{{ url('product/' . $product['id']) }}">
+                                                                                @if (!empty($product['product_image']) && file_exists($product_image_path)) {{-- if the product image exists in BOTH database table AND filesystem (on server) --}}
+                                                                                <img src="{{ asset($product_image_path) }}" alt="Product">
+                                                                                @else {{-- show the dummy image --}}
+                                                                                <img  src="{{ asset('front/images/product_images/small/no-image.png') }}" alt="Product">
+                                                                                @endif
+
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="info-right"><span class="font-xs color-gray-500">{{ $product['brand']['name'] ?? $product['product_code'] }}</span>
+                                                                            <br>
+                                                                            <a class="color-brand-3 font-sm-bold" href="{{ url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
+                                                                            <div class="rating">
+                                                                                @php
+                                                                                    $avg = round($product['ratings_avg_rating'], 1); // average like 4.2
+                                                                                    $fullStars = floor($avg); // e.g. 4
+                                                                                    $halfStar = ($avg - $fullStars) >= 0.5;
+                                                                                    $emptyStars = 5 - $fullStars - ($halfStar ? 1 : 0);
+                                                                                @endphp
+
+                                                                                {{-- Full Stars --}}
+                                                                                @for ($i = 0; $i < $fullStars; $i++)
+                                                                                    <img src="{{asset('front/new/assets/imgs/template/icons/star.svg')}}" alt="Revira">
+                                                                                @endfor
+
+                                                                                {{-- Half Star --}}
+                                                                                @if ($halfStar)
+                                                                                    <img src="{{asset('front/new/assets/imgs/template/icons/star-gray.svg')}}" alt="Revira">
+                                                                                @endif
+                                                                                {{-- Empty Stars --}}
+                                                                                @for ($i = 0; $i < $emptyStars; $i++)
+                                                                                    <img src="{{asset('front/new/assets/imgs/template/icons/star-gray.svg')}}" alt="Revira">
+                                                                                @endfor
+
+                                                                                <span class="font-xs color-gray-500">({{ number_format($avg, 1) }}/5, {{ $product['ratings_count'] }} reviews</span>
+                                                                            </div>
+                                                                            @php
+                                                                                $getDiscountPrice = \App\Models\Product::getDiscountPrice($product['id']);
+                                                                            @endphp
+                                                                            <div class="price-info">
+                                                                                @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
+
+                                                                                <strong class="font-md-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                                                                <span class="color-gray-500 price-line">@include('front.layout.currency'){{ $product['product_price'] }}</span>
+
+                                                                                @else {{-- if there's no discount on the price, show the original price --}}
+                                                                                <strong class="font-md-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                                                                @endif
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @endforeach
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -96,16 +140,7 @@
                     </div>
                     <nav>
                         {{$vendors->links()}}
-{{--                        <ul class="pagination">--}}
-{{--                            <li class="page-item"><a class="page-link page-prev" href="#"></a></li>--}}
-{{--                            <li class="page-item"><a class="page-link" href="#">1</a></li>--}}
-{{--                            <li class="page-item"><a class="page-link active" href="#">2</a></li>--}}
-{{--                            <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
-{{--                            <li class="page-item"><a class="page-link" href="#">4</a></li>--}}
-{{--                            <li class="page-item"><a class="page-link" href="#">5</a></li>--}}
-{{--                            <li class="page-item"><a class="page-link" href="#">6</a></li>--}}
-{{--                            <li class="page-item"><a class="page-link page-next" href="#"></a></li>--}}
-{{--                        </ul>--}}
+
                     </nav>
                 </div>
 
