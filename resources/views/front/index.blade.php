@@ -88,7 +88,9 @@
 {{--                                        <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>--}}
                                     </div>
                                     <div class="image-box">
-                                        <span class="label bg-brand-2">-% {{$product['product_discount']}}</span>
+                                        @if ($product['product_discount'] > 0)
+                                            <span class="label bg-brand-2">-% {{$product['product_discount']}}</span>
+                                        @endif
                                         <a href="{{ url('product/' . $product['id']) }}">
                                             @if (!empty($product['product_image']) && file_exists($product_image_path)) {{-- if the product image exists in BOTH database table AND filesystem (on server) --}}
                                                 <img src="{{ asset($product_image_path) }}" alt="Product">
@@ -705,7 +707,9 @@
                                         {{--                                        <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>--}}
                                     </div>
                                     <div class="image-box">
-                                        <span class="label bg-brand-2">-% {{$product['product_discount']}}</span>
+                                        @if ($product['product_discount'] > 0)
+                                            <span class="label bg-brand-2">-% {{$product['product_discount']}}</span>
+                                        @endif
                                         <a href="{{ url('product/' . $product['id']) }}">
                                             @if (!empty($product['product_image']) && file_exists($product_image_path)) {{-- if the product image exists in BOTH database table AND filesystem (on server) --}}
                                             <img src="{{ asset($product_image_path) }}" alt="Product">
@@ -1403,7 +1407,7 @@
                                                     <div class="card-grid-style-2 card-grid-none-border hover-up">
                                                         <div class="image-box">
                                                             @if ($product['product_discount'] > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
-                                                            <span class="label bg-brand-2">-%{{ $product['product_discount'] }}</span>
+                                                                <span class="label bg-brand-2">-%{{ $product['product_discount'] }}</span>
                                                             @endif
 
 
