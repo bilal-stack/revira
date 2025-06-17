@@ -380,3 +380,16 @@ $(document).ready(function() {
 
 
 });
+
+function setCurrency(currency) {
+    fetch('/set-currency', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        body: JSON.stringify({ currency })
+    }).then(res => res.json()).then(data => {
+        location.reload();
+    });
+}

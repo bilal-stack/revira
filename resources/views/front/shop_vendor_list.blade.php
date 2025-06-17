@@ -114,16 +114,7 @@
                                                                             @php
                                                                                 $getDiscountPrice = \App\Models\Product::getDiscountPrice($product['id']);
                                                                             @endphp
-                                                                            <div class="price-info">
-                                                                                @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
-
-                                                                                <strong class="font-md-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
-                                                                                <span class="color-gray-500 price-line">@include('front.layout.currency'){{ $product['product_price'] }}</span>
-
-                                                                                @else {{-- if there's no discount on the price, show the original price --}}
-                                                                                <strong class="font-md-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
-                                                                                @endif
-                                                                            </div>
+                                                                            @include('front.layout.price')
                                                                         </div>
                                                                     </div>
                                                                 </div>

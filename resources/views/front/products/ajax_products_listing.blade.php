@@ -13,7 +13,7 @@
                         {{--                                        <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>--}}
                     </div>
                     <div class="image-box">
-                        <span class="label bg-brand-2">-@include('front.layout.currency') {{$product['product_discount']}}</span>
+                        <span class="label bg-brand-2">-% {{$product['product_discount']}}</span>
                         <a href="{{ url('product/' . $product['id']) }}">
                             @if (!empty($product['product_image']) && file_exists($product_image_path)) {{-- if the product image exists in BOTH database table AND filesystem (on server) --}}
                             <img src="{{ asset($product_image_path) }}" alt="Product">
@@ -52,16 +52,7 @@
                         @php
                             $getDiscountPrice = \App\Models\Product::getDiscountPrice($product['id']);
                         @endphp
-                        <div class="price-info">
-                            @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
-
-                            <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
-                            <span class="color-gray-500 price-line">@include('front.layout.currency'){{ $product['product_price'] }}</span>
-
-                            @else {{-- if there's no discount on the price, show the original price --}}
-                            <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
-                            @endif
-                        </div>
+                        @include('front.layout.price')
                         <p class="list-features">
                             {{ $product['description'] }}
                         </p>
@@ -74,10 +65,7 @@
 </div>
 @if (!isset($_REQUEST['search']))
 
-
-    {{-- Fixing the Laravel Pagination problem with the Sorting Filter where sorting gets messed up with pagination). The cause of the problem is that when you click on the pagination links like for example when you go to the second page, the URL query string parameters gets the pagination page number (e.g. 'page=2') but it loses the filter query string parameter (e.g. '&sort=desc'), so we have to always append the sorting filter query string parameter to the page number query string paramter  --}}
-    {{-- Appending Query String Values: https://laravel.com/docs/9.x/pagination#appending-query-string-values --}}
-    @if (isset($_GET['sort'])) {{-- if there's a Sorting Filter used --}}
+        @if (isset($_GET['sort'])) {{-- if there's a Sorting Filter used --}}
     <div>
         {{ $categoryProducts->appends(['sort' => $_GET['sort']])->links() }} {{-- Appending Query String Values: https://laravel.com/docs/9.x/pagination#appending-query-string-values --}} {{-- Displaying Pagination Results: https://laravel.com/docs/9.x/pagination#displaying-pagination-results --}}
     </div>

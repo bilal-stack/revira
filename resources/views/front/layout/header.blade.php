@@ -38,33 +38,48 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
                 </button>
 
                 <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="dropdownPage" data-bs-popper="static">
-                    <li><a class="dropdown-item" href="#" onclick="translateLanguage('en');return false;">
+                    <li>
+                        <a class="dropdown-item" href="#" onclick="translateLanguage('en');return false;">
                             <img src="{{ asset('front/new/assets/imgs/template/flag-en.svg') }}" alt="Revira"> English
-                        </a></li>
-                    <li><a class="dropdown-item" href="#" onclick="translateLanguage('fr');return false;">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#" onclick="translateLanguage('fr');return false;">
                             <img src="{{ asset('front/new/assets/imgs/template/flag-fr.svg') }}" alt="Revira"> Français
-                        </a></li>
-                    <li><a class="dropdown-item" href="#" onclick="translateLanguage('es');return false;">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#" onclick="translateLanguage('es');return false;">
                             <img src="{{ asset('front/new/assets/imgs/template/flag-es.svg') }}" alt="Revira"> Español
-                        </a></li>
-                    <li><a class="dropdown-item" href="#" onclick="translateLanguage('pt');return false;">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#" onclick="translateLanguage('pt');return false;">
                             <img src="{{ asset('front/new/assets/imgs/template/flag-pt.svg') }}" alt="Revira"> Português
-                        </a></li>
-                    <li><a class="dropdown-item" href="#" onclick="translateLanguage('zh-CN');return false;">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#" onclick="translateLanguage('zh-CN');return false;">
                             <img src="{{ asset('front/new/assets/imgs/template/flag-cn.svg') }}" alt="Revira"> 中国人
-                        </a></li>
+                        </a>
+                    </li>
                 </ul>
             </div>
+
             <div class="dropdown dropdown-language">
-                <button class="btn dropdown-toggle" id="dropdownPage2" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="true" data-bs-display="static"><span
-                        class="dropdown-right font-xs color-brand-3">USD</span></button>
-                <ul class="dropdown-menu dropdown-menu-light dropdown-menu-end" aria-labelledby="dropdownPage2"
-                    data-bs-popper="static">
-                    <li><a class="dropdown-item active" href="#">USD</a></li>
-                    <li><a class="dropdown-item" href="#">EUR</a></li>
-                    <li><a class="dropdown-item" href="#">AUD</a></li>
-                    <li><a class="dropdown-item" href="#">SGP</a></li>
+                <button class="btn dropdown-toggle" id="dropdownPage2" type="button" data-bs-toggle="dropdown" aria-expanded="true" data-bs-display="static">
+                    <span class="dropdown-right font-xs color-brand-3">
+                        {{ strtoupper(session('currency', 'gbp')) }}
+                    </span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-light dropdown-menu-end" aria-labelledby="dropdownPage2" data-bs-popper="static">
+                    @php
+                        $selectedCurrency = session('currency', 'gbp');
+                    @endphp
+                    <li><a class="dropdown-item {{ $selectedCurrency == 'gbp' ? 'active' : '' }}" onclick="setCurrency('gbp');return false;" href="#">GBP</a></li>
+                    <li><a class="dropdown-item {{ $selectedCurrency == 'usd' ? 'active' : '' }}" onclick="setCurrency('usd');return false;" href="#">USD</a></li>
+                    <li><a class="dropdown-item {{ $selectedCurrency == 'eur' ? 'active' : '' }}" onclick="setCurrency('eur');return false;" href="#">EUR</a></li>
+                    <li><a class="dropdown-item {{ $selectedCurrency == 'aud' ? 'active' : '' }}" onclick="setCurrency('aud');return false;" href="#">AUD</a></li>
                 </ul>
             </div>
         </div>

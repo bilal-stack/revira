@@ -205,6 +205,7 @@ Route::get('orders/invoice/download/{id}', 'App\Http\Controllers\Admin\OrderCont
 
 // Second: FRONT section routes:
 Route::namespace('App\Http\Controllers\Front')->group(function () {
+    Route::post('/set-currency', 'IndexController@changeCurrency');
     Route::get('/', 'IndexController@index');
     Route::get('/about-us', 'IndexController@aboutUs');
     Route::get('/terms-and-conditions', 'IndexController@termsConditions');

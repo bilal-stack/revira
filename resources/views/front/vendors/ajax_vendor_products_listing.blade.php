@@ -13,7 +13,7 @@
                         {{--                                        <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>--}}
                     </div>
                     <div class="image-box">
-                        <span class="label bg-brand-2">-@include('front.layout.currency') {{$product['product_discount']}}</span>
+                        <span class="label bg-brand-2">-% {{$product['product_discount']}}</span>
                         <a href="{{ url('product/' . $product['id']) }}">
                             @if (!empty($product['product_image']) && file_exists($product_image_path)) {{-- if the product image exists in BOTH database table AND filesystem (on server) --}}
                             <img src="{{ asset($product_image_path) }}" alt="Product">
@@ -52,16 +52,7 @@
                         @php
                             $getDiscountPrice = \App\Models\Product::getDiscountPrice($product['id']);
                         @endphp
-                        <div class="price-info">
-                            @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
-
-                            <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
-                            <span class="color-gray-500 price-line">@include('front.layout.currency'){{ $product['product_price'] }}</span>
-
-                            @else {{-- if there's no discount on the price, show the original price --}}
-                            <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
-                            @endif
-                        </div>
+                        @include('front.layout.price')
                         <p class="list-features">
                             {{ $product['description'] }}
                         </p>

@@ -9,6 +9,7 @@ use App\Models\Banner;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use javcorreia\Wishlist\Facades\Wishlist;
 
@@ -135,15 +136,22 @@ class IndexController extends Controller
             $products[] = Wishlist::getWishListItem($wishlist->item_id, Auth::user()->id);
             dd(Wishlist::getWishListItem($wishlist->item_id, Auth::user()->id));
         }
-        dd($products);
+
         return $products;
     }
 
     public function logout()
     {
-        Auth::logout(); // Logging Out: https://laravel.com/docs/9.x/authentication#logging-out
-        // Emptying the Session to empty the Cart when the user logs out
-        Session::flush(); // Deleting Data: https://laravel.com/docs/9.x/session#deleting-data
+        Auth::logout();
+        Session::flush();
         return redirect('/');
+    }
+
+    public function changeCurrency(Request $request)
+    {
+        $currency = $request->input('currency');
+        session(['currency' => $currency]);
+
+        return response()->json(['currency' => $currency]);
     }
 }

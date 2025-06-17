@@ -688,7 +688,6 @@
     });
 
     $(".swiper-group-style-2").each(function () {
-        console.log('asd');
         var swiper_1_items = new Swiper(this, {
             spaceBetween: 0,
             slidesPerView: 6,
