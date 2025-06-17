@@ -324,7 +324,8 @@ class ProductsController extends Controller
 
 
                 return view('front.products.listing')->with(compact('categoryDetails', 'categoryProducts'));
-            } else { // If the Search Form is NOT used, render the listing.blade.php page with the Sorting Filter WITHOUT AJAX (using the HTML <form> and jQuery)
+            }
+            else { // If the Search Form is NOT used, render the listing.blade.php page with the Sorting Filter WITHOUT AJAX (using the HTML <form> and jQuery)
                 $url = \Illuminate\Support\Facades\Route::getFacadeRoot()->current()->uri(); // Accessing The Current Route: https://laravel.com/docs/9.x/routing#accessing-the-current-route    // Accessing The Current URL: https://laravel.com/docs/9.x/urls#accessing-the-current-url
 
                 $categoryCount = Category::where([
@@ -375,12 +376,6 @@ class ProductsController extends Controller
             }
         }
     }
-
-    public function shop()
-    {
-
-    }
-
 
     // Render Single Product Detail Page in front/products/detail.blade.php
     public function detail($id)
@@ -537,21 +532,148 @@ class ProductsController extends Controller
         }
     }
 
+    // app/Http/Controllers/ProductsController.php
 
-    // Show all Vendor products in front/products/vendor_listing.blade.php    // This route is accessed from the <a> HTML element in front/products/vendor_listing.blade.php
-    public function vendorListing($vendorid)
-    { // Required Parameters: https://laravel.com/docs/9.x/routing#required-parameters
-        // Get vendor shop name
-        $getVendorShop = Vendor::getVendorShop($vendorid);
+    public function vendorProductListing(Request $request, $shop_name)
+    {
+        // Get vendor by shop name
+        $vendor = Vendor::whereHas('vendorbusinessdetails', function($query) use ($shop_name) {
+            $query->where('shop_name', $shop_name);
+        })->with('vendorbusinessdetails')->first();
 
-        // Get all vendor products
-        $vendorProducts = Product::with('brand')->where('vendor_id', $vendorid)->where('status', 1); // Eager Loading (using with() method): https://laravel.com/docs/9.x/eloquent-relationships#eager-loading    // 'brand' is the relationship method name in Product.php model that is being Eager Loaded
+        if (!$vendor) {
+            abort(404);
+        }
 
-        // $vendorProducts Pagination
-        $vendorProducts = $vendorProducts->paginate(30); // Paginating Eloquent Results: https://laravel.com/docs/9.x/pagination#paginating-eloquent-results
+        if ($request->ajax()) {
+            $data = $request->all();
 
+            // Sorting
+            $_GET['sort'] = $data['sort'] ?? '';
 
-        return view('front.products.vendor_listing')->with(compact('getVendorShop', 'vendorProducts'));
+            // Meta information
+            $meta_title = $vendor->vendorbusinessdetails->shop_name . " - Products";
+            $meta_description = "Browse products from " . $vendor->vendorbusinessdetails->shop_name;
+            $meta_keywords = $vendor->vendorbusinessdetails->shop_name . ", products, clothing";
+
+            // Base query for vendor products
+            $vendorProducts = Product::with('brand')
+                ->where('status', 1)
+                ->where('vendor_id', $vendor->id);
+
+            // Apply product filters
+            $productFilters = ProductsFilter::productFilters();
+            foreach ($productFilters as $key => $filter) {
+                if (isset($filter['filter_column']) && isset($data[$filter['filter_column']]) &&
+                    !empty($filter['filter_column']) && !empty($data[$filter['filter_column']])) {
+                    $catIds = explode(',', $filter['cat_ids']);
+                    $vendorProducts->whereIn('category_id', $catIds);
+                }
+            }
+
+            // Size filter
+            if (isset($data['size']) && !empty($data['size'])) {
+                $productIds = ProductsAttribute::select('product_id')
+                    ->whereIn('size', $data['size'])
+                    ->pluck('product_id')
+                    ->toArray();
+                $vendorProducts->whereIn('products.id', $productIds);
+            }
+
+            // Color filter
+            if (isset($data['color']) && !empty($data['color'])) {
+                $productIds = Product::select('id')
+                    ->whereIn('product_color', $data['color'])
+                    ->pluck('id')
+                    ->toArray();
+                $vendorProducts->whereIn('products.id', $productIds);
+            }
+
+            // Price filter
+            $priceProductIds = [];
+            if (isset($data['price']) && !empty($data['price'])) {
+                foreach ($data['price'] as $key => $price) {
+                    $priceArr = explode('-', $price);
+                    if (isset($priceArr[0]) && isset($priceArr[1])) {
+                        $priceProductIds[] = Product::select('id')
+                            ->whereBetween('product_price', [$priceArr[0], $priceArr[1]])
+                            ->pluck('id')
+                            ->toArray();
+                    }
+                }
+                $priceProductIds = array_unique(\Illuminate\Support\Arr::flatten($priceProductIds));
+                $vendorProducts->whereIn('products.id', $priceProductIds);
+            }
+
+            // Brand filter
+            if (isset($data['brand']) && !empty($data['brand'])) {
+                $productIds = Product::select('id')
+                    ->whereIn('brand_id', $data['brand'])
+                    ->pluck('id')
+                    ->toArray();
+                $vendorProducts->whereIn('products.id', $productIds);
+            }
+
+            // Sorting
+            if (isset($_GET['sort']) && !empty($_GET['sort'])) {
+                if ($_GET['sort'] == 'product_latest') {
+                    $vendorProducts->orderBy('products.id', 'Desc');
+                } elseif ($_GET['sort'] == 'price_lowest') {
+                    $vendorProducts->orderBy('products.product_price', 'Asc');
+                } elseif ($_GET['sort'] == 'price_highest') {
+                    $vendorProducts->orderBy('products.product_price', 'Desc');
+                } elseif ($_GET['sort'] == 'name_z_a') {
+                    $vendorProducts->orderBy('products.product_name', 'Desc');
+                } elseif ($_GET['sort'] == 'name_a_z') {
+                    $vendorProducts->orderBy('products.product_name', 'Asc');
+                }
+            }
+
+            // Pagination
+            $categoryProducts = $vendorProducts->paginate(30);
+
+            return view('front.vendors.ajax_vendor_products_listing')->with(compact(
+                'vendor',
+                'categoryProducts',
+                'meta_title',
+                'meta_description',
+                'meta_keywords'
+            ));
+        } else {
+            // Non-AJAX request
+            $meta_title = $vendor->vendorbusinessdetails->shop_name . " - Products";
+            $meta_description = "Browse products from " . $vendor->vendorbusinessdetails->shop_name;
+            $meta_keywords = $vendor->vendorbusinessdetails->shop_name . ", products, clothing";
+
+            $vendorProducts = Product::with('brand')
+                ->where('status', 1)
+                ->where('vendor_id', $vendor->id);
+
+            // Sorting
+            if (isset($_GET['sort']) && !empty($_GET['sort'])) {
+                if ($_GET['sort'] == 'product_latest') {
+                    $vendorProducts->orderBy('products.id', 'Desc');
+                } elseif ($_GET['sort'] == 'price_lowest') {
+                    $vendorProducts->orderBy('products.product_price', 'Asc');
+                } elseif ($_GET['sort'] == 'price_highest') {
+                    $vendorProducts->orderBy('products.product_price', 'Desc');
+                } elseif ($_GET['sort'] == 'name_z_a') {
+                    $vendorProducts->orderBy('products.product_name', 'Desc');
+                } elseif ($_GET['sort'] == 'name_a_z') {
+                    $vendorProducts->orderBy('products.product_name', 'Asc');
+                }
+            }
+
+            $categoryProducts = $vendorProducts->paginate(30);
+
+            return view('front.vendors.vendor_listing')->with(compact(
+                'vendor',
+                'categoryProducts',
+                'meta_title',
+                'meta_description',
+                'meta_keywords'
+            ));
+        }
     }
 
 

@@ -1732,7 +1732,7 @@
     </section>
 
 
-    <section class="section-box mt-30">
+    <section class="section-box mt-30 mb-60">
         <div class="container">
             <div class="border-bottom pb-25 head-main">
                 <h3>Popular Brands</h3>
@@ -1748,19 +1748,17 @@
                 <div class="box-swiper">
                     <div class="swiper-container swiper-group-style-2">
                         <div class="swiper-wrapper pt-5">
-                            <div class="swiper-slide">
-                                <ul class="list-9-col">
-                                    @foreach($brands as $brand)
-                                        <li>
-                                            <div class="box-category hover-up">
-                                                <div class="text-info">
-                                                    <a class="font-lg-bold color-gray-900 font-bold" href="{{url('shop')}}">{{$brand->name}}</a>
-                                                </div>
+                            @foreach($brands as $brand)
+                                <div class="swiper-slide">
+                                    <div class="brands-slider">
+                                        <div class="brands-box-category hover-up">
+                                            <div class="text-info">
+                                                <a class="font-lg-bold color-gray-900 font-bold" href="{{url('shop')}}">{{$brand->name}}</a>
                                             </div>
-                                        </li>
-                                        @endforeach
-                                </ul>
-                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -1768,4 +1766,28 @@
         </div>
     </section>
 
+@endsection
+@section('scripts')
+    <script>
+        $(".swiper-group-style-2").each(function () {
+            console.log('asd');
+            var swiper_1_items = new Swiper(this, {
+                spaceBetween: 0,
+                slidesPerView: 8,
+                slidesPerGroup: 2,
+                loop: true,
+                navigation: {
+                    nextEl: ".swiper-button-next-group-2",
+                    prevEl: ".swiper-button-prev-group-2"
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                },
+                // autoplay: {
+                //     delay: 10000
+                // }
+            });
+        });
+    </script>
 @endsection

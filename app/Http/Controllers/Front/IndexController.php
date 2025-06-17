@@ -65,7 +65,7 @@ class IndexController extends Controller
             ->get()
             ->toArray();
 
-        $brands = Brand::where('status', 1)->inRandomOrder()->limit(9)->get();
+        $brands = Brand::where('status', 1)->inRandomOrder()->limit(16)->get();
 
         // Static SEO (HTML meta tags): Check the HTML <meta> tags and <title> tag in front/layout/layout.blade.php
         $meta_title = 'Multi Vendor E-commerce Website';
@@ -76,13 +76,6 @@ class IndexController extends Controller
         return view('front.index')->with(compact('sliderBanners', 'fixBanners', 'newProducts',
             'bestSellers', 'discountedProducts', 'featuredProducts', 'mostViewedProducts',
             'meta_title', 'meta_description', 'meta_keywords', 'brands')); // this is the same as:    return view('front/index');
-    }
-
-
-    public function shopGrid()
-    {
-
-        return view('front.shop_grid', get_defined_vars());
     }
 
     public function vendors()
@@ -144,11 +137,6 @@ class IndexController extends Controller
         }
         dd($products);
         return $products;
-    }
-
-    public function compare()
-    {
-        return view('front.compare', get_defined_vars());
     }
 
     public function logout()

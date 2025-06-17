@@ -36,7 +36,7 @@
                                         <div class="card-vendor">
                                             <div class="card-top-vendor">
                                                 <div class="card-top-vendor-left">
-                                                   <a href="{{url('products/'. $vendor['id'])}}">
+                                                   <a href="{{url($vendor->vendorbusinessdetails->shop_name. '/products')}}">
                                                        @if(!empty($vendor->vendorbusinessdetails->shop_image))
                                                            <img src="{{ url('admin/images/photos/' . $vendor->vendorbusinessdetails->shop_image) }}" alt="{{ $vendor->vendorbusinessdetails->shop_name }}">
                                                        @else
@@ -45,10 +45,12 @@
                                                    </a>
                                                 </div>
                                                 <div class="card-top-vendor-right">
-                                                    <a href="{{url('products/'. $vendor['id'])}}"><p class="font-lg-bold color-gray-500" style="color: #000000ad">{{ $vendor->vendorbusinessdetails->shop_name }}</p></a>
+                                                    <a href="{{url($vendor->vendorbusinessdetails->shop_name. '/products')}}">
+                                                        <p class="font-lg-bold color-gray-500" style="color: #000000ad">{{ $vendor->vendorbusinessdetails->shop_name }}</p>
+                                                    </a>
 
                                                     <p class="font-sm color-gray-500 mt-10">Member since {{ \Carbon\Carbon::parse($vendor->created_at)->format('F Y') }}</p>
-                                                    <a class="btn btn-gray mt-2" href="{{url('products/'. $vendor['id'])}}">View Products</a>
+                                                    <a class="btn btn-gray mt-2" href="{{url($vendor->vendorbusinessdetails->shop_name. '/products')}}">View Products</a>
                                                 </div>
                                             </div>
                                             <div class="card-bottom-vendor">
@@ -60,18 +62,17 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
                                         <div class="box-swiper">
-                                            <div class="swiper-container swiper-group-1">
-                                                <div class="swiper-wrapper pt-5">
-                                                    <div class="swiper-slide">
-                                                        <div class="row">
-                                                            @foreach ($vendor->limitedProducts as $product)
+                                            <div class="swiper-container swiper-vendor-list">
+                                                <div class="swiper-wrapper mb-15">
+                                                    @foreach ($vendor->limitedProducts as $product)
+                                                        <div class="swiper-slide">
+
                                                                 @php
                                                                     $product_image_path = 'front/images/product_images/small/' . $product['product_image'];
                                                                 @endphp
-
-                                                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                                                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                                                                     <div class="card-grid-style-2">
                                                                         <div class="image-box">
                                                                             <a href="{{ url('product/' . $product['id']) }}">
@@ -126,11 +127,10 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            @endforeach
-
-                                                        </div>
                                                     </div>
+                                                    @endforeach
                                                 </div>
+                                                <div class="swiper-pagination"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -140,11 +140,26 @@
                     </div>
                     <nav>
                         {{$vendors->links()}}
-
                     </nav>
                 </div>
 
             </div>
         </div>
     </section>
+@endsection
+@section('scripts')
+    <script>
+        var swiper = new Swiper(".swiper-vendor-list", {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            pagination: {
+                el: ".swiper-pagination",
+                dynamicBullets: true,
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
 @endsection

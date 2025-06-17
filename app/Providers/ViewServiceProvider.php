@@ -17,8 +17,10 @@ class ViewServiceProvider extends ServiceProvider
                 ->where('parent_id', 0)
                 ->get();
 
+            $headerBrands = Brand::where('status', 1)->get();
+
             $headerSections = Section::sections();
-            $view->with(compact('headerSections', 'headerCategories'));
+            $view->with(compact('headerSections', 'headerCategories', 'headerBrands'));
         });
 
 //        View::composer('front.index', function ($view) {

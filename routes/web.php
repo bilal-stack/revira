@@ -207,7 +207,6 @@ Route::get('orders/invoice/download/{id}', 'App\Http\Controllers\Admin\OrderCont
 Route::namespace('App\Http\Controllers\Front')->group(function () {
     Route::get('/', 'IndexController@index');
     Route::get('/about-us', 'IndexController@aboutUs');
-    Route::get('/shop', 'IndexController@shopGrid');
     Route::get('/terms-and-conditions', 'IndexController@termsConditions');
     Route::get('/faqs', 'IndexController@faqs');
     Route::get('/careers', 'IndexController@careers');
@@ -237,7 +236,7 @@ Route::namespace('App\Http\Controllers\Front')->group(function () {
     // Vendor Register
     Route::post('vendor/register', 'VendorController@vendorRegister'); // the register HTML form submission in vendor login_register.blade.php page
 
-    // Confirm Vendor Account (from 'vendor_confirmation.blade.php) from the mail by Mailtrap
+    // Confirm Vendor Account (from vendor_confirmation.blade.php) from the mail by Mailtrap
     Route::get('vendor/confirm/{code}', 'VendorController@confirmVendor'); // {code} is the base64 encoded vendor e-mail with which they have registered which is a Route Parameters/URL Paramters: https://laravel.com/docs/9.x/routing#required-parameters    // this route is requested (accessed/opened) from inside the mail sent to vendor (vendor_confirmation.blade.php)
 
     // Render Single Product Detail Page in front/products/detail.blade.php
@@ -247,7 +246,8 @@ Route::namespace('App\Http\Controllers\Front')->group(function () {
     Route::post('get-product-price', 'ProductsController@getProductPrice');
 
     // Show all Vendor products in front/products/vendor_listing.blade.php    // This route is accessed from the <a> HTML element in front/products/vendor_listing.blade.php
-    Route::get('/products/{vendorid}', 'ProductsController@vendorListing');
+    Route::match(['get', 'post'], '/{shop_name}/products', 'ProductsController@vendorProductListing');
+
 
     // Add to Cart <form> submission in front/products/detail.blade.php
     Route::post('cart/add', 'ProductsController@cartAdd');

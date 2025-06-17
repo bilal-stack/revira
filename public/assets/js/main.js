@@ -688,10 +688,11 @@
     });
 
     $(".swiper-group-style-2").each(function () {
+        console.log('asd');
         var swiper_1_items = new Swiper(this, {
             spaceBetween: 0,
-            slidesPerView: 1,
-            slidesPerGroup: 1,
+            slidesPerView: 6,
+            //slidesPerGroup: 4,
             loop: true,
             navigation: {
                 nextEl: ".swiper-button-next-group-2",

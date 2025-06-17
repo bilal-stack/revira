@@ -125,21 +125,21 @@ class ProductsFilter extends Model
         return $brandDetails;
     }
 
-    public static function getSizesWithoutCat($url)
+    public static function getSizesWithoutCat()
     {
         $getProductSizes = \App\Models\ProductsAttribute::select('size')->groupBy('size')->pluck('size')->toArray(); // We used groupBy() method to eliminate the repeated product `size`-s (in order not to show repeated 'filters' values (like small, small, medium, ...)): https://laravel.com/docs/9.x/collections#method-groupby
         return $getProductSizes;
     }
 
     // Get the colors of a product from a URL (URL of the category)
-    public static function getColorsWithoutCat($url)
+    public static function getColorsWithoutCat()
     {
         $getProductColors = Product::select('product_color')->groupBy('product_color')->pluck('product_color')->toArray(); // We used groupBy() method to eliminate the repeated product `color`-s (in order not to show repeated 'filters' values (like red, red, green, ...)): https://laravel.com/docs/9.x/collections#method-groupby
         return $getProductColors;
     }
 
     // Get the brand of a product from a URL (URL of the category)
-    public static function getBrandsWithoutCat($url)
+    public static function getBrandsWithoutCat()
     {
         $brandDetails = \App\Models\Brand::select('id', 'name')->get()->toArray(); // from `brands` table
         return $brandDetails;

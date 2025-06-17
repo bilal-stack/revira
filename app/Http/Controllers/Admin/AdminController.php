@@ -222,19 +222,16 @@ class AdminController extends Controller
             Session::put('page', 'update_personal_details');
 
 
-            // Handling update vendor personal details <form> submission
             if ($request->isMethod('post')) { // if the <form> is submitted
                 $data = $request->all();
-                // dd($data);
 
-                // Laravel's Validation    // Customizing Laravel's Validation Error Messages: https://laravel.com/docs/9.x/validation#customizing-the-error-messages    // Customizing Validation Rules: https://laravel.com/docs/9.x/validation#custom-validation-rules
                 $rules = [
                     'vendor_name' => 'required|regex:/^[\pL\s\-]+$/u', // only alphabetical characters and spaces
                     'vendor_city' => 'required|regex:/^[\pL\s\-]+$/u', // only alphabetical characters and spaces
                     'vendor_mobile' => 'required|numeric',
                 ];
 
-                $customMessages = [ // Specifying A Custom Message For A Given Attribute: https://laravel.com/docs/9.x/validation#specifying-a-custom-message-for-a-given-attribute
+                $customMessages = [
                     'vendor_name.required' => 'Name is required',
                     'vendor_city.required' => 'City is required',
                     'vendor_city.regex' => 'Valid City alphabetical is required',
@@ -246,10 +243,7 @@ class AdminController extends Controller
                 $this->validate($request, $rules, $customMessages);
 
 
-                // Uploading Admin Photo
-
-                // Using the Intervention package for uploading images
-                if ($request->hasFile('vendor_image')) { // the HTML name attribute    name="admin_name"    in update_admin_details.blade.php
+                if ($request->hasFile('vendor_image')) {
                     $image_tmp = $request->file('vendor_image');
 
                     if ($image_tmp->isValid()) {
@@ -273,15 +267,12 @@ class AdminController extends Controller
                 }
 
 
-                // Vendor details need to be updated in BOTH `admins` and `vendors` tables:
-                // Update Vendor Details in 'admins' table
                 Admin::where('id', Auth::guard('admin')->user()->id)->update([ // Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances
                     'name' => $data['vendor_name'],
                     'mobile' => $data['vendor_mobile'],
                     'image' => $imageName
-                ]); // Note that the image name is the random image name that we generated
+                ]);
 
-                // Update Vendor Details in 'vendors' table
                 Vendor::where('id', Auth::guard('admin')->user()->vendor_id)->update([ // Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances
                     'name' => $data['vendor_name'],
                     'mobile' => $data['vendor_mobile'],
@@ -306,30 +297,27 @@ class AdminController extends Controller
 
             if ($request->isMethod('post')) { // if the <form> is submitted
                 $data = $request->all();
-                // dd($data);
 
-                // Laravel's Validation    // Customizing Laravel's Validation Error Messages: https://laravel.com/docs/9.x/validation#customizing-the-error-messages    // Customizing Validation Rules: https://laravel.com/docs/9.x/validation#custom-validation-rules
                 $rules = [
-                    'shop_name' => 'required|regex:/^[\pL\s\-]+$/u', // only alphabetical characters and spaces
+                    'shop_name' => 'required|regex:/^[\pL\s\-]+$/u|unique:vendors_business_details,shop_name', // only alphabetical characters and spaces
                     'shop_city' => 'required|regex:/^[\pL\s\-]+$/u', // only alphabetical characters and spaces
-                    'shop_mobile' => 'required|numeric',
-                    'address_proof' => 'required',
+                    'shop_mobile' => 'nullable|numeric',
+                    'address_proof' => 'nullable',
                     'shop_image' => 'required',
                 ];
 
-                $customMessages = [ // Specifying A Custom Message For A Given Attribute: https://laravel.com/docs/9.x/validation#specifying-a-custom-message-for-a-given-attribute
-                    'shop_name.required' => 'Name is required',
-                    'shop_city.required' => 'City is required',
-                    'shop_city.regex' => 'Valid City alphabetical is required',
+                $customMessages = [
+                    'shop_name.required' => 'Shop Name is required',
+                    'shop_name.unique' => 'Shop Name already registered',
+                    'shop_city.required' => 'Shop City is required',
+                    'shop_city.regex' => 'Valid Shop City alphabetical is required',
                     'shop_name.regex' => 'Valid Shop Name is required',
-                    'shop_mobile.required' => 'Mobile is required',
-                    'shop_mobile.numeric' => 'Valid Mobile is required',
+                    'shop_mobile.numeric' => 'Shop Valid Mobile is required',
                 ];
 
                 $this->validate($request, $rules, $customMessages);
 
 
-                // Uploading Admin Photo    // Using the Intervention package for uploading images
                 if ($request->hasFile('address_proof_image')) { // the HTML name attribute    name="admin_name"    in update_admin_details.blade.php
                     $image_tmp = $request->file('address_proof_image');
 
@@ -349,11 +337,10 @@ class AdminController extends Controller
 
                 } else if (!empty($data['current_address_proof'])) { // In case the admins updates other fields but doesn't update the image itself (doesn't upload a new image), but there's an already existing old image
                     $imageName = $data['current_address_proof'];
-                } else { // In case the admins updates other fields but doesn't update the image itself (doesn't upload a new image), and originally there wasn't any image uploaded in the first place
+                } else {
                     $imageName = '';
                 }
 
-                // Uploading Admin Photo    // Using the Intervention package for uploading images
                 if ($request->hasFile('shop_image')) {
                     $image_tmp = $request->file('shop_image');
 
@@ -373,14 +360,13 @@ class AdminController extends Controller
 
                 } else if (!empty($data['shop_image'])) { // In case the admins updates other fields but doesn't update the image itself (doesn't upload a new image), but there's an already existing old image
                     $shop_image = $data['shop_image'];
-                } else { // In case the admins updates other fields but doesn't update the image itself (doesn't upload a new image), and originally there wasn't any image uploaded in the first place
+                } else {
                     $shop_image = '';
                 }
 
 
                 $vendorCount = VendorsBusinessDetail::where('vendor_id', Auth::guard('admin')->user()->vendor_id)->count(); // Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances
-                if ($vendorCount > 0) { // if there's a vendor already existing, them UPDATE
-                    // UPDATE `vendors_business_details` table
+                if ($vendorCount > 0) {
                     VendorsBusinessDetail::where('vendor_id', Auth::guard('admin')->user()->vendor_id)->update([ // Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances
                         'shop_name' => $data['shop_name'],
                         'shop_mobile' => $data['shop_mobile'],
@@ -398,8 +384,7 @@ class AdminController extends Controller
                         'shop_image' => $shop_image,
                     ]);
 
-                } else { // if there's no vendor already existing, then INSERT
-                    // INSERT INTO `vendors_business_details` table
+                } else {
 
                     VendorsBusinessDetail::insert([
                         'vendor_id' => Auth::guard('admin')->user()->vendor_id, // Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances
@@ -440,17 +425,15 @@ class AdminController extends Controller
 
             if ($request->isMethod('post')) { // if the <form> is submitted
                 $data = $request->all();
-                // dd($data);
 
-                // Laravel's Validation    // Customizing Laravel's Validation Error Messages: https://laravel.com/docs/9.x/validation#customizing-the-error-messages    // Customizing Validation Rules: https://laravel.com/docs/9.x/validation#custom-validation-rules
                 $rules = [
-                    'account_holder_name' => 'required|regex:/^[\pL\s\-]+$/u', // only alphabetical characters and spaces
-                    'bank_name' => 'required', // only alphabetical characters and spaces
-                    'account_number' => 'required|numeric',
-                    'bank_ifsc_code' => 'required',
+                    'account_holder_name' => 'nullable|regex:/^[\pL\s\-]+$/u', // only alphabetical characters and spaces
+                    'bank_name' => 'nullable', // only alphabetical characters and spaces
+                    'account_number' => 'nullable|numeric',
+                    'bank_ifsc_code' => 'nullable',
                 ];
 
-                $customMessages = [ // Specifying A Custom Message For A Given Attribute: https://laravel.com/docs/9.x/validation#specifying-a-custom-message-for-a-given-attribute
+                $customMessages = [
                     'account_holder_name.required' => 'Account Holder Name is required',
                     'bank_name.required' => 'Bank Name is required',
                     'account_holder_name.regex' => 'Valid Account Holder Name is required',
@@ -472,8 +455,7 @@ class AdminController extends Controller
                         'bank_ifsc_code' => $data['bank_ifsc_code'],
                     ]);
 
-                } else { // if there's no vendor already existing, then INSERT
-                    // INSERT INTO `vendors_bank_details` table
+                } else {
                     VendorsBankDetail::insert([
                         'vendor_id' => Auth::guard('admin')->user()->vendor_id, // Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances
                         'account_holder_name' => $data['account_holder_name'],

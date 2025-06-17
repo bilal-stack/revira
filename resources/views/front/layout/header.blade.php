@@ -1,9 +1,13 @@
 <?php
-// Getting the 'enabled' sections ONLY and their child categories (using the 'categories' relationship method) which, in turn, include their 'subcategories`
 $sections = \App\Models\Section::sections();
 $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)->get();
-// dd($sections);
 ?>
+<style>
+    .nav-link {
+        display: block;
+        padding: unset;
+    }
+    </style>
 
 <div class="topbar">
     <div class="container-topbar">
@@ -72,8 +76,32 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
     <div class="container">
         <div class="main-header">
             <div class="header-left">
-                <div class="header-logo"><a class="d-flex" href="{{ url('/') }}"><img alt="Revira"
-                            src="{{ asset('front/new/assets/imgs/logo.png') }}"></a></div>
+                <div class="header-logo"><a class="d-flex" href="{{ url('/') }}">
+                        <img alt="Revira" src="{{ asset('front/new/assets/imgs/logo.png') }}">
+                    </a>
+                </div>
+                <div class="header-nav">
+                    <nav class="nav-main-menu d-none d-xl-block">
+                        <ul class="main-menu">
+                            <li><a href="{{ url('vendors/list') }}">Suppliers</a></li>
+                            <li><a href="{{ url('shop') }}">Shop</a></li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarBrandsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Brands
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarBrandsDropdown">
+                                    @foreach($headerBrands as $brand)
+                                        <li><a class="dropdown-item" href="{{$brand['name']}}" onclick="window.location.href='{{ url('shop') }}'">{{$brand['name']}}</a></li>
+                                    @endforeach
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+                    <div class="burger-icon burger-icon-white"><span class="burger-icon-top"></span><span
+                            class="burger-icon-mid"></span><span class="burger-icon-bottom"></span></div>
+                </div>
                 <div class="header-search">
                     <div class="box-header-search">
                         <form class="form-search" action="{{ url('/search-products') }}" method="get">
@@ -99,8 +127,6 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
                     <nav class="nav-main-menu d-none d-xl-block">
                         <ul class="main-menu">
                             <li><a class="active" href="{{ url('/') }}">Home</a></li>
-                            <li><a href="{{ url('shop') }}">Shop</a></li>
-                            <li><a href="{{ url('vendors/list') }}">Vendors</a></li>
                             <li><a href="{{ url('contact') }}">Contact Us</a></li>
                         </ul>
                     </nav>
@@ -108,8 +134,8 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
                             class="burger-icon-mid"></span><span class="burger-icon-bottom"></span></div>
                 </div>
                 <div class="header-shop">
-                    <div class="d-inline-block box-dropdown-cart"><span
-                            class="font-lg icon-list icon-account"><span>Account</span></span>
+                    <div class="d-inline-block box-dropdown-cart">
+                        <span class="font-lg icon-list icon-account"><span>Account</span></span>
                         <div class="dropdown-account">
                             <ul>
                                 @if (!Auth::check())
@@ -134,48 +160,48 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
     </div>
 </header>
 
-<div class="sidebar-left"><a class="btn btn-open" href="#"></a>
-    <ul class="menu-icons hidden">
-        @foreach ($headerCategories as $category)
-            @if ($category->subCategories->count())
-                <li><a href="javascript:void(0)">
+{{--<div class="sidebar-left"><a class="btn btn-open" href="#"></a>--}}
+{{--    <ul class="menu-icons hidden">--}}
+{{--        @foreach ($headerCategories as $category)--}}
+{{--            @if ($category->subCategories->count())--}}
+{{--                <li><a href="javascript:void(0)">--}}
 
-                        @if (!$category['category_image'])
-                            <img src="{{ asset('front/new/assets/imgs/template/monitor.svg') }}" alt="Revira">
-                        @else
-                            <img src="{{ url('front/images/category_images/' . $category['category_image']) }}" alt="Revira">
-                        @endif
-                    </a>
-                </li>
-            @endif
-        @endforeach
+{{--                        @if (!$category['category_image'])--}}
+{{--                            <img src="{{ asset('front/new/assets/imgs/template/monitor.svg') }}" alt="Revira">--}}
+{{--                        @else--}}
+{{--                            <img src="{{ url('front/images/category_images/' . $category['category_image']) }}" alt="Revira">--}}
+{{--                        @endif--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--            @endif--}}
+{{--        @endforeach--}}
 
-    </ul>
-    <ul class="menu-texts menu-close">
-        @foreach ($headerCategories as $category)
-            <li class="has-children">
-                <a href="{{ url($category->url) }}"><span class="img-link">
-                        @if (!$category->category_image)
-                            <img src="{{ asset('front/new/assets/imgs/template/monitor.svg') }}" alt="Revira">
-                        @else
-                            <img src="{{ url('front/images/category_images/' . $category->category_image) }}"
-                                alt="{{ $category->category_name }}">
-                        @endif
+{{--    </ul>--}}
+{{--    <ul class="menu-texts menu-close">--}}
+{{--        @foreach ($headerCategories as $category)--}}
+{{--            <li class="has-children">--}}
+{{--                <a href="{{ url($category->url) }}"><span class="img-link">--}}
+{{--                        @if (!$category->category_image)--}}
+{{--                            <img src="{{ asset('front/new/assets/imgs/template/monitor.svg') }}" alt="Revira">--}}
+{{--                        @else--}}
+{{--                            <img src="{{ url('front/images/category_images/' . $category->category_image) }}"--}}
+{{--                                alt="{{ $category->category_name }}">--}}
+{{--                        @endif--}}
 
-                    </span>
-                    <span class="text-link">{{ $category->category_name }}</span>
-                </a>
-                @if ($category->subCategories->count())
-                    <ul class="sub-menu">
-                        @foreach ($category->subCategories as $child)
-                            <li><a href="{{ url($child->url) }}">{{ $child->category_name }}</a></li>
-                        @endforeach
-                    </ul>
-                @endif
-            </li>
-        @endforeach
-    </ul>
-</div>
+{{--                    </span>--}}
+{{--                    <span class="text-link">{{ $category->category_name }}</span>--}}
+{{--                </a>--}}
+{{--                @if ($category->subCategories->count())--}}
+{{--                    <ul class="sub-menu">--}}
+{{--                        @foreach ($category->subCategories as $child)--}}
+{{--                            <li><a href="{{ url($child->url) }}">{{ $child->category_name }}</a></li>--}}
+{{--                        @endforeach--}}
+{{--                    </ul>--}}
+{{--                @endif--}}
+{{--            </li>--}}
+{{--        @endforeach--}}
+{{--    </ul>--}}
+{{--</div>--}}
 
 <div class="mobile-header-active mobile-header-wrapper-style perfect-scrollbar">
     <div class="mobile-header-wrapper-inner">
@@ -188,6 +214,26 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
                         <ul class="mobile-menu font-heading">
                             <li><a href="{{ url('shop') }}">Shop</a></li>
                             <li><a href="{{ url('vendors/list') }}">Vendors</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Categories
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    @foreach($categories as $category)
+                                        <li><a class="dropdown-item" href="{{ url($category['url']) }}" onclick="window.location.href='{{ url($category['url']) }}'">{{$category['category_name']}}</a></li>
+                                    @endforeach
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Brands
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    @foreach($headerBrands as $brand)
+                                        <li><a class="dropdown-item" href="{{$brand['name']}}" onclick="window.location.href='{{ url('shop') }}'">{{$brand['name']}}</a></li>
+                                    @endforeach
+                                </ul>
+                            </li>
                             <li><a href="{{ url('contact') }}">Contact</a></li>
                         </ul>
                     </nav>
@@ -205,17 +251,6 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
                             </div>
                         </div>
                     @endif
-{{--                    <ul class="mobile-menu">--}}
-{{--                        @if (!Auth::check())--}}
-{{--                            <li><a href="{{ url('login') }}">User Login</a></li>--}}
-{{--                            <li><a href="{{ url('user/login-register') }}">User Register</a></li>--}}
-{{--                            <li><a href="{{ url('vendor/login-register') }}">Vendor Login</a></li>--}}
-{{--                        @else--}}
-{{--                            <li><a href="{{ url('user/account') }}">My Account</a></li>--}}
-{{--                            <li><a href="{{ url('user/orders') }}">My Orders</a></li>--}}
-{{--                            <li><a href="{{ route('user.logout') }}">Sign out</a></li>--}}
-{{--                        @endif--}}
-{{--                    </ul>--}}
                 </div>
                 <div class="site-copyright color-gray-400 mt-30">Copyright 2025 &copy; Revira.</div>
             </div>
