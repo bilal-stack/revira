@@ -93,12 +93,6 @@ class IndexController extends Controller
         return view('front.about_us', get_defined_vars());
     }
 
-    public function careers()
-    {
-
-        return view('front.careers', get_defined_vars());
-    }
-
     public function termsConditions()
     {
         return view('front.terms_and_conditions', get_defined_vars());

@@ -93,9 +93,9 @@
                                                     <a title="Edit Product" href="{{ url('admin/add-edit-product/' . $product['id']) }}">
                                                         <i style="font-size: 25px" class="mdi mdi-pencil-box"></i> {{-- Icons from Skydash Admin Panel Template --}}
                                                     </a>
-                                                    <a title="Add Attributes" href="{{ url('admin/add-edit-attributes/' . $product['id']) }}">
-                                                        <i style="font-size: 25px" class="mdi mdi-plus-box"></i> {{-- Icons from Skydash Admin Panel Template --}}
-                                                    </a>
+{{--                                                    <a title="Add Attributes" href="{{ url('admin/add-edit-attributes/' . $product['id']) }}">--}}
+{{--                                                        <i style="font-size: 25px" class="mdi mdi-plus-box"></i> --}}{{-- Icons from Skydash Admin Panel Template --}}
+{{--                                                    </a>--}}
                                                     <a title="Add Multiple Images" href="{{ url('admin/add-images/' . $product['id']) }}">
                                                         <i style="font-size: 25px" class="mdi mdi-library-plus"></i> {{-- Icons from Skydash Admin Panel Template --}}
                                                     </a>

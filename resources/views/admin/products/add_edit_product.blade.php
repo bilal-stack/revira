@@ -14,7 +14,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 grid-margin stretch-card">
+                <div class="col-md-8 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">{{ $title }}</h4>
@@ -114,7 +114,7 @@
                                     <input type="text" class="form-control" id="product_name" placeholder="Enter Product Name" name="product_name" @if (!empty($product['product_name'])) value="{{ $product['product_name'] }}" @else value="{{ old('product_name') }}" @endif>  {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
                                 <div class="form-group">
-                                    <label for="product_code">Product Code</label>
+                                    <label for="product_code">Product Code (123456789)</label>
                                     <input type="text" class="form-control" id="product_code" placeholder="Enter Code" name="product_code" @if (!empty($product['product_code'])) value="{{ $product['product_code'] }}" @else value="{{ old('product_code') }}" @endif>  {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
                                 <div class="form-group">
@@ -122,15 +122,25 @@
                                     <input type="text" class="form-control" id="product_color" placeholder="Enter Product Color" name="product_color" @if (!empty($product['product_color'])) value="{{ $product['product_color'] }}" @else value="{{ old('product_color') }}" @endif>  {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
                                 <div class="form-group">
-                                    <label for="product_price">Product Price</label>
+                                    <label for="product_price">Product Price (GBP)</label>
                                     <input type="text" class="form-control" id="product_price" placeholder="Enter Product Price" name="product_price" @if (!empty($product['product_price'])) value="{{ $product['product_price'] }}" @else value="{{ old('product_price') }}" @endif> {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
+                                </div>
+                                <div class="form-group">
+                                    <label for="product_price">Bundle Quantity</label>
+                                    @php
+                                    if (!empty($product)) {
+                                        dd('asdas');
+                                        $attributes = $product->attributes()->first();
+                                    }
+                                    @endphp
+                                    <input type="number" class="form-control" id="product_quantity" placeholder="Enter Product Bundle Quantity" name="product_quantity" @if (!isset($attributes)) value="{{ $attributes->stock }}" @else value="{{ old('product_quantity') }}" @endif> {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
                                 <div class="form-group">
                                     <label for="product_discount">Product Discount (%)</label>
                                     <input type="text" class="form-control" id="product_discount" placeholder="Enter Product Discount" name="product_discount" @if (!empty($product['product_discount'])) value="{{ $product['product_discount'] }}" @else value="{{ old('product_discount') }}" @endif> {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
                                 <div class="form-group">
-                                    <label for="product_weight">Product Weight (%)</label>
+                                    <label for="product_weight">Product Weight (gm)</label>
                                     <input type="text" class="form-control" id="product_weight" placeholder="Enter Product Weight" name="product_weight" @if (!empty($product['product_weight'])) value="{{ $product['product_weight'] }}" @else value="{{ old('product_weight') }}" @endif> {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
 
@@ -138,7 +148,7 @@
 
                                 {{-- Managing Product Colors (in front/products/detail.blade.php) --}}
                                 <div class="form-group">
-                                    <label for="group_code">Group Code</label>
+                                    <label for="group_code">Group Code (To group products)</label>
                                     <input type="text" class="form-control" id="group_code" placeholder="Enter Group Code" name="group_code"  @if (!empty($product['group_code'])) value="{{ $product['group_code'] }}" @else value="{{ old('group_code') }}" @endif> {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
 

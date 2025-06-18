@@ -92,26 +92,22 @@ class ProductsController extends Controller
         if ($id == '') { // if there's no $id is passed in the route/URL parameters, this means 'Add a new product'
             $title = 'Add Product';
             $product = new \App\Models\Product();
-            // dd($product);
             $message = 'Product added successfully!';
-        } else { // if the $id is passed in the route/URL parameters, this means Edit the Product
+        } else {
             $title = 'Edit Product';
             $product = Product::find($id);
-            // dd($product);
             $message = 'Product updated successfully!';
         }
 
         if ($request->isMethod('post')) { // WHETHER 'Add a Product' or 'Update a Product' <form> is submitted (THE SAME <form>)!!
             $data = $request->all();
-            // dd($data);
 
-
-            // Laravel's Validation    // Customizing Laravel's Validation Error Messages: https://laravel.com/docs/9.x/validation#customizing-the-error-messages    // Customizing Validation Rules: https://laravel.com/docs/9.x/validation#custom-validation-rules
-            $rules = [
+             $rules = [
                 'category_id'   => 'required',
                 'product_name'  => 'required', // only alphabetical characters and spaces
                 'product_code'  => 'required|regex:/^\w+$/', // alphanumeric regular expression
                 'product_price' => 'required|numeric',
+                 'product_quantity'  => 'required|numeric',
                 'product_color' => 'required|regex:/^[\pL\s\-]+$/u', // only alphabetical characters and spaces
             ];
 
@@ -125,6 +121,8 @@ class ProductsController extends Controller
                 'product_price.numeric'  => 'Valid Product Price is required',
                 'product_color.required' => 'Product Color is required',
                 'product_color.regex'    => 'Valid Product Color is required',
+                'product_quantity.required' => 'Product Quantity is required',
+                'product_quantity.numeric'  => 'Valid Product Quantity is required',
 
             ];
 
@@ -270,8 +268,19 @@ class ProductsController extends Controller
                     unset($product->$key);
                 }
             }
+
             $product->save();
-            $product->save(); // Save all data in the database
+
+            $attribute = new ProductsAttribute;
+
+            $attribute->product_id = $product->id; // $id is passed in up there to the addAttributes() method
+            $attribute->sku        = rand(0000, 9999);
+            $attribute->size       = 'Bundle of '. $data['product_quantity'];  // $key denotes the iteration/loop cycle number (0, 1, 2, ...), e.g. $data['size'][0]
+            $attribute->price      = $data['product_price']; // $key denotes the iteration/loop cycle number (0, 1, 2, ...), e.g. $data['price'][0]
+            $attribute->stock      = $data['product_quantity']; // $key denotes the iteration/loop cycle number (0, 1, 2, ...), e.g. $data['stock'][0]
+            $attribute->status     = 1;
+
+            $attribute->save();
 
             return redirect('admin/products')->with('success_message', $message);
         }

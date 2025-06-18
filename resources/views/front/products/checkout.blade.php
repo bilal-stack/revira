@@ -1,8 +1,8 @@
-{{-- Note: This page (view) is rendered by the checkout() method in the Front/ProductsController.php --}}
 @extends('front.layout.layout')
-
-
 @section('content')
+    @php
+        $currency = session('currency', 'GBP')
+    @endphp
     <div class="section-box">
         <div class="breadcrumbs-div">
             <div class="container">
@@ -104,14 +104,14 @@
                                                     <a href="{{ url('product/' . $item['product_id']) }}">
                                                         <h6 class="color-brand-3">{{ $item['product']['product_name'] }}</h6>
                                                     </a>
-                                                    <div class="rating">
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="star">
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="star">
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="star">
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="star">
-                                                        <img src="assets/imgs/template/icons/star.svg" alt="star">
-                                                        <span class="font-xs color-gray-500"> (65)</span>
-                                                    </div>
+{{--                                                    <div class="rating">--}}
+{{--                                                        <img src="assets/imgs/template/icons/star.svg" alt="star">--}}
+{{--                                                        <img src="assets/imgs/template/icons/star.svg" alt="star">--}}
+{{--                                                        <img src="assets/imgs/template/icons/star.svg" alt="star">--}}
+{{--                                                        <img src="assets/imgs/template/icons/star.svg" alt="star">--}}
+{{--                                                        <img src="assets/imgs/template/icons/star.svg" alt="star">--}}
+{{--                                                        <span class="font-xs color-gray-500"> (65)</span>--}}
+{{--                                                    </div>--}}
                                                 </div>
                                             </div>
                                         </div>
@@ -120,7 +120,11 @@
                                         </div>
                                         <div class="wishlist-price">
                                             <h4 class="color-brand-3 font-lg-bold">
-                                                ${{ number_format($discountPrice * $item['quantity'], 2) }}
+                                                @php
+                                                    $price = $discountPrice * $item['quantity'];
+                                                    $price = currency($price, $from = null, $currency);
+                                                @endphp
+                                                {{ $price }}
                                             </h4>
                                         </div>
                                     </div>
@@ -145,22 +149,42 @@
                         <div class="box-total">
                             <div class="total-price d-flex justify-content-between">
                                 <h5 class="color-brand-3">Subtotal</h5>
-                                <h5 class="color-brand-3">${{ number_format($total_price, 2) }}</h5>
+                                <h5 class="color-brand-3">
+                                    @php
+                                        $price = currency($total_price, $from = null, $currency);
+                                    @endphp
+                                   {{$price}}
+                                </h5>
                             </div>
                             <div class="total-price d-flex justify-content-between">
                                 <h5 class="color-brand-3">Shipping Charges</h5>
-                                <h5 class="color-brand-3">${{ number_format($shipping_charges ?? 0, 2) }}</h5>
+                                <h5 class="color-brand-3">
+                                    @php
+                                        $price = currency($shipping_charges ?? 0, $from = null, $currency);
+                                    @endphp
+                                    {{$price}}
+                                </h5>
                             </div>
                             @if (session('couponAmount') && session('couponAmount') > 0)
                                 <div class="total-price d-flex justify-content-between">
                                     <h5 class="color-brand-3">Coupon Discount</h5>
-                                    <h5 class="color-brand-3">- ${{ number_format(session('couponAmount'), 2) }}</h5>
+                                    <h5 class="color-brand-3">
+                                        @php
+                                            $price = currency(session('couponAmount'), $from = null, $currency);
+                                        @endphp
+                                        -{{$price}}
+                                    </h5>
                                 </div>
                             @endif
                             <div class="total-price d-flex justify-content-between font-lg-bold">
                                 <h5 class="color-brand-3">Total</h5>
                                 <h5 class="color-brand-3">
-                                    ${{ number_format(($final_price ?? $total_price) + ($shipping_charges ?? 0) - (session('couponAmount') ?? 0), 2) }}
+                                    @php
+                                        $price = ($final_price ?? $total_price) + ($shipping_charges ?? 0) - (session('couponAmount') ?? 0);
+                                        $price = currency($price, $from = null, $currency);
+                                    @endphp
+
+                                    {{$price}}
                                 </h5>
                             </div>
                         </div>

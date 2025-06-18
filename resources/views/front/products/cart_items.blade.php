@@ -1,5 +1,7 @@
+@php
+    $currency = session('currency', 'GBP')
+@endphp
 <div class="row">
-
     <div class="col-lg-9">
         <div class="box-carts">
             <div class="head-wishlist">
@@ -49,8 +51,7 @@
                                             <img src="{{ asset('assets/imgs/template/icons/star.svg') }}"
                                                  alt="star">
                                         @endfor
-                                        <span class="font-xs color-gray-500">
-                                                            ({{ $item['product']['rating'] ?? '0' }})</span>
+                                        <span class="font-xs color-gray-500">({{ $item['product']['rating'] ?? '0' }})</span>
                                     </div>
                                 </div>
                             </div>
@@ -58,11 +59,11 @@
 
                         <div class="wishlist-price">
                             <h4 class="color-brand-3">
-                                @if ($getDiscountAttributePrice['discount'] > 0)
-                                    @include('front.layout.currency') {{ $getDiscountAttributePrice['final_price'] }}
-                                @else
-                                    @include('front.layout.currency') {{ $getDiscountAttributePrice['final_price'] }}
-                                @endif
+
+                                @php
+                                    $discountPrice = currency($getDiscountAttributePrice['final_price'], $from = null, $currency)
+                                @endphp
+                                {{$discountPrice}}
                             </h4>
                         </div>
                         <div class="wishlist-status">
@@ -91,7 +92,11 @@
 
                         <div class="wishlist-action">
                             <h4 class="color-brand-3">
-                                @include('front.layout.currency') {{ $getDiscountAttributePrice['final_price'] * $item['quantity'] }}
+                                @php
+                                    $price = $getDiscountAttributePrice['final_price'] * $item['quantity'];
+                                    $price = currency($price, $from = null, $currency)
+                            @endphp
+                                {{$price}}
                             </h4>
                         </div>
 
@@ -114,7 +119,12 @@
                 <div class="row">
                     <div class="col-6"><span class="font-md-bold color-gray-500">Subtotal</span></div>
                     <div class="col-6 text-end">
-                        <h4 class="calc-text">@include('front.layout.currency'){{ $total_price }}</h4>
+                        <h4 class="calc-text">
+                            @php
+                                $grand_price = currency($total_price, $from = null, $currency)
+                            @endphp
+                            {{ $grand_price }}
+                        </h4>
                     </div>
                 </div>
             </div>
@@ -125,9 +135,9 @@
                     <div class="col-6 text-end">
                         <h4 class="couponAmount">
                             @if (session()->has('couponAmount'))
-                                @include('front.layout.currency'){{ number_format(session('couponAmount'), 2) }}
+                                {{ number_format(session('couponAmount'), 2) }}
                             @else
-                                @include('front.layout.currency') 0
+                                0
                             @endif
                         </h4>
                     </div>
@@ -138,7 +148,14 @@
                     <div class="col-6"><span class="font-md-bold color-gray-500">Grand Total</span></div>
                     <div class="col-6 text-end">
                         <h4 class="grand_total">
-                            @include('front.layout.currency'){{ $total_price - \Illuminate\Support\Facades\Session::get('couponAmount') }}
+                            @php
+                                $total_price = $total_price - \Illuminate\Support\Facades\Session::get('couponAmount');
+
+                                $currency = session('currency', 'GBP');
+                                $price = currency($total_price, $from = null, $currency);
+                            @endphp
+
+                            {{ $price}}
                         </h4>
                     </div>
                 </div>

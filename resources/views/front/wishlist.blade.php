@@ -77,15 +77,19 @@
                                 </div>
                                 <div class="wishlist-price">
                                     @php
+                                        $currency = session('currency', 'GBP');
+                                        $price = currency($wishlist->item->product_price, $from = null, $currency);
                                         $getDiscountPrice = \App\Models\Product::getDiscountPrice($wishlist->item->id);
                                     @endphp
-                                    @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
 
-                                    <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
-                                    <span class="color-gray-500 price-line">@include('front.layout.currency'){{ $wishlist->item->product_price }}</span>
+                                    @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
+                                    @php($discountPrice = currency($getDiscountPrice, $from = null, $currency))
+                                
+                                    <strong class="font-lg-bold color-brand-3 price-main">{{$discountPrice}}</strong>
+                                    <span class="color-gray-500 price-line">{{$price}}</span>
 
                                     @else {{-- if there's no discount on the price, show the original price --}}
-                                    <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
+                                    <strong class="font-lg-bold color-brand-3 price-main">{{$price}}</strong>
                                     @endif
                                 </div>
                                 <div class="wishlist-action">

@@ -105,8 +105,6 @@ class UserController extends Controller
     // User Login (in front/users/login_register.blade.php) <form> submission using an AJAX request. Check front/js/custom.js
     public function userLogin(Request $request)
     {
-        // dd('abc');
-
         if ($request->ajax()) { // if the request is coming via an AJAX call
             $data = $request->all(); // Getting the name/value pairs array that are sent from the AJAX request (AJAX call)
 
@@ -427,13 +425,5 @@ class UserController extends Controller
                 ]);
             }
         }
-    }
-
-    public function myAccount()
-    {
-
-        $countries = \App\Models\Country::where('status', 1)->get()->toArray(); // get the countries which have status = 1 (to ignore the blacklisted countries, in case)
-
-        return view('front.users.user_account', get_defined_vars());
     }
 }

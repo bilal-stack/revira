@@ -60,12 +60,12 @@
             </div>
             @endif
             <div class="row">
-                <div class="col-lg-5">
+                <div class="col-lg-6">
                     <div class="gallery-image">
                         <div class="galleries">
                             <div class="detail-gallery">
                                 @if ($productDetails['product_discount'] > 0)
-                                    <label class="label">-{{$productDetails['product_discount']}}</label>
+                                    <label class="label">-%{{$productDetails['product_discount']}}</label>
                                 @endif
                                 <div class="product-image-slider">
                                     <figure class="border-radius-10">
@@ -95,13 +95,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-7">
+                <div class="col-lg-6">
                     <h3 class="color-brand-3 mb-25">{{ $productDetails['product_name'] }}</h3>
                     <div class="row align-items-center">
                         <div class="col-lg-4 col-md-4 col-sm-3 mb-mobile">
                             @if(isset($productDetails['vendor']))
                                 <span class="bytext color-gray-500 font-xs font-medium">by</span>
-                                <a class="byAUthor color-gray-900 font-xs font-medium" href="/products/{{ $productDetails['vendor']['id'] }}">
+                                <a class="byAUthor color-gray-900 font-xs font-medium" href="{{url($productDetails['vendor']['vendorbusinessdetails']['shop_name']. '/products')}}">
                                     {{ $productDetails['vendor']['vendorbusinessdetails']['shop_name'] }}
                                 </a>
                             @endif
@@ -141,23 +141,26 @@
                     </div>
                     <div class="border-bottom pt-10 mb-20"></div>
                     <div class="box-product-price">
-                        @php $getDiscountPrice = \App\Models\Product::getDiscountPrice($productDetails['id']) @endphp
+                        @php
+                            $currency = session('currency', 'GBP');
+                            $price = currency($productDetails['product_price'], $from = null, $currency);
+                            $getDiscountPrice = \App\Models\Product::getDiscountPrice($productDetails['id']);
+                        @endphp
+
                         @if ($getDiscountPrice > 0)
-                            <h3 class="color-brand-3 price-main d-inline-block mr-10 getAttributePrice" >@include('front.layout.currency'){{ $getDiscountPrice }}</h3>
-                            <span class="color-gray-500 price-line font-xl line-througt">@include('front.layout.currency'){{ $productDetails['product_price'] }}</span>
+                            @php $discountPrice = currency($getDiscountPrice, $from = null, $currency); @endphp
+                            <div class="col-md-2 pb-10">
+                                <button class="btn btn-cart" style="padding: 7px 0px; border: 1px solid #ff5400;background-color: #ff5400;color: #ffffff;" type="button">-%{{$productDetails['product_discount']}} Discount</button>
+                            </div>
+
+                            <h3 class="color-brand-3 price-main d-inline-block mr-10 getAttributePrice" >{{$discountPrice}}/pc</h3>
+                            <span class="color-gray-500 price-line font-xl line-througt">{{$price}}</span>
                         @else
-                            <h3 class="color-brand-3 price-main d-inline-block mr-10 getAttributePrice">@include('front.layout.currency'){{ $productDetails['product_price'] }}</h3>
+                            <h3 class="color-brand-3 price-main d-inline-block mr-10 getAttributePrice">{{$price}}/pc</h3>
                         @endif
 
                     </div>
-                    <div class="product-description mt-20 color-gray-900">
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                <p>{{ \Illuminate\Support\Str::limit($productDetails['description'], 100) }}</p>
-                            </div>
 
-                        </div>
-                    </div>
 
                     @if (count($groupProducts) > 0)
                         <div class="box-product-color mt-20">
@@ -173,56 +176,56 @@
                             </ul>
                         </div>
                     @endif
+                    <div class="product-description mt-20 color-gray-900">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <p>
+                                    {!! nl2br($productDetails['description']) !!}
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
                     <form action="{{ url('cart/add') }}" method="Post" class="post-form">
                         @csrf
                         <input type="hidden" name="product_id" value="{{ $productDetails['id'] }}">
                         <div class="box-product-style-size mt-20">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 mb-20">
-                                <p class="font-sm color-gray-900">Size:</p>
-                                <select class="form-control select-box product-size" id="getPrice" product-id="{{ $productDetails['id'] }}" name="size" required> {{-- Check front/js/custom.js file --}}
-                                    <option value="">Select Size</option>
-                                    @foreach ($productDetails['attributes'] as $attribute)
-                                        <option value="{{ $attribute['size'] }}">{{ $attribute['size'] }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
+{{--                        <div class="row">--}}
+{{--                            <div class="col-lg-6 col-md-6 mb-20">--}}
+{{--                                <p class="font-sm color-gray-900">Size:</p>--}}
+{{--                                <select class="form-control select-box product-size" id="getPrice" product-id="{{ $productDetails['id'] }}" name="size" required> --}}{{-- Check front/js/custom.js file --}}
+{{--                                    <option value="">Select Size</option>--}}
+{{--                                    @foreach ($productDetails['attributes'] as $attribute)--}}
+{{--                                        <option value="{{ $attribute['size'] }}">{{ $attribute['size'] }}</option>--}}
+{{--                                    @endforeach--}}
+{{--                                </select>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </div>
-
-                        <div class="buy-product mt-30">
-                            <p class="font-sm mb-20">Quantity</p>
-                            <div class="box-quantity">
-                                <div class="input-quantity">
-                                    <input class="font-xl color-brand-3" type="number" name="quantity" value="1">
-                                    <span class="minus-cart"></span>
-                                    <span class="plus-cart"></span>
-                                </div>
-                                <div class="button-buy">
-                                    <button class="btn btn-cart" type="submit">Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <div class="info-product mt-40">
-                        <div class="row align-items-end">
-                            <div class="col-lg-4 col-md-4 mb-20">
-                                <span class="font-sm font-medium color-gray-900">SKU:
-                                    <span class="color-gray-500">{{ $productDetails['product_code'] }}</span>
-                                </span>
-                            </div>
-
-{{--                            <div class="col-lg-4 col-md-4 mb-20 text-start text-md-end">--}}
-{{--                                <div class="d-inline-block">--}}
-{{--                                    <div class="share-link"><span--}}
-{{--                                            class="font-md-bold color-brand-3 mr-15">Share</span><a--}}
-{{--                                            class="facebook hover-up" href="#"></a><a class="printest hover-up"--}}
-{{--                                                                                      href="#"></a><a class="twitter hover-up" href="#"></a><a--}}
-{{--                                            class="instagram hover-up" href="#"></a></div>--}}
+                        <input hidden="" class="font-xl color-brand-3" type="number" name="quantity" value="1">
+{{--                        <div class="buy-product mt-30">--}}
+{{--                            <p class="font-sm mb-20">Quantity</p>--}}
+{{--                            <div class="box-quantity">--}}
+{{--                                <div class="input-quantity">--}}
+{{--                                    <input class="font-xl color-brand-3" type="number" name="quantity" value="1">--}}
+{{--                                    <span class="minus-cart"></span>--}}
+{{--                                    <span class="plus-cart"></span>--}}
+{{--                                </div>--}}
+{{--                                <div class="button-buy">--}}
+{{--                                    <button class="btn btn-cart" type="submit">Add to cart</button>--}}
 {{--                                </div>--}}
 {{--                            </div>--}}
-                        </div>
-                    </div>
+{{--                        </div>--}}
+                    </form>
+{{--                    <div class="info-product mt-40">--}}
+{{--                        <div class="row align-items-end">--}}
+{{--                            <div class="col-lg-4 col-md-4 mb-20">--}}
+{{--                                <span class="font-sm font-medium color-gray-900">SKU:--}}
+{{--                                    <span class="color-gray-500">{{ $productDetails['product_code'] }}</span>--}}
+{{--                                </span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>
@@ -372,7 +375,7 @@
                                     {{--                                        <a class="btn btn-quickview btn-tooltip" aria-label="Quick view" href="#ModalQuickview" data-bs-toggle="modal"></a>--}}
                                 </div>
                                 <div class="image-box">
-                                    <span class="label bg-brand-2">-@include('front.layout.currency') {{$product['product_discount']}}</span>
+                                    <span class="label bg-brand-2">-%{{$product['product_discount']}}</span>
                                     <a href="{{ url('product/' . $product['id']) }}">
                                         @php
                                             $product_image_path = 'front/images/product_images/small/' . $product['product_image'];
@@ -414,16 +417,7 @@
                                     @php
                                         $getDiscountPrice = \App\Models\Product::getDiscountPrice($product['id']);
                                     @endphp
-                                    <div class="price-info">
-                                        @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
-
-                                        <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
-                                        <span class="color-gray-500 price-line">@include('front.layout.currency'){{ $product['product_price'] }}</span>
-
-                                        @else {{-- if there's no discount on the price, show the original price --}}
-                                        <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
-                                        @endif
-                                    </div>
+                                    @include('front.layout.price')
                                     <p class="list-features">
                                         {{ $product['description'] }}
                                     </p>
@@ -478,16 +472,7 @@
 
                                             <span class="font-xs color-gray-500">({{ number_format($avg, 1) }}/5) {{ $product['ratings_count'] }} reviews</span>
                                         </div>
-                                        <div class="price-info">
-                                            @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
-
-                                            <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
-                                            <span class="color-gray-500 price-line">@include('front.layout.currency'){{ $product['product_price'] }}</span>
-
-                                            @else {{-- if there's no discount on the price, show the original price --}}
-                                            <strong class="font-lg-bold color-brand-3 price-main">@include('front.layout.currency'){{ $getDiscountPrice }}</strong>
-                                            @endif
-                                        </div>
+                                        @include('front.layout.price')
                                     </div>
                                 </div>
                             </div>
