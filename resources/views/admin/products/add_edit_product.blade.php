@@ -128,12 +128,11 @@
                                 <div class="form-group">
                                     <label for="product_price">Bundle Quantity</label>
                                     @php
-                                    if (!empty($product)) {
-                                        dd('asdas');
+                                    if (!empty($product['product_price'])) {
                                         $attributes = $product->attributes()->first();
                                     }
                                     @endphp
-                                    <input type="number" class="form-control" id="product_quantity" placeholder="Enter Product Bundle Quantity" name="product_quantity" @if (!isset($attributes)) value="{{ $attributes->stock }}" @else value="{{ old('product_quantity') }}" @endif> {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
+                                    <input type="number" class="form-control" id="product_quantity" placeholder="Enter Product Bundle Quantity" name="product_quantity" @if (isset($attributes)) value="{{ $attributes->stock }}" @else value="{{ old('product_quantity') }}" @endif> {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
                                 <div class="form-group">
                                     <label for="product_discount">Product Discount (%)</label>

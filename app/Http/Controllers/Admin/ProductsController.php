@@ -93,10 +93,21 @@ class ProductsController extends Controller
             $title = 'Add Product';
             $product = new \App\Models\Product();
             $message = 'Product added successfully!';
+
+            $attribute = new ProductsAttribute;
+            $attribute->product_id = $product->id; // $id is passed in up there to the addAttributes() method
+            $attribute->sku        = rand(0000, 9999);
+
         } else {
             $title = 'Edit Product';
             $product = Product::find($id);
             $message = 'Product updated successfully!';
+            $attribute = ProductsAttribute::where([
+                'product_id' => $id
+            ])->first();
+
+            $attribute->product_id = $product->id; // $id is passed in up there to the addAttributes() method
+            $attribute->sku        = rand(0000, 9999);
         }
 
         if ($request->isMethod('post')) { // WHETHER 'Add a Product' or 'Update a Product' <form> is submitted (THE SAME <form>)!!
@@ -271,10 +282,6 @@ class ProductsController extends Controller
 
             $product->save();
 
-            $attribute = new ProductsAttribute;
-
-            $attribute->product_id = $product->id; // $id is passed in up there to the addAttributes() method
-            $attribute->sku        = rand(0000, 9999);
             $attribute->size       = 'Bundle of '. $data['product_quantity'];  // $key denotes the iteration/loop cycle number (0, 1, 2, ...), e.g. $data['size'][0]
             $attribute->price      = $data['product_price']; // $key denotes the iteration/loop cycle number (0, 1, 2, ...), e.g. $data['price'][0]
             $attribute->stock      = $data['product_quantity']; // $key denotes the iteration/loop cycle number (0, 1, 2, ...), e.g. $data['stock'][0]
@@ -285,17 +292,9 @@ class ProductsController extends Controller
             return redirect('admin/products')->with('success_message', $message);
         }
 
-
-        // Get ALL the Sections with their Categories and Subcategories (Get all sections with its categories and subcategories)    // $categories are ALL the `sections` with their (parent) categories (if any (if exist)) and subcategories (if any (if exist))
         $categories = \App\Models\Section::with('categories')->get()->toArray(); // with('categories') is the relationship method name in the Section.php Model
-        // dd($categories);
-
-        // Get all brands
         $brands = \App\Models\Brand::where('status', 1)->get()->toArray();
-        // dd($brands);
 
-
-        // return view('admin.products.add_edit_product')->with(compact('title', 'product'));
         return view('admin.products.add_edit_product')->with(compact('title', 'product', 'categories', 'brands'));
     }
 
@@ -363,7 +362,6 @@ class ProductsController extends Controller
 
         if ($request->isMethod('post')) { // When the <form> is submitted
             $data = $request->all();
-            // dd($data);
 
             foreach ($data['sku'] as $key => $value) { // or instead could be: $data['size'], $data['price'] or $data['stock']
                 // echo '<pre>', var_dump($key), '</pre>';
@@ -427,9 +425,8 @@ class ProductsController extends Controller
     public function editAttributes(Request $request) {
         Session::put('page', 'products');
 
-        if ($request->isMethod('post')) { // if the <form> is submitted
+        if ($request->isMethod('post')) {
             $data = $request->all();
-            // dd($data);
 
             foreach ($data['attributeId'] as $key => $attribute) {
                 if (!empty($attribute)) {
