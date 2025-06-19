@@ -69,9 +69,9 @@ class IndexController extends Controller
         $brands = Brand::where('status', 1)->inRandomOrder()->limit(16)->get();
 
         // Static SEO (HTML meta tags): Check the HTML <meta> tags and <title> tag in front/layout/layout.blade.php
-        $meta_title = 'Multi Vendor E-commerce Website';
-        $meta_description = 'Online Shopping Website which deals in Clothing, Electronics & Appliances Products';
-        $meta_keywords = 'eshop website, online shopping, multi vendor e-commerce';
+        $meta_title = 'Vintage Wholesale Marketplace - Bulk Vintage Wholesale | Revira';
+        $meta_description = 'Revira: #1 marketplace for verified vintage wholesalers in UK, France, Germany & US ✓ Top-ranked platform with global reach ✓ Connecting elite retailers & wholesalers worldwide ✓ Curated premium brands from across the globe ✓ Join the leading international vintage wholesale network » Start with Revira now!';
+        $meta_keywords = "vintage, vintage wholesale, wholesale, marketplace, verified wholesalers, quality vintage, Carhartt, Ralph Lauren, Stone Island, Stussy, Nike, Burberry, Arc'Teryx, Patagonia, True Religion, Lacoste, Moncler, The North Face, Dickies, Harley Davidson, Juicy Couture, Canada Goose, Evisu, Levis, MissMe, Adidas, Lululemon, Columbia, Coogi, Tommy Hilfiger, Champion, Doc Martens, Gap, Fila, Guess, Gildan, Russel Athletic";
 
 
         return view('front.index')->with(compact('sliderBanners', 'fixBanners', 'newProducts',

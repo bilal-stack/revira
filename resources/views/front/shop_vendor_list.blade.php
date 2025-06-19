@@ -57,7 +57,10 @@
                                                 <p class="fontlg color-gray-500 location mb-10">{{ $vendor->vendorbusinessdetails->shop_country }} </p>
 
                                                 <p class="font-lg color-gray-500 phone">
-                                                    <a class="btn btn-gray" href="{{url('chat/'. $vendor->username)}}">Message</a>
+                                                    @php
+                                                        $vendorId = userFromVendor( $vendor->id);
+                                                    @endphp
+                                                    <a class="btn btn-gray" href="{{url('chat/'. $vendorId)}}">Message</a>
                                                 </p>
                                             </div>
                                         </div>

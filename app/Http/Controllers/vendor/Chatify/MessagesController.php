@@ -100,6 +100,18 @@ class MessagesController extends Controller
             'status' => 0,
             'message' => null
         ];
+
+        $messageBody = trim($request['message']);
+
+        // Basic phone number pattern: matches digits with optional +, -, (), and spaces
+        $phoneRegex = '/(\+?\d{1,3}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/';
+
+        // If phone number found, reject the message
+        if (preg_match($phoneRegex, $messageBody)) {
+            $error->status = 1;
+            $error->message = "File size you are trying to upload is too large!";
+        }
+
         $attachment = null;
         $attachment_title = null;
 

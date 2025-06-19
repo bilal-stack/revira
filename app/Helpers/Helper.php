@@ -1,5 +1,14 @@
 <?php
 
+if (!function_exists('userFromVendor')) {
+    function userFromVendor($vendorId)
+    {
+        return \Illuminate\Support\Facades\Cache::remember("vendor_user_$vendorId", 60, function () use ($vendorId) {
+            return \App\Models\User::where('vendor_id', $vendorId)->value('id');
+        });
+    }
+}
+
 use App\Models\Cart;
 // Creating the 'Helpers' folder and the 'CUSTOM' 'Helper.php' file, then autoload/register it in 'composer.json' file
 // echo 'Testing this Helper.php \'CUSTOM\' file<br>';
@@ -14,14 +23,14 @@ function totalCartItems() { // this function is used in front/layout/header.blad
         $totalCartItems = Cart::where('session_id', $session_id)->sum('quantity');
     }
 
-    
+
     return $totalCartItems;
 }
 
 
 
 // We copied this function from Cart.php model in
-// Get the Cart Items of a cerain user (using their `user_id` if they're authenticated/logged in or their `session_id` if they're not authenticated/not logged in (guest))    
+// Get the Cart Items of a cerain user (using their `user_id` if they're authenticated/logged in or their `session_id` if they're not authenticated/not logged in (guest))
 function getCartItems() { // this method is called (used) in cart() method in Front/ProductsController.php
     // Get all Cart items of the user depending on whether the user is authenticated/logged in or logged out (Guest)
     if (\Illuminate\Support\Facades\Auth::check()) { // if the user is authenticated/logged in, get their cart items through their BOTH `user_id` and `session_id` in `carts` table

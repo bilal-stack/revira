@@ -12,8 +12,23 @@
     <meta name="author" content="Bilal - Whatsapp: +923323735667">
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('front/new/assets/imgs/template/favicon.svg')}}">
     <link href="{{asset('front/new/assets/css/style.css?v=3.0.0')}}" rel="stylesheet">
+    @if (!empty($meta_description))
+        <meta name="description" content="{{ $meta_description }}">
+    @endif
+
+    @if (!empty($meta_keywords))
+        <meta name="keywords" content="{{ $meta_keywords }}">
+    @endif
+
     <title>
-        Home - Revira
+
+        {{-- Static And Dynamic SEO (HTML meta tags): Check the HTML <meta> tags and <title> tag in front/layout/layout.blade.php. Check index() method in Front/IndexController.php, listing() method in Front/ProductsController.php, detail() method in Front/ProductsController.php and cart() method in Front/ProductsController.php     --}}
+        @if (!empty($meta_title))
+            {{ $meta_title }}
+        @else
+            Vintage Wholesale Marketplace - Bulk Vintage Wholesale | Revira
+        @endif
+
     </title>
     <style>
         body > .skiptranslate {

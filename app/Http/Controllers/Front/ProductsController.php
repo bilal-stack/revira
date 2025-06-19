@@ -510,7 +510,10 @@ class ProductsController extends Controller
 
 
         // Dynamic SEO (HTML meta tags): Check the HTML <meta> tags and <title> tag in front/layout/layout.blade.php
-        $meta_title = $productDetails['meta_title'];
+        $meta_title = $productDetails['product_name'];
+        if (!empty($productDetails['meta_title'])){
+            $meta_title = $productDetails['meta_title'];
+        }
         $meta_description = $productDetails['meta_description'];
         $meta_keywords = $productDetails['meta_keywords'];
 
@@ -552,10 +555,12 @@ class ProductsController extends Controller
             $_GET['sort'] = $data['sort'] ?? '';
 
             // Meta information
-            $meta_title = $vendor->vendorbusinessdetails->shop_name . " - Products";
-            $meta_description = "Browse products from " . $vendor->vendorbusinessdetails->shop_name;
-            $meta_keywords = $vendor->vendorbusinessdetails->shop_name . ", products, clothing";
-
+//            $meta_title = $vendor->vendorbusinessdetails->shop_name . " - Products";
+//            $meta_description = "Browse products from " . $vendor->vendorbusinessdetails->shop_name;
+//            $meta_keywords = $vendor->vendorbusinessdetails->shop_name . ", products, clothing";
+            $meta_title = '';
+            $meta_description = '';
+            $meta_keywords = '';
             // Base query for vendor products
             $vendorProducts = Product::with('brand')
                 ->where('status', 1)
@@ -641,9 +646,13 @@ class ProductsController extends Controller
             ));
         } else {
             // Non-AJAX request
-            $meta_title = $vendor->vendorbusinessdetails->shop_name . " - Products";
-            $meta_description = "Browse products from " . $vendor->vendorbusinessdetails->shop_name;
-            $meta_keywords = $vendor->vendorbusinessdetails->shop_name . ", products, clothing";
+//            $meta_title = $vendor->vendorbusinessdetails->shop_name . " - Products";
+//            $meta_description = "Browse products from " . $vendor->vendorbusinessdetails->shop_name;
+//            $meta_keywords = $vendor->vendorbusinessdetails->shop_name . ", products, clothing";
+
+            $meta_title = '';
+            $meta_description = '';
+            $meta_keywords = '';
 
             $vendorProducts = Product::with('brand')
                 ->where('status', 1)
@@ -682,7 +691,6 @@ class ProductsController extends Controller
     {
         if (true) { // if the Add to Cart <form> is submitted
             $data = $request->all();
-
 
             // Correcting an issue with Coupon Codes when adding an item to the Cart which already has items in it (added before)
             // We need to remove/empty (forget) the 'couponAmount' and 'couponCode' Session Variables (reset the whole process of Applying the Coupon) whenever a user applies a new coupon, or updates Cart items (changes items quantity for example) or deletes items from the Cart or even Adds new items in the Cart

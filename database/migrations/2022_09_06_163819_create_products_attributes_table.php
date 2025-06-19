@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('size');
             $table->float('price');
             $table->integer('stock');
-            $table->string('sku'); // Stock Keeping Unit (example: CW21001)    // SKU is similar to Product Code then - hyphen then the initial of the product size (e.g. 'RC001-S')
+            $table->string('sku')->nullable(); // Stock Keeping Unit (example: CW21001)    // SKU is similar to Product Code then - hyphen then the initial of the product size (e.g. 'RC001-S')
             $table->tinyInteger('status'); // 0 means inactive/disabled, 1 means active/enabled
 
             $table->timestamps();

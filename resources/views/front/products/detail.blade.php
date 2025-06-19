@@ -143,20 +143,28 @@
                     <div class="box-product-price">
                         @php
                             $currency = session('currency', 'GBP');
+                            $perPrice = $productDetails['product_price'] / $productDetails['quantity'];
+                            $perPrice = currency($perPrice, $from = null, $currency);
                             $price = currency($productDetails['product_price'], $from = null, $currency);
                             $getDiscountPrice = \App\Models\Product::getDiscountPrice($productDetails['id']);
                         @endphp
 
                         @if ($getDiscountPrice > 0)
-                            @php $discountPrice = currency($getDiscountPrice, $from = null, $currency); @endphp
+                            @php
+                                $perPrice = $getDiscountPrice / $productDetails['quantity'];
+                                $perPrice = currency($perPrice, $from = null, $currency);
+                                    $discountPrice = currency($getDiscountPrice, $from = null, $currency);
+                            @endphp
                             <div class="col-md-2 pb-10">
-                                <button class="btn btn-cart" style="padding: 7px 0px; border: 1px solid #ff5400;background-color: #ff5400;color: #ffffff;" type="button">-%{{$productDetails['product_discount']}} Discount</button>
+                                <span class="badge bg-warning" style="background-color: #ff5400!important; font-size: 14px; padding: 8px 12px;">
+                                    -%{{$productDetails['product_discount']}} Discount
+                                </span>
                             </div>
 
-                            <h3 class="color-brand-3 price-main d-inline-block mr-10 getAttributePrice" >{{$discountPrice}}/pc</h3>
+                            <h3 class="color-brand-3 price-main d-inline-block mr-10 getAttributePrice" >{{$perPrice}}/pc ({{$discountPrice}})</h3>
                             <span class="color-gray-500 price-line font-xl line-througt">{{$price}}</span>
                         @else
-                            <h3 class="color-brand-3 price-main d-inline-block mr-10 getAttributePrice">{{$price}}/pc</h3>
+                            <h3 class="color-brand-3 price-main d-inline-block mr-10 getAttributePrice">{{$perPrice}}/pc ({{$price}})</h3>
                         @endif
 
                     </div>
@@ -176,19 +184,72 @@
                             </ul>
                         </div>
                     @endif
+
                     <div class="product-description mt-20 color-gray-900">
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12">
-                                <p>
-                                    {!! nl2br($productDetails['description']) !!}
-                                </p>
-                            </div>
+                                <style>
+                                    .custom-table th,
+                                    .custom-table td {
+                                        padding: 12px;
+                                        border-bottom: 1px solid #dee2e6; /* Light gray line */
+                                    }
 
+                                    .custom-table th {
+                                        width: 30%;
+                                        font-weight: 600;
+                                    }
+                                </style>
+
+                                <table class="w-100 custom-table mt-4">
+                                    <tbody>
+                                    @if($productDetails['category']['parent_id'] != 0)
+                                        <tr>
+                                            <th>Department</th>
+                                            <td class="font-md-bold" style="text-align:right">{{ \App\Models\Category::find($productDetails['category']['parent_id'])?->category_name ?? 'N/A' }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Category</th>
+                                            <td class="font-md-bold" style="text-align:right">
+                                                <a href="{{ url($productDetails['category']['url']) }}" target="_blank" class="text-decoration-none text-primary">
+                                                    {{ $productDetails['category']['category_name'] }}
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @else
+                                        <tr>
+                                            <th>Department</th>
+                                            <td class="font-md-bold" style="text-align:right">
+                                                <a href="{{ url('category/' . $productDetails['category']['url']) }}" target="_blank" class="text-decoration-none text-primary">
+                                                    {{ $productDetails['category']['category_name'] }}
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @endif
+                                    @if(!empty($productDetails['brand']))
+                                        <tr>
+                                            <th>Brand</th>
+                                            <td class="font-md-bold" style="text-align:right">{{$productDetails['brand']['name']}}</td>
+                                        </tr>
+                                    @endif
+                                    @if(!empty($productDetails['grade']))
+                                        <tr>
+                                            <th>Grade</th>
+                                            <td class="font-md-bold" style="text-align:right">{{strtoupper($productDetails['grade'])}}</td>
+                                        </tr>
+                                    @endif
+
+                                    </tbody>
+                                </table>
+
+                            </div>
                         </div>
                     </div>
+
                     <form action="{{ url('cart/add') }}" method="Post" class="post-form">
                         @csrf
                         <input type="hidden" name="product_id" value="{{ $productDetails['id'] }}">
+                        <input type="hidden" name="size" value="{{ $productDetails['attributes'][0]['size'] }}">
                         <div class="box-product-style-size mt-20">
 {{--                        <div class="row">--}}
 {{--                            <div class="col-lg-6 col-md-6 mb-20">--}}
@@ -202,20 +263,40 @@
 {{--                            </div>--}}
 {{--                        </div>--}}
                     </div>
+
                         <input hidden="" class="font-xl color-brand-3" type="number" name="quantity" value="1">
-{{--                        <div class="buy-product mt-30">--}}
-{{--                            <p class="font-sm mb-20">Quantity</p>--}}
-{{--                            <div class="box-quantity">--}}
+                        <div class="buy-product mt-30">
+                            <div class="d-flex align-items-center gap-3 mb-30">
+                                <p class="font-sm mb-1">Quantity:</p>
+                                <span class="badge bg-dark" style="font-size: 14px; padding: 8px 12px;">
+                                    {{ $productDetails['quantity'] }}pcs
+                                </span>
+                            </div>
+                            <div class="box-quantity">
 {{--                                <div class="input-quantity">--}}
 {{--                                    <input class="font-xl color-brand-3" type="number" name="quantity" value="1">--}}
 {{--                                    <span class="minus-cart"></span>--}}
 {{--                                    <span class="plus-cart"></span>--}}
 {{--                                </div>--}}
-{{--                                <div class="button-buy">--}}
-{{--                                    <button class="btn btn-cart" type="submit">Add to cart</button>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                                <div class="button-buy row g-2 mt-3">
+                                    <div class="col-6">
+                                        <button class="btn btn-cart w-100" type="submit" style="max-width: unset;">Add to cart</button>
+                                    </div>
+                                    @if(isset($productDetails['vendor']))
+                                        <div class="col-6">
+                                            @php
+                                                $vendorId = userFromVendor($productDetails['vendor']['id']);
+                                            @endphp
+                                            <a href="{{url('chat/'.$vendorId)}}" class="btn btn-cart w-100 text-white d-flex align-items-center justify-content-center"
+                                               style="max-width: unset; background-color: #ff5400; border-color: #ff5400;">
+                                                <i class="fa-regular fa-message me-2"></i> MESSAGE THE SELLER
+                                            </a>
+                                        </div>
+                                    @endif
+
+                                </div>
+                            </div>
+                        </div>
                     </form>
 {{--                    <div class="info-product mt-40">--}}
 {{--                        <div class="row align-items-end">--}}
@@ -226,6 +307,15 @@
 {{--                            </div>--}}
 {{--                        </div>--}}
 {{--                    </div>--}}
+                    <div class="product-description mt-20 color-gray-900">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <p>
+                                    {!! nl2br($productDetails['description']) !!}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -234,9 +324,7 @@
         <div class="container">
             <div class="pt-30 mb-10">
                 <ul class="nav nav-tabs nav-tabs-product" role="tablist">
-                    <li><a class="active" href="#tab-description" data-bs-toggle="tab" role="tab"
-                           aria-controls="tab-description" aria-selected="true">Description</a></li>
-                    <li><a href="#tab-specification" data-bs-toggle="tab" role="tab"
+                    <li><a class="active" href="#tab-specification" data-bs-toggle="tab" role="tab"
                            aria-controls="tab-specification" aria-selected="true">Specification</a></li>
                     @if ($productDetails['product_video'])
                     <li><a href="#tab-additional" data-bs-toggle="tab" role="tab" aria-controls="tab-additional"
@@ -250,21 +338,16 @@
                     @endif
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane fade active show" id="tab-description" role="tabpanel"
-                         aria-labelledby="tab-description">
-                        <div class="display-text-short">
-                            <p>{{$productDetails['description']}}</p>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="tab-specification" role="tabpanel"
+                    <div class="tab-pane fade active show" id="tab-specification" role="tabpanel"
                          aria-labelledby="tab-specification">
                         <h5 class="mb-25">Specification</h5>
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 @foreach ($productDetails['attributes'] as $attribute)
                                     <tr>
-                                        <td>Size</td>
+                                        <td>Pieces:</td>
                                         <td>{{ $attribute['size'] }}</td>
+                                        <td>SKU:</td>
                                         <td>{{ $attribute['sku'] }}</td>
                                     </tr>
                                 @endforeach

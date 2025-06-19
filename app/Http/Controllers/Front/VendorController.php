@@ -3,12 +3,15 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Traits\Username;
 use App\Models\Vendor;
 use App\Models\Admin;
+use Illuminate\Support\Str;
 
 class VendorController extends Controller
 {
@@ -93,6 +96,14 @@ class VendorController extends Controller
 
             $admin->save();
 
+            User::create([
+                'name' => $vendor->name,
+                'email' => 'vendor_' . $vendor->id . '@vendors.local',
+                'vendor_id' => $vendor->id,
+                'password' => Hash::make(Str::random(16)), // random unusable password
+                'status' => 0, // optional
+            ]);
+
 
             // Send the Confirmation Email to the new vendor who has just registered
             $email = $data['email']; // the vendor's email
@@ -104,9 +115,9 @@ class VendorController extends Controller
                 'code'  => base64_encode($data['email']) // We base64 code the vendor $email and send it as a Route Parameter from vendor_confirmation.blade.php to the 'vendor/confirm/{code}' route in web.php, then it gets base64 decoded again in confirmVendor() method in Front/VendorController.php    // we will use the opposite: base64_decode() in the confirmVendor() method (encode X decode)
             ];
 
-            \Illuminate\Support\Facades\Mail::send('emails.vendor_confirmation', $messageData, function ($message) use ($email) { // Sending Mail: https://laravel.com/docs/9.x/mail#sending-mail    // 'emails.vendor_confirmation' is the vendor_confirmation.blade.php file inside the 'resources/views/emails' folder that will be sent as an email    // We pass in all the variables that vendor_confirmation.blade.php will use    // https://www.php.net/manual/en/functions.anonymous.php
-                $message->to($email)->subject('Confirm your Vendor Account');
-            });
+//            \Illuminate\Support\Facades\Mail::send('emails.vendor_confirmation', $messageData, function ($message) use ($email) { // Sending Mail: https://laravel.com/docs/9.x/mail#sending-mail    // 'emails.vendor_confirmation' is the vendor_confirmation.blade.php file inside the 'resources/views/emails' folder that will be sent as an email    // We pass in all the variables that vendor_confirmation.blade.php will use    // https://www.php.net/manual/en/functions.anonymous.php
+//                $message->to($email)->subject('Confirm your Vendor Account');
+//            });
 
 
             DB::commit(); // commit the Database Transaction

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\FacadesAuth;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Validation\Rule;
 use Intervention\Image\Facades\Image;
 use Symfony\Component\VarDumper\VarDumper;
 use App\Models\Admin;
@@ -299,11 +300,14 @@ class AdminController extends Controller
                 $data = $request->all();
 
                 $rules = [
-                    'shop_name' => 'required|regex:/^[\pL\s\-]+$/u|unique:vendors_business_details,shop_name', // only alphabetical characters and spaces
+                    'shop_name' => [
+                        'required', 'regex:/^[\pL\s\-]+$/u',
+                        Rule::unique('vendors_business_details', 'shop_name')
+                            ->ignore(Auth::guard('admin')->user()->vendor_id, 'vendor_id'), // ignore the current vendor by vendor_id
+                    ],
                     'shop_city' => 'required|regex:/^[\pL\s\-]+$/u', // only alphabetical characters and spaces
                     'shop_mobile' => 'nullable|numeric',
                     'address_proof' => 'nullable',
-                    'shop_image' => 'required',
                 ];
 
                 $customMessages = [
@@ -313,7 +317,15 @@ class AdminController extends Controller
                     'shop_city.regex' => 'Valid Shop City alphabetical is required',
                     'shop_name.regex' => 'Valid Shop Name is required',
                     'shop_mobile.numeric' => 'Shop Valid Mobile is required',
+                    'shop_image.required' => 'Shop Image is required',
+                    'shop_image.image' => 'Shop Image must be image'
                 ];
+
+                $vendorDetails = VendorsBusinessDetail::where('vendor_id', Auth::guard('admin')->user()->vendor_id)->first();
+
+                if (null == $vendorDetails || !$vendorDetails->shop_image) {
+                    $rules['shop_image'] = 'required|image';
+                }
 
                 $this->validate($request, $rules, $customMessages);
 
@@ -405,6 +417,10 @@ class AdminController extends Controller
                     ]);
                 }
 
+                User::where('vendor_id', Auth::guard('admin')->user()->vendor_id)->update([
+                   'name' =>  $data['shop_name']
+                ]);
+
 
                 return redirect()->back()->with('success_message', 'Vendor details updated successfully!');
             }
@@ -429,7 +445,7 @@ class AdminController extends Controller
                 $rules = [
                     'account_holder_name' => 'nullable|regex:/^[\pL\s\-]+$/u', // only alphabetical characters and spaces
                     'bank_name' => 'nullable', // only alphabetical characters and spaces
-                    'account_number' => 'nullable|numeric',
+                    'account_number' => 'nullable',
                     'bank_ifsc_code' => 'nullable',
                 ];
 
@@ -555,10 +571,10 @@ class AdminController extends Controller
                 'shop_mobile' => 'required|numeric',
                 'address_proof' => 'required',
                 //'shop_image' => 'required',
-                'account_holder_name' => 'required|regex:/^[\pL\s\-]+$/u', // only alphabetical characters and spaces
-                'bank_name' => 'required', // only alphabetical characters and spaces
-                'account_number' => 'required|numeric',
-                'bank_ifsc_code' => 'required',
+                'account_holder_name' => 'nullable|regex:/^[\pL\s\-]+$/u', // only alphabetical characters and spaces
+                'bank_name' => 'nullable', // only alphabetical characters and spaces
+                'account_number' => 'nullable|numeric',
+                'bank_ifsc_code' => 'nullable',
                 'confirm' => 'required|in:yes,no',
                 'active' => 'required|in:1,0',
             ];
@@ -590,7 +606,12 @@ class AdminController extends Controller
 
             $this->updateVendorBusinessDetails($id, $request);
 
-            $this->updateVendorBankDetails($id, $request);
+            if ($request['account_holder_name'] && $request['bank_name']
+                && $request['account_number'] && $request['bank_ifsc_code'])
+            {
+                $this->updateVendorBankDetails($id, $request);
+            }
+
 
 
             return redirect()->back()->with('success_message', 'Vendor details updated successfully!');
@@ -753,6 +774,10 @@ class AdminController extends Controller
             ]);
         }
 
+        User::where('vendor_id', $id)->update([
+            'name' =>  $data['shop_name']
+        ]);
+
         return true;
         //return redirect()->back()->with('success_message', 'Vendor details updated successfully!');
     }
@@ -763,8 +788,7 @@ class AdminController extends Controller
 
         $vendorCount = VendorsBankDetail::where('vendor_id', $id)->count();
 
-        if ($vendorCount > 0) { // if there's a vendor already existing, them UPDATE
-            // UPDATE `vendors_bank_details` table
+        if ($vendorCount > 0) {
             VendorsBankDetail::where('vendor_id', $id)->update([
                 'account_holder_name' => $data['account_holder_name'],
                 'bank_name' => $data['bank_name'],

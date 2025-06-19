@@ -70,7 +70,23 @@
                             <form class="forms-sample"   @if (empty($product['id'])) action="{{ url('admin/add-edit-product') }}" @else action="{{ url('admin/add-edit-product/' . $product['id']) }}" @endif   method="post" enctype="multipart/form-data">  <!-- If the id is not passed in from the route, this measn 'Add a new Product', but if the id is passed in from the route, this means 'Edit the Product' --> <!-- Using the enctype="multipart/form-data" to allow uploading files (images) -->
                                 @csrf
 
-
+                                @if(Auth::guard('admin')->user()->type == 'superadmin')
+                                    <div class="form-group">
+                                        <label for="vendor_id">Select Vendor</label>
+                                        <select name="vendor_id" id="vendor_id" class="form-control text-dark">
+                                            <option value="">Select Vendor</option>
+                                            @foreach ($vendors as $vendor)
+                                                <option value="{{ $vendor['id'] }}"
+                                                @if(old('vendor_id'))
+                                                    {{ old('vendor_id') == $vendor['id'] ? 'selected' : '' }}
+                                                    @elseif(!empty($product['vendor_id']))
+                                                    {{ $product['vendor_id'] == $vendor['id'] ? 'selected' : '' }}
+                                                    @endif
+                                                >{{ $vendor['name'] }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                @endif
 
                                 <div class="form-group">
                                     <label for="category_id">Select Category</label>
@@ -126,7 +142,11 @@
                                     <input type="text" class="form-control" id="product_price" placeholder="Enter Product Price" name="product_price" @if (!empty($product['product_price'])) value="{{ $product['product_price'] }}" @else value="{{ old('product_price') }}" @endif> {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
                                 <div class="form-group">
-                                    <label for="product_price">Bundle Quantity</label>
+                                    <label for="product_price">Bundle pieces quantity (eg: 15pcs)</label>
+                                    <input type="text" class="form-control" id="quantity" placeholder="Enter Bundle pieces" name="quantity" @if (!empty($product['quantity'])) value="{{ $product['quantity'] }}" @else value="{{ old('quantity') }}" @endif> {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
+                                </div>
+                                <div class="form-group">
+                                    <label for="product_price">Bundle Quantity (stock)</label>
                                     @php
                                     if (!empty($product['product_price'])) {
                                         $attributes = $product->attributes()->first();
@@ -143,7 +163,10 @@
                                     <input type="text" class="form-control" id="product_weight" placeholder="Enter Product Weight" name="product_weight" @if (!empty($product['product_weight'])) value="{{ $product['product_weight'] }}" @else value="{{ old('product_weight') }}" @endif> {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
 
-
+                                <div class="form-group">
+                                    <label for="product_price">Grade (eg: C)</label>
+                                    <input type="text" class="form-control" id="grade" placeholder="Enter Product grade" name="grade" @if (!empty($product['grade'])) value="{{ $product['grade'] }}" @else value="{{ old('grade') }}" @endif> {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
+                                </div>
 
                                 {{-- Managing Product Colors (in front/products/detail.blade.php) --}}
                                 <div class="form-group">
@@ -154,7 +177,7 @@
 
 
                                 <div class="form-group">
-                                    <label for="product_image">Product Image (Recommended Size: 1000x1000)</label> {{-- Important Note: There are going to be 3 three sizes for the product image: Admin will upload the image with the recommended size which 1000*1000 which is the 'large' size (will store it in 'large' folder), but then we're going to use 'Intervention' package to get another two sizes: 500*500 which is the 'medium' size (will store it in 'medium' folder) and 250*250 which is the 'small' size (will store it in 'small' folder) --}}
+                                    <label for="product_image">Product Banner Image (Recommended Size: 1000x1000)</label> {{-- Important Note: There are going to be 3 three sizes for the product image: Admin will upload the image with the recommended size which 1000*1000 which is the 'large' size (will store it in 'large' folder), but then we're going to use 'Intervention' package to get another two sizes: 500*500 which is the 'medium' size (will store it in 'medium' folder) and 250*250 which is the 'small' size (will store it in 'small' folder) --}}
                                     <input type="file" class="form-control" id="product_image" name="product_image">
                                     {{-- Show the admin image if exists --}}
 
