@@ -37,7 +37,6 @@ class AdminController extends Controller
         // Correcting issues in the Skydash Admin Panel Sidebar using Session:
         Session::put('page', 'dashboard');
 
-
         $sectionsCount = Section::count();
         $categoriesCount = Category::count();
         $productsCount = Product::count();

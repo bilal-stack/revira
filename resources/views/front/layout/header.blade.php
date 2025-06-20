@@ -105,7 +105,7 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarBrandsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Brands
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarBrandsDropdown">
+                                <ul class="dropdown-menu" aria-labelledby="navbarBrandsDropdown" style="max-height: 200px;overflow-y: auto;  ">
                                     @foreach($headerBrands as $brand)
                                         <li><a class="dropdown-item" href="{{$brand['name']}}" onclick="window.location.href='{{ url('shop') }}'">{{$brand['name']}}</a></li>
                                     @endforeach

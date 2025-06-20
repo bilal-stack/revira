@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\URL;
 
@@ -28,6 +29,10 @@ class AppServiceProvider extends ServiceProvider
         \Illuminate\Pagination\Paginator::useBootstrap();
         if (app()->environment('local')) {
             // URL::forceScheme('https');
+        }
+
+        if (Auth::guard('admin')->check() && Auth::guard('admin')->user()->type === 'vendor') {
+            config(['chatify.guard' => 'admin']);
         }
     }
 }

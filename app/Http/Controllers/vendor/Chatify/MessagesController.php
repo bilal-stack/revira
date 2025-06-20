@@ -232,6 +232,7 @@ class MessagesController extends Controller
      */
     public function getContacts(Request $request)
     {
+        //dd(Auth::user());
         // get all users that received/sent message from/to [Auth user]
         $users = Message::join('users',  function ($join) {
             $join->on('ch_messages.from_id', '=', 'users.id')
@@ -339,28 +340,77 @@ class MessagesController extends Controller
      * @param Request $request
      * @return JsonResponse|void
      */
+//    public function search(Request $request)
+//    {
+//        $getRecords = null;
+//        $input = trim(filter_var($request['input']));
+//        $records = User::where('id','!=',Auth::user()->id)
+//                    ->where('name', 'LIKE', "%{$input}%")
+//                    ->paginate($request->per_page ?? $this->perPage);
+//        foreach ($records->items() as $record) {
+//            $getRecords .= view('Chatify::layouts.listItem', [
+//                'get' => 'search_item',
+//                'user' => Chatify::getUserWithAvatar($record),
+//            ])->render();
+//        }
+//        if($records->total() < 1){
+//            $getRecords = '<p class="message-hint center-el"><span>Nothing to show.</span></p>';
+//        }
+//        // send the response
+//        return Response::json([
+//            'records' => $getRecords,
+//            'total' => $records->total(),
+//            'last_page' => $records->lastPage()
+//        ], 200);
+//    }
+
     public function search(Request $request)
     {
-        $getRecords = null;
-        $input = trim(filter_var($request['input']));
-        $records = User::where('id','!=',Auth::user()->id)
-                    ->where('name', 'LIKE', "%{$input}%")
-                    ->paginate($request->per_page ?? $this->perPage);
-        foreach ($records->items() as $record) {
-            $getRecords .= view('Chatify::layouts.listItem', [
-                'get' => 'search_item',
-                'user' => Chatify::getUserWithAvatar($record),
+        $input = trim($request->input('input'));
+
+        // 1. Build the base query: every user you've ever messaged with
+        $query = Message::join('users', function ($join) {
+            $join->on('ch_messages.from_id', '=', 'users.id')
+                ->orOn('ch_messages.to_id',   '=', 'users.id');
+        })
+            ->where(function ($q) {
+                $q->where('ch_messages.from_id', Auth::id())
+                    ->orWhere('ch_messages.to_id',   Auth::id());
+            })
+            ->where('users.id', '!=', Auth::id());
+
+        // 2. Apply the name filter
+        if ($input !== '') {
+            $query->where('users.name', 'LIKE', "%{$input}%");
+        }
+
+        // 3. Group and sort by most recent message
+        $contacts = $query
+            ->select('users.*', DB::raw('MAX(ch_messages.created_at) as last_message_at'))
+            ->groupBy('users.id')
+            ->orderByDesc('last_message_at')
+            ->paginate($request->per_page ?? $this->perPage);
+
+        // 4. Render each contact with Chatify’s listItem view
+        $html = '';
+        foreach ($contacts->items() as $user) {
+            $html .= view('Chatify::layouts.listItem', [
+                'get'  => 'search_item',
+                'user' => Chatify::getUserWithAvatar($user),
             ])->render();
         }
-        if($records->total() < 1){
-            $getRecords = '<p class="message-hint center-el"><span>Nothing to show.</span></p>';
+
+        // 5. Fallback if none found
+        if ($contacts->total() < 1) {
+            $html = '<p class="message-hint center-el"><span>No recent chats found.</span></p>';
         }
-        // send the response
-        return Response::json([
-            'records' => $getRecords,
-            'total' => $records->total(),
-            'last_page' => $records->lastPage()
-        ], 200);
+
+        // 6. Return the same JSON structure Chatify expects
+        return response()->json([
+            'records'   => $html,
+            'total'     => $contacts->total(),
+            'last_page' => $contacts->lastPage(),
+        ]);
     }
 
     /**
