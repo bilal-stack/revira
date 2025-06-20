@@ -12,13 +12,14 @@ class ChatifyAuthenticate
     {
         // 1) If a web‑guard user is logged in, let them through
         if (Auth::guard('web')->check()) {
+            //dd(Auth::user());
             return $next($request);
         }
 
         // 2) If an admin‑guard user is logged in, let them through
         if (Auth::guard('admin')->check() && Auth::guard('admin')->user()->type == 'vendor') {
             $vendor = Auth::guard('admin')->user();
-
+            //dd($vendor);
             // Find the proxy User row you created:
             $user = User::where('vendor_id', $vendor->vendor_id)->first();
 

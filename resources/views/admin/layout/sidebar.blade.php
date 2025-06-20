@@ -188,10 +188,33 @@
 
         @php
             $vendorId = userFromVendor(auth()->guard('admin')->user()->vendor_id);
+
+                use App\Models\ChMessage;
+                $unseenCount = \App\Models\ChMessage::where('to_id', $vendorId)
+                    ->where('seen', 0)
+                    ->count();
         @endphp
         <li class="nav-item">
-            <a style="background: #ff5400 !important; color: white !important" class="nav-link" href="{{url('chat')}}">
-                <i class="icon-inbox menu-icon text-white"></i>
+            <a href="{{ url('chat') }}"
+               class="nav-link position-relative text-white d-flex align-items-center"
+               style="background: #ff5400 !important; padding: .5rem 1rem;">
+
+                <i class="icon-inbox menu-icon me-2 text-white"></i>
+
+                @if($unseenCount > 0)
+                    <span class="badge rounded-pill bg-danger"
+                          style="
+                    position: absolute;
+                    /*top: 0.2rem;*/
+                    right: 0.6rem;
+                    font-size: 0.75rem;        /* ↑ increased from .65rem */
+                    line-height: 1;
+                    padding: 0.35em 0.6em;     /* ↑ increased padding */
+                  ">
+                {{ $unseenCount > 99 ? '+99' : $unseenCount }}
+            </span>
+                @endif
+
                 <span class="menu-title">Inbox</span>
             </a>
         </li>

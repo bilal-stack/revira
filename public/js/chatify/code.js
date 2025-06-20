@@ -648,6 +648,18 @@ channel.bind("messaging", function (data) {
     "new_message",
     !(data.from_id == getMessengerId() && data.to_id == auth_id)
   );
+
+    if (Notification.permission === "granted") {
+        const notification = new Notification("Revira | New Message", {
+            body: "You received a new message",
+            icon: "/path-to-icon.png", // Optional icon
+        });
+
+        // Optional: click handler
+        notification.onclick = function () {
+            window.focus();
+        };
+    }
 });
 
 // listen to typing indicator
@@ -1251,6 +1263,9 @@ function setActiveStatus(status) {
  *-------------------------------------------------------------
  */
 $(document).ready(function () {
+    if ("Notification" in window && Notification.permission !== "granted") {
+        Notification.requestPermission();
+    }
   // get contacts list
   getContacts();
 
