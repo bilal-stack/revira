@@ -67,6 +67,37 @@ function addSubscriber() {
 }
 
 $(document).ready(function() {
+    $('#search-input').on('keyup', function () {
+        const query = $(this).val();
+        if (query.length > 1) {
+            $.ajax({
+                url: '/search-suggestions',
+                method: 'GET',
+                data: { query },
+                success: function (data) {
+                    let suggestions = '';
+                    data.forEach(item => {
+                        suggestions += `
+                            <a href="${item.url}" class="autocomplete-item">
+                                <img src="${item.image}" alt="${item.name}" />
+                                <span>${item.name}</span>
+                            </a>`;
+                    });
+                    $('#search-results').html(suggestions).show();
+                }
+            });
+        } else {
+            $('#search-results').hide();
+        }
+    });
+
+    // Optional: hide on outside click
+    $(document).on('click', function (e) {
+        if (!$(e.target).closest('#search-results, #search-input').length) {
+            $('#search-results').hide();
+        }
+    });
+
     $('#getPrice').change(function() {
         // console.log(this);
         var size       = $(this).val();

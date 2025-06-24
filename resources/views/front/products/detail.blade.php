@@ -151,9 +151,9 @@
 
                         @if ($getDiscountPrice > 0)
                             @php
-                                $perPrice = $getDiscountPrice / $productDetails['quantity'];
+                                $perPrice = round($getDiscountPrice / $productDetails['quantity'], 2);
                                 $perPrice = currency($perPrice, $from = null, $currency);
-                                    $discountPrice = currency($getDiscountPrice, $from = null, $currency);
+                                $discountPrice = currency($getDiscountPrice, $from = null, $currency);
                             @endphp
                             <div class="col-md-2 pb-10">
                                 <span class="badge bg-warning" style="background-color: #ff5400!important; font-size: 14px; padding: 8px 12px;">

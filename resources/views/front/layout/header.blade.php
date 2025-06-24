@@ -7,7 +7,74 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
         display: block;
         padding: unset;
     }
-    </style>
+    #search-results {
+        position: absolute;
+        top: 100%; /* Just below the input */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 500px;
+        max-height: 300px;
+        overflow-y: auto;
+        background: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        z-index: 1000;
+        border-radius: 6px;
+        padding: 8px 0;
+    }
+
+    /* Each item */
+    .autocomplete-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 16px;
+        text-decoration: none;
+        color: #333;
+        transition: background 0.2s;
+    }
+
+    .autocomplete-item img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    .autocomplete-item:hover {
+        background-color: #f3f4f6;
+    }
+
+    .autocomplete-results {
+        position: absolute;
+        background: #fff;
+        border: 1px solid #ddd;
+        width: 100%;
+        z-index: 1000;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+    .autocomplete-results div {
+        padding: 8px;
+        cursor: pointer;
+    }
+    .autocomplete-results div:hover {
+        background-color: #f1f1f1;
+    }
+    .autocomplete-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px;
+        text-decoration: none;
+        color: #333;
+        border-bottom: 1px solid #eee;
+    }
+
+    .autocomplete-item:hover {
+        background-color: #f7f7f7;
+    }
+</style>
 
 <div class="topbar">
     <div class="container-topbar">
@@ -131,9 +198,11 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
                                 </select>
                             </div>
                             <div class="box-keysearch">
-                                <input class="form-control font-xs" type="text" name="search"
+                                <input id="search-input" class="form-control font-xs" type="text" name="search"
                                     @if (isset($_REQUEST['search']) && !empty($_REQUEST['search'])) value="{{ $_REQUEST['search'] }}" @endif
                                     placeholder="Search for items">
+
+                                <div id="search-results" class="autocomplete-results"></div>
                             </div>
                         </form>
                     </div>

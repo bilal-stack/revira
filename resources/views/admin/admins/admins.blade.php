@@ -19,7 +19,7 @@
                                             <th>Mobile</th>
                                             <th>Email</th>
                                             <th>Image</th>
-                                            <th>Active</th>
+                                            <th>Login</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>

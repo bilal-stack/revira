@@ -811,7 +811,7 @@ class AdminController extends Controller
     { // Update Admin Status using AJAX in admins.blade.php
         if ($request->ajax()) { // if the request is coming via an AJAX call
             $data = $request->all(); // Getting the name/value pairs array that are sent from the AJAX request (AJAX call)
-            // dd($data);
+
 
             if ($data['status'] == 'Active') { // $data['status'] comes from the 'data' object inside the $.ajax() method    // reverse the 'status' from (ative/inactive) 0 to 1 and 1 to 0 (and vice versa)
                 $status = 0;
@@ -825,6 +825,10 @@ class AdminController extends Controller
 
             // (!! Database Transaction !!) UPDATE the `status` columns in BOTH `admins` and `vendors` tables (I did the code of `vendors` myself!) (!! Database Transaction !!)
             Admin::where('id', $data['admin_id'])->update(['status' => $status]); // $data['admin_id'] comes from the 'data' object inside the $.ajax() method
+            //Vendor::where('id', $data['admin_id'])->update(['status' => $status]);
+//            $admin->update(['status' => $status]);
+//            dd($admin);
+
             // echo '<pre>', var_dump($data), '</pre>';
 
             // Send a THIRD Approval Email to the vendor when the superadmin or admin approves their account (`status` column in the `admins` table becomes 1 instead of 0) so that they can add their products on the website now

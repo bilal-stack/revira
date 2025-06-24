@@ -53,9 +53,9 @@
                             $getDiscountPrice = \App\Models\Product::getDiscountPrice($product['id']);
                         @endphp
                         @include('front.layout.price')
-                        <p class="list-features">
-                            {{ $product['description'] }}
-                        </p>
+{{--                        <p class="list-features">--}}
+{{--                            {{ $product['description'] }}--}}
+{{--                        </p>--}}
                         <div class="mt-20 box-add-cart"><a class="btn btn-cart" href="{{ url('product/' . $product['id']) }}">Add To Cart</a></div>
                     </div>
                 </div>

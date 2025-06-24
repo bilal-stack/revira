@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -25,6 +26,33 @@ use App\Models\OrdersProduct;
 
 class ProductsController extends Controller
 {
+    public function searchSuggestions(Request $request)
+    {
+        $query = $request->input('query');
+
+        if (!$query) {
+            return response()->json([]);
+        }
+
+        $cacheKey = 'search_products_' . md5($query);
+
+        $results = Cache::remember($cacheKey, now()->addMinutes(10), function () use ($query) {
+            $products = Product::where('product_name', 'LIKE', "%{$query}%")
+                ->limit(10)
+                ->get(['id', 'product_name', 'product_image']);
+
+            return $products->map(function ($product) {
+                return [
+                    'name' => $product->product_name,
+                    'image' => 'front/images/product_images/small/' . $product->product_image,
+                    'url' => url('product/' . $product->id),
+                ];
+            });
+        });
+
+        return response()->json($results);
+    }
+
     // match() method is used for the HTTP 'GET' requests to render listing.blade.php page and the HTTP 'POST' method for the AJAX request of the Sorting Filter or the HTML Form submission and jQuery for the Sorting Filter WITHOUT AJAX, AND ALSO for submitting the Search Form in listing.blade.php    // e.g.    /men    or    /computers
     // Search Form
     public function listing(Request $request)
