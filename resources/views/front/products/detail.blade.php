@@ -294,6 +294,13 @@
                                         </div>
                                     @endif
 
+                                    <div class="col-6">
+                                        <a href="{{url('chat/1')}}" class="btn btn-cart w-100 text-white d-flex align-items-center justify-content-center"
+                                           style="max-width: unset; background-color: #ff5400; border-color: #ff5400;">
+                                            <i class="fa-regular fa-message me-2"></i> MESSAGE THE SELLER
+                                        </a>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -501,9 +508,9 @@
                                         $getDiscountPrice = \App\Models\Product::getDiscountPrice($product['id']);
                                     @endphp
                                     @include('front.layout.price')
-                                    <p class="list-features">
-                                        {{ $product['description'] }}
-                                    </p>
+{{--                                    <p class="list-features">--}}
+{{--                                        {{ $product['description'] }}--}}
+{{--                                    </p>--}}
                                     <div class="mt-20 box-add-cart"><a class="btn btn-cart" href="{{url('shop-cart')}}">Add To Cart</a></div>
                                 </div>
                             </div>

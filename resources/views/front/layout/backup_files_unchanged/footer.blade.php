@@ -68,9 +68,9 @@
                             <li>
                                 <a href="{{ url('user/account') }}">My Account</a>
                             </li>
-                            <li>
-                                <a href="{{ url('user/orders') }}">My Orders</a>
-                            </li>
+{{--                            <li>--}}
+{{--                                <a href="{{ url('user/orders') }}">My Orders</a>--}}
+{{--                            </li>--}}
                         </ul>
                     </div>
                 </div>

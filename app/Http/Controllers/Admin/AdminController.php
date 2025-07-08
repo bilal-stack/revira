@@ -416,11 +416,6 @@ class AdminController extends Controller
                     ]);
                 }
 
-                User::where('vendor_id', Auth::guard('admin')->user()->vendor_id)->update([
-                   'name' =>  $data['shop_name']
-                ]);
-
-
                 return redirect()->back()->with('success_message', 'Vendor details updated successfully!');
             }
 
@@ -772,10 +767,6 @@ class AdminController extends Controller
                 'shop_image' => $shop_image,
             ]);
         }
-
-        User::where('vendor_id', $id)->update([
-            'name' =>  $data['shop_name']
-        ]);
 
         return true;
         //return redirect()->back()->with('success_message', 'Vendor details updated successfully!');

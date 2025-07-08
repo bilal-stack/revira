@@ -183,11 +183,11 @@ class ProductsController extends Controller
                 'quantity.numeric' => 'Valid Bundle pieces quantity is required',
             ];
 
-            if (Auth::guard('admin')->user()->type == 'superadmin') {
-                $rules['vendor_id'] = 'required|exists:vendors,id';
-                $customMessages['vendor_id.required'] = 'Vendor selection is required';
-                $customMessages['vendor_id.exists'] = 'Selected vendor does not exist';
-            }
+//            if (Auth::guard('admin')->user()->type == 'superadmin') {
+//                $rules['vendor_id'] = 'required|exists:vendors,id';
+//                $customMessages['vendor_id.required'] = 'Vendor selection is required';
+//                $customMessages['vendor_id.exists'] = 'Selected vendor does not exist';
+//            }
 
             $this->validate($request, $rules, $customMessages);
 

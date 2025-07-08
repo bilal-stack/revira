@@ -213,7 +213,7 @@ Route::namespace('App\Http\Controllers\Front')->group(function () {
     Route::get('/careers', 'IndexController@careers');
     Route::get('/wishlist', 'IndexController@wishlist');
     Route::get('/search-suggestions', 'ProductsController@searchSuggestions');
-    Route::get('/vendors/list', 'IndexController@vendors');
+    //Route::get('/vendors/list', 'IndexController@vendors');
 //    Route::get('/vendors/{username}', ['as' => 'vendor-detail', 'uses' => 'IndexController@vendors']);
 
 

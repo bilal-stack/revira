@@ -40,7 +40,7 @@
                                             <th>Product Image</th>
                                             <th>Category</th> {{-- Through the relationship --}}
                                             <th>Section</th>  {{-- Through the relationship --}}
-                                            <th>Added by</th> {{-- Through the relationship --}}
+{{--                                            <th>Added by</th>--}}
                                             <th>Status</th>
                                             <th>Actions</th>
                                         </tr>
@@ -71,13 +71,13 @@
                                                     <td>-</td>
                                                 @endif
                                                 {{-- Through the relationship --}}
-                                                <td>
-                                                    @if ($product['admin_type'] == 'vendor')
-                                                        <a target="_blank" href="{{ url('admin/view-vendor-details/' . $product['admin_id']) }}">{{ ucfirst($product['admin_type']) }}</a>
-                                                    @else
-                                                        {{ ucfirst($product['admin_type']) }}
-                                                    @endif
-                                                </td>
+{{--                                                <td>--}}
+{{--                                                    @if ($product['admin_type'] == 'vendor')--}}
+{{--                                                        <a target="_blank" href="{{ url('admin/view-vendor-details/' . $product['admin_id']) }}">{{ ucfirst($product['admin_type']) }}</a>--}}
+{{--                                                    @else--}}
+{{--                                                        {{ ucfirst($product['admin_type']) }}--}}
+{{--                                                    @endif--}}
+{{--                                                </td>--}}
                                                 <td>
                                                     @if ($product['status'] == 1)
                                                         <a class="updateProductStatus" id="product-{{ $product['id'] }}" product_id="{{ $product['id'] }}" href="javascript:void(0)"> {{-- Using HTML Custom Attributes. Check admin/js/custom.js --}}

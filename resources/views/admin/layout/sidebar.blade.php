@@ -187,10 +187,9 @@
         @endif
 
         @php
-            $vendorId = userFromVendor(auth()->guard('admin')->user()->vendor_id);
-
+            //$vendorId = userFromVendor(auth()->guard('admin')->user()->vendor_id);
                 use App\Models\ChMessage;
-                $unseenCount = \App\Models\ChMessage::where('to_id', $vendorId)
+                $unseenCount = \App\Models\ChMessage::where('to_id', \Illuminate\Support\Facades\Auth::guard('admin')->user()->id)
                     ->where('seen', 0)
                     ->count();
         @endphp

@@ -49,7 +49,7 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect('my-account');
+        //return redirect('my-account');
 
         return redirect(RouteServiceProvider::HOME);
     }

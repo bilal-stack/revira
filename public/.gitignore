@@ -4,3 +4,5 @@
 # .env.backup
 .phpunit.result.cache
 Homestead.json
+front/images/product_images
+front/images/product_videos

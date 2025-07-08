@@ -9,10 +9,10 @@
 
 
 <div class="d-inline-block box-dropdown-cart"><span class="font-lg icon-list icon-cart"><span>Cart</span><span class="number-item font-xs">{{$countCartItems}}</span></span>
-
     <div class="dropdown-cart">
         @foreach ($getCartItems as $item) {{-- $getCartItems is passed in from cart() method in Front/ProductsController.php --}}
         @php
+
             $getDiscountAttributePrice = \App\Models\Product::getDiscountAttributePrice($item['product_id'], $item['size']);
             @endphp
         <div class="item-cart mb-20">

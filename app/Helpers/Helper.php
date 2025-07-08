@@ -3,9 +3,10 @@
 if (!function_exists('userFromVendor')) {
     function userFromVendor($vendorId)
     {
-        return \Illuminate\Support\Facades\Cache::remember("vendor_user_$vendorId", 60, function () use ($vendorId) {
-            return \App\Models\User::where('vendor_id', $vendorId)->value('id');
-        });
+//        return \Illuminate\Support\Facades\Cache::remember("vendor_user_$vendorId", 60, function () use ($vendorId) {
+//            return \App\Models\User::where('vendor_id', $vendorId)->value('id');
+//        });
+        return 0;
     }
 }
 

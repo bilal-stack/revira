@@ -172,10 +172,13 @@ class Product extends Model
 
     public static function getProductImage($product_id)
     { // this method is used in front/orders/order_details.blade.php
-        $getProductImage = Product::select('product_image')->where('id', $product_id)->first()->toArray();
-
-
-        return $getProductImage['product_image'];
+        $getProductImage = Product::select('product_image')->where('id', $product_id)->first();
+            if($getProductImage) {
+                return $getProductImage->toArray()['product_image'];
+            } else {
+                //dd($getProductImage, $product_id);
+                return null;
+            }
     }
 
 

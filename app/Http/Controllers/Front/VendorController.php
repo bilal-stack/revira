@@ -96,15 +96,6 @@ class VendorController extends Controller
 
             $admin->save();
 
-            User::create([
-                'name' => $vendor->name,
-                'email' => 'vendor_' . $vendor->id . '@vendors.local',
-                'vendor_id' => $vendor->id,
-                'password' => Hash::make(Str::random(16)), // random unusable password
-                'status' => 0, // optional
-            ]);
-
-
             // Send the Confirmation Email to the new vendor who has just registered
             $email = $data['email']; // the vendor's email
 

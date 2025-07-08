@@ -1281,7 +1281,7 @@ class ProductsController extends Controller
             $order->save(); // INSERT data INTO the `orders` table
 
             // Get the last generated `id` of the the last inserted order in the `orders` table (to be able to store it in the `order_id` column in the `orders_products` table)
-            $order_id = DB::getPdo()->lastInsertId();
+            $order_id = $order->id;
 
 
             // INSERT/Fill in the data of the order in the `orders_products` table (after filling in the `orders` table)

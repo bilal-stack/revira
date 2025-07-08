@@ -34,6 +34,14 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
         transition: background 0.2s;
     }
 
+    .autocomplete-item:hover {
+        color: #ff5400 !important;
+    }
+
+    .autocomplete-item-span:hover {
+        color: #ff5400 !important;
+    }
+
     .autocomplete-item img {
         width: 40px;
         height: 40px;
@@ -41,9 +49,9 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
         border-radius: 4px;
     }
 
-    .autocomplete-item:hover {
-        background-color: #f3f4f6;
-    }
+    /*.autocomplete-item:hover {*/
+    /*    background-color: white;*/
+    /*}*/
 
     .autocomplete-results {
         position: absolute;
@@ -70,19 +78,14 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
         color: #333;
         border-bottom: 1px solid #eee;
     }
-
-    .autocomplete-item:hover {
-        background-color: #f7f7f7;
-    }
 </style>
 
 <div class="topbar">
     <div class="container-topbar">
         <div class="menu-topbar-left d-none d-xl-block">
             <ul class="nav-small">
-
                 <li><a class="font-xs" href="{{ url('about-us') }}">About Us</a></li>
-                <li><a class="font-xs" href="{{ url('vendor/login-register') }}">Open a shop</a></li>
+{{--                <li><a class="font-xs" href="{{ url('vendor/login-register') }}">Open a shop</a></li>--}}
             </ul>
         </div>
         <div class="info-topbar text-center d-none d-xl-block">
@@ -165,7 +168,7 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
                 <div class="header-nav">
                     <nav class="nav-main-menu d-none d-xl-block">
                         <ul class="main-menu">
-                            <li><a href="{{ url('vendors/list') }}">Suppliers</a></li>
+{{--                            <li><a href="{{ url('vendors/list') }}">Suppliers</a></li>--}}
                             <li><a href="{{ url('shop') }}">Shop</a></li>
 
                             <li class="nav-item dropdown">
@@ -225,10 +228,10 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
                                 @if (!Auth::check())
                                     <li><a href="{{ url('login') }}">User Login</a></li>
                                     <li><a href="{{ url('user/login-register') }}">User Register</a></li>
-                                    <li><a href="{{ url('vendor/login-register') }}">Vendor Login</a></li>
+{{--                                    <li><a href="{{ url('vendor/login-register') }}">Vendor Login</a></li>--}}
                                 @else
                                     <li><a href="{{ url('user/account') }}">My Account</a></li>
-                                    <li><a href="{{ url('user/orders') }}">My Orders</a></li>
+{{--                                    <li><a href="{{ url('user/orders') }}">My Orders</a></li>--}}
                                     <li><a href="{{ route('user.logout') }}">Sign out</a></li>
                                 @endif
 
@@ -297,7 +300,7 @@ $categories = \App\Models\Category::with('subCategories')->where('parent_id', 0)
                     <nav class="mt-15">
                         <ul class="mobile-menu font-heading">
                             <li><a href="{{ url('shop') }}">Shop</a></li>
-                            <li><a href="{{ url('vendors/list') }}">Vendors</a></li>
+{{--                            <li><a href="{{ url('vendors/list') }}">Vendors</a></li>--}}
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Categories
