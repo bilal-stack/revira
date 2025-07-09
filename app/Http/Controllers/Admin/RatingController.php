@@ -10,7 +10,7 @@ use App\Models\Rating;
 
 class RatingController extends Controller
 {
-    // Render admin/ratings/ratings.blade.php page in the Admin Panel    
+    // Render admin/ratings/ratings.blade.php page in the Admin Panel
     public function ratings() {
         // Highlight the 'Product Ratings & Reviews' tab in the 'Ratings Management' module in the Admin Panel left Sidebar (admin/layout/sidebar.blade.php) on the left in the Admin Panel. Correcting issues in the Skydash Admin Panel Sidebar using Session
         Session::put('page', 'ratings');
@@ -22,7 +22,7 @@ class RatingController extends Controller
         return view('admin.ratings.ratings')->with(compact('ratings'));
     }
 
-    // Update Rating Status (active/inactive) via AJAX in admin/ratings/ratings.blade.php, check admin/js/custom.js    
+    // Update Rating Status (active/inactive) via AJAX in admin/ratings/ratings.blade.php, check admin/js/custom.js
     public function updateRatingStatus(Request $request) {
         if ($request->ajax()) { // if the request is coming via an AJAX call
             $data = $request->all(); // Getting the name/value pairs array that are sent from the AJAX request (AJAX call)
@@ -45,12 +45,12 @@ class RatingController extends Controller
         }
     }
 
-    // Delete a Rating via AJAX in admin/ratings/ratings.blade.php, check admin/js/custom.js    
+    // Delete a Rating via AJAX in admin/ratings/ratings.blade.php, check admin/js/custom.js
     public function deleteRating($id) { // Route Parameters: Required Parameters: https://laravel.com/docs/9.x/routing#required-parameters
         Rating::where('id', $id)->delete();
 
         $message = 'Rating has been deleted successfully!';
-        
+
 
         return redirect()->back()->with('success_message', $message);
     }

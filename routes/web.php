@@ -5,6 +5,7 @@ use App\Http\Controllers\Front\ProductsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\UserController;
 use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,23 +16,13 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/test-cart-add', function () {
-    $request = new Request([
-        'product_id' => 1,   // Dummy product_id (ensure this exists in your DB)
-        'size'       => '64GB-4GB', // Dummy size (ensure this matches an attribute in your DB)
-        'quantity'   => 2    // Dummy quantity
-    ]);
-
-    $controller = new ProductsController; // Replace with your controller
-    return $controller->cartAdd($request);
-});
+// Stripe webhook route:
+Route::post('stripe/webhook', 'StripeWebhookController@handle');
 Route::get('user/login-register', ['as' => 'login', 'uses' => 'UserController@loginRegister']); // 'as' => 'login'    is Giving this route a name 'login' route in order for the 'auth' middleware ('auth' middleware is the Authenticate.php) to redirect to the right page
 Route::get('logout', [UserController::class, 'userLogout'])->name('user.logout');
 Route::post('cart/add', 'ProductsController@cartAdd');
 
 require __DIR__ . '/auth.php';
-
 
 
 // Note: OUR WEBSITE WILL HAVE TWO MAJOR SECTIONS: ADMIN ROUTES (for the Admin Panel) & FRONT ROUTES (for the Frontend section routes)!:
@@ -159,8 +150,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         // Render admin/shipping/edit_shipping_charges.blade.php page in case of HTTP 'GET' request ('Edit/Update Shipping Charges'), or hadle the HTML Form submission in the same page in case of HTTP 'POST' request
         Route::match(['get', 'post'], 'edit-shipping-charges/{id}', 'ShippingController@editShippingCharges');
 
-        Route::match(['get', 'post'],'add-shipping-charges', 'ShippingController@addShippingCharges');
-
+        Route::match(['get', 'post'], 'add-shipping-charges', 'ShippingController@addShippingCharges');
 
 
         // Newsletter Subscribers module
@@ -172,7 +162,6 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
         // Delete a Subscriber via AJAX in admin/subscribers/subscribers.blade.php, check admin/js/custom.js
         Route::get('delete-subscriber/{id}', 'NewsletterController@deleteSubscriber');
-
 
 
         // Export subscribers (`newsletter_subscribers` database table) as an Excel file using Maatwebsite/Laravel Excel Package in admin/subscribers/subscribers.blade.php
@@ -191,16 +180,8 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 });
 
 
-
-
-
-
 // User download order PDF invoice (We'll use the same viewPDFInvoice() function (but with different routes/URLs!) to render the PDF invoice for 'admin'-s in the Admin Panel and for the user to download it!) (we created this route outside outside the Admin Panel routes so that the user could use it!)
 Route::get('orders/invoice/download/{id}', 'App\Http\Controllers\Admin\OrderController@viewPDFInvoice');
-
-
-
-
 
 
 // Second: FRONT section routes:
@@ -263,7 +244,6 @@ Route::namespace('App\Http\Controllers\Front')->group(function () {
     Route::post('cart/delete', 'ProductsController@cartDelete');
 
 
-
     // Render User Login/Register page (front/users/login_register.blade.php)
     Route::get('user/login-register', ['as' => 'login', 'uses' => 'UserController@loginRegister']); // 'as' => 'login'    is Giving this route a name 'login' route in order for the 'auth' middleware ('auth' middleware is the Authenticate.php) to redirect to the right page
 
@@ -300,8 +280,6 @@ Route::namespace('App\Http\Controllers\Front')->group(function () {
     Route::post('add-rating', 'RatingController@addRating');
 
 
-
-
     // Protecting the routes of user (user must be authenticated/logged in) (to prevent access to these links while being unauthenticated/not being logged in (logged out))
     Route::group(['middleware' => ['auth']], function () {
 
@@ -335,6 +313,13 @@ Route::namespace('App\Http\Controllers\Front')->group(function () {
         Route::get('/wishlist/{id}', 'IndexController@addProductWishlist');
         Route::get('/wishlist/remove/{id}', 'IndexController@removeProductWishlist');
 
+        // Stripe routes:
+        Route::get('stripe', 'StripeController@stripe');
+
+        Route::get('stripe/success', 'StripeController@success')->name('stripe.success');
+
+        Route::get('stripe/cancel', 'StripeController@cancel')->name('stripe.cancel');
+
         // PayPal routes:
         // PayPal payment gateway integration in Laravel (this route is accessed from checkout() method in Front/ProductsController.php). Rendering front/paypal/paypal.blade.php page
         Route::get('paypal', 'PaypalController@paypal');
@@ -347,7 +332,6 @@ Route::namespace('App\Http\Controllers\Front')->group(function () {
 
         // PayPal failed payment
         Route::get('error', 'PaypalController@error');
-
 
 
         // iyzipay (iyzico) routes:    // iyzico Payment Gateway integration in/with Laravel

@@ -1,5 +1,6 @@
 @php
     $getDiscountPrice = \App\Models\Product::getDiscountPrice($product['id']);
+    //dd($product);
     $perPrice = round($getDiscountPrice / $product['quantity'], 2);
     $currency = session('currency', 'GBP');
     $price = currency($product['product_price'], $from = null, $currency);

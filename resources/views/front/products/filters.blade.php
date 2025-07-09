@@ -1,7 +1,6 @@
 @php
     $categories = \App\Models\Category::inRandomOrder()->get();
     $productFilters = \App\Models\ProductsFilter::productFilters(); // Get all the (enabled/active) Filters
-        // dd($productFilters);
 @endphp
 
 <div class="sidebar-border mb-0">

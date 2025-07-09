@@ -128,7 +128,6 @@ class IndexController extends Controller
         $products = [];
         foreach ($wishlists as $wishlist) {
             $products[] = Wishlist::getWishListItem($wishlist->item_id, Auth::user()->id);
-            dd(Wishlist::getWishListItem($wishlist->item_id, Auth::user()->id));
         }
 
         return $products;

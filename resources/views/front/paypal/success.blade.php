@@ -11,7 +11,7 @@
                 <ul class="bread-crumb">
                     <li class="has-separator">
                         <i class="ion ion-md-home"></i>
-                        <a href="index.html">Home</a>
+                        <a href="{{url('/')}}">Home</a>
                     </li>
                     <li class="is-marked">
                         <a href="#">Thanks</a>
@@ -28,7 +28,7 @@
                 <div class="col-lg-12" align="center">
                     <h3>YOUR PAYMENT HAS BEEN CONFIRMED</h3>
                     <p>Thanks for the Payment. We will process your order very soon.</p>
-                    <p>Your order number is {{ Session::get('order_id') }} and total amount paid is INR {{ Session::get('grand_total') }}</p> {{-- The Order Number is the order `id` in the `orders` database table. We stored the order id in Session in checkout() method in Front/ProductsController.php --}} {{-- Retrieving Data: https://laravel.com/docs/10.x/session#retrieving-data --}}
+                    <p>Your order Total amount paid is {{ Session::get('grand_total') }}</p> {{-- The Order Number is the order `id` in the `orders` database table. We stored the order id in Session in checkout() method in Front/ProductsController.php --}} {{-- Retrieving Data: https://laravel.com/docs/10.x/session#retrieving-data --}}
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
 
 
 
-{{-- Forget/Remove some data in the Session after making the PayPal payment --}} 
+{{-- Forget/Remove some data in the Session after making the PayPal payment --}}
 @php
     use Illuminate\Support\Facades\Session;
 

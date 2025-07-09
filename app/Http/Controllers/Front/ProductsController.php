@@ -171,7 +171,6 @@ class ProductsController extends Controller
             return view('front.products.ajax_products_listing')->with(compact('categoryDetails', 'categoryProducts', 'url', 'meta_title', 'meta_description', 'meta_keywords'));
 
         } else { // Sorting Filter WITHOUT AJAX (using the HTML <form> and jQuery) Or handling the website Search Form (in front/layout/header.blade.php) BOTH in front/products/listing.blade.php
-
             // Website Search Form (to search for all website products). Check the HTML Form in front/layout/header.blade.php
             if (isset($_REQUEST['search']) && !empty($_REQUEST['search'])) { // If the Search Form is used, handle the Search Form submission
                 // New Arrivals    // Check front/layout/header.blade.php
@@ -303,6 +302,7 @@ class ProductsController extends Controller
                     // dd($categoryProducts);
 
                 } else { // The Search Bar
+
                     $search_product = $_REQUEST['search'];
 
                     // We fill in the $categoryDetails array MANUALLY with the same indexes/keys that come from the categoryDetails() method in Category.php model (because in either cases of the if-else statement, we pass in $categoryDetails variable to the view down below)
@@ -324,6 +324,7 @@ class ProductsController extends Controller
                         'products.product_price',
                         'products.product_discount',
                         'products.product_image',
+                        'products.quantity',
                         'products.description'
                     )->with('brand')->join( // Joins: Inner Join Clause: https://laravel.com/docs/9.x/queries#inner-join-clause    // moving the paginate() method after checking for the sorting filter <form>    // Paginating Eloquent Results: https://laravel.com/docs/9.x/pagination#paginating-eloquent-results    // Displaying Pagination Results Using Bootstrap: https://laravel.com/docs/9.x/pagination#using-bootstrap        // https://laravel.com/docs/9.x/queries#additional-where-clauses    // using the brand() relationship method in Product.php model    // Eager Loading (using with() method): https://laravel.com/docs/9.x/eloquent-relationships#eager-loading    // 'brand' is the relationship method name in Product.php model
                         'categories', // `categories` table
@@ -348,12 +349,11 @@ class ProductsController extends Controller
                 }
 
                 $categoryProducts = $categoryProducts->get();
-                // dd($categoryProducts);
 
+                $url = 'shop';
 
-                return view('front.products.listing')->with(compact('categoryDetails', 'categoryProducts'));
-            }
-            else { // If the Search Form is NOT used, render the listing.blade.php page with the Sorting Filter WITHOUT AJAX (using the HTML <form> and jQuery)
+                return view('front.products.listing')->with(compact('categoryDetails', 'categoryProducts', 'url'));
+            } else { // If the Search Form is NOT used, render the listing.blade.php page with the Sorting Filter WITHOUT AJAX (using the HTML <form> and jQuery)
                 $url = \Illuminate\Support\Facades\Route::getFacadeRoot()->current()->uri(); // Accessing The Current Route: https://laravel.com/docs/9.x/routing#accessing-the-current-route    // Accessing The Current URL: https://laravel.com/docs/9.x/urls#accessing-the-current-url
 
                 $categoryCount = Category::where([
@@ -539,7 +539,7 @@ class ProductsController extends Controller
 
         // Dynamic SEO (HTML meta tags): Check the HTML <meta> tags and <title> tag in front/layout/layout.blade.php
         $meta_title = $productDetails['product_name'];
-        if (!empty($productDetails['meta_title'])){
+        if (!empty($productDetails['meta_title'])) {
             $meta_title = $productDetails['meta_title'];
         }
         $meta_description = $productDetails['meta_description'];
@@ -568,7 +568,7 @@ class ProductsController extends Controller
     public function vendorProductListing(Request $request, $shop_name)
     {
         // Get vendor by shop name
-        $vendor = Vendor::whereHas('vendorbusinessdetails', function($query) use ($shop_name) {
+        $vendor = Vendor::whereHas('vendorbusinessdetails', function ($query) use ($shop_name) {
             $query->where('shop_name', $shop_name);
         })->with('vendorbusinessdetails')->first();
 
@@ -1381,6 +1381,8 @@ class ProductsController extends Controller
 
 
                 // PayPal payment gateway integration in Laravel
+            } elseif ($data['payment_gateway'] == 'Stripe') {
+                return redirect('/stripe');
             } elseif ($data['payment_gateway'] == 'Paypal') {
                 // redirect the user to the PayPalController.php (after saving the order details in `orders` and `orders_products` tables)
                 return redirect('/paypal');

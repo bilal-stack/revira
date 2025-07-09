@@ -151,34 +151,5 @@
 {{--                </div>--}}
 {{--            </div>--}}
         </div>
-        <div class="box-contact-support pt-80 pb-50 background-gray-50">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 mb-30 text-center text-lg-start">
-                        <h3 class="mb-5">We‘d love to here from you</h3>
-                        <p class="font-sm color-gray-700">Chat with our friendly team</p>
-                    </div>
-                    <div class="col-lg-3 text-center mb-30">
-                        <div class="box-image mb-20"><img src="assets/imgs/page/contact/chat.svg" alt="Revira"></div>
-                        <h4 class="mb-5">Chat to sales</h4>
-                        <p class="font-sm color-gray-700 mb-5">Speak to our team.</p><a class="font-sm color-gray-900"
-                            href="mailto:sales@Revira.com">sales@Revira.com</a>
-                    </div>
-                    <div class="col-lg-3 text-center mb-30">
-                        <div class="box-image mb-20"><img src="assets/imgs/page/contact/call.svg" alt="Revira"></div>
-                        <h4 class="mb-5">Call us</h4>
-                        <p class="font-sm color-gray-700 mb-5">Mon-Fri from 8am to 5pm</p><a
-                            class="font-sm color-gray-900" href="tel:+1(555)000-0000">+1(555)000-0000</a>
-                    </div>
-                    <div class="col-lg-3 text-center mb-30">
-                        <div class="box-image mb-20"><img src="assets/imgs/page/contact/map.svg" alt="Revira"></div>
-                        <h4 class="mb-5">Visit us</h4>
-                        <p class="font-sm color-gray-700 mb-5">Visit our office</p><span
-                            class="font-sm color-gray-900">205 North Michigan Avenue, Suite 810<br>Chicago, 60601,
-                            USA</span>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 @endsection
