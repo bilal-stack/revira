@@ -197,11 +197,10 @@
                                     value="PayPal" {{ old('payment_method') == 'PayPal' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="paypal">PayPal</label>
                             </div>
-{{--                            <div class="form-check">--}}
-{{--                                <input class="form-check-input" type="radio" name="payment_method" id="paymentStripe"--}}
-{{--                                    value="Stripe" {{ old('payment_method') == 'Stripe' ? 'checked' : '' }}>--}}
-{{--                                <label class="form-check-label" for="paymentStripe">Stripe</label>--}}
-{{--                            </div>--}}
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="payment_gateway" id="stripe" value="Stripe" {{ old('payment_method') == 'Stripe' ? 'checked' : '' }}>
+                                <label class="form-check-label" for="stripe">Stripe</label>
+                            </div>
                         </div>
 
 

@@ -23,6 +23,7 @@
         "munafio/chatify": "^1.6",
         "omnipay/paypal": "^3.0",
         "pusher/pusher-php-server": "^7.0.2",
+        "stripe/stripe-php": "^17.4",
         "torann/currency": "^1.1"
     },
     "require-dev": {

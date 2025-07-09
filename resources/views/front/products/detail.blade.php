@@ -264,44 +264,46 @@
 {{--                        </div>--}}
                     </div>
 
-                        <input hidden="" class="font-xl color-brand-3" type="number" name="quantity" value="1">
+{{--                        <input hidden="" class="font-xl color-brand-3" type="number" name="quantity" value="1">--}}
                         <div class="buy-product mt-30">
                             <div class="d-flex align-items-center gap-3 mb-30">
-                                <p class="font-sm mb-1">Quantity:</p>
+                                <p class="font-sm mb-1">Bundle of:</p>
                                 <span class="badge bg-dark" style="font-size: 14px; padding: 8px 12px;">
                                     {{ $productDetails['quantity'] }}pcs
                                 </span>
                             </div>
-                            <div class="box-quantity">
-{{--                                <div class="input-quantity">--}}
-{{--                                    <input class="font-xl color-brand-3" type="number" name="quantity" value="1">--}}
-{{--                                    <span class="minus-cart"></span>--}}
-{{--                                    <span class="plus-cart"></span>--}}
-{{--                                </div>--}}
-                                <div class="button-buy row g-2 mt-3">
-                                    <div class="col-6">
-                                        <button class="btn btn-cart w-100" type="submit" style="max-width: unset;">Add to cart</button>
-                                    </div>
-                                    @if(isset($productDetails['vendor']))
-                                        <div class="col-6">
-                                            @php
-                                                $vendorId = userFromVendor($productDetails['vendor']['id']);
-                                            @endphp
-                                            <a href="{{url('chat/'.$vendorId)}}" class="btn btn-cart w-100 text-white d-flex align-items-center justify-content-center"
-                                               style="max-width: unset; background-color: #ff5400; border-color: #ff5400;">
-                                                <i class="fa-regular fa-message me-2"></i> MESSAGE THE SELLER
-                                            </a>
-                                        </div>
-                                    @endif
+                            <div class="box-quantity d-flex align-items-center gap-3 mb-30">
+                                <p class="font-sm mb-1">Quantity:</p>
+                                <div class="input-quantity">
+                                    <input class="font-xl color-brand-3" type="number" name="quantity" value="1">
+                                    <span class="minus-cart"></span>
+                                    <span class="plus-cart"></span>
+                                </div>
 
+                            </div>
+                            <div class="button-buy row g-2 mt-3">
+                                <div class="col-6">
+                                    <button class="btn btn-cart w-100" type="submit" style="max-width: unset;">Add to cart</button>
+                                </div>
+                                @if(isset($productDetails['vendor']))
                                     <div class="col-6">
-                                        <a href="{{url('chat/1')}}" class="btn btn-cart w-100 text-white d-flex align-items-center justify-content-center"
+                                        @php
+                                            $vendorId = userFromVendor($productDetails['vendor']['id']);
+                                        @endphp
+                                        <a href="{{url('chat/'.$vendorId)}}" class="btn btn-cart w-100 text-white d-flex align-items-center justify-content-center"
                                            style="max-width: unset; background-color: #ff5400; border-color: #ff5400;">
                                             <i class="fa-regular fa-message me-2"></i> MESSAGE THE SELLER
                                         </a>
                                     </div>
+                                @endif
 
+                                <div class="col-6">
+                                    <a href="{{url('chat/1')}}" class="btn btn-cart w-100 text-white d-flex align-items-center justify-content-center"
+                                       style="max-width: unset; background-color: #ff5400; border-color: #ff5400;">
+                                        <i class="fa-regular fa-message me-2"></i> MESSAGE THE SELLER
+                                    </a>
                                 </div>
+
                             </div>
                         </div>
                     </form>
